@@ -1,0 +1,39 @@
+{
+  "modules": {
+    "byIdentifier": {
+      "multi private-next-pages/_app.js": 0,
+      "multi private-next-pages/features/video.md": 1,
+      "multi private-next-pages/hello.md": 2,
+      "multi private-next-pages/index.md": 3,
+      "multi next/dist/pages/_error": 4,
+      "multi next/dist/pages/_document": 5
+    },
+    "usedIds": {
+      "0": 0,
+      "1": 1,
+      "2": 2,
+      "3": 3,
+      "4": 4,
+      "5": 5
+    }
+  },
+  "chunks": {
+    "byName": {
+      "static/IBpka6zxngQgns0V9yuVF/pages/_app.js": 0,
+      "static/IBpka6zxngQgns0V9yuVF/pages/_document.js": 1,
+      "static/IBpka6zxngQgns0V9yuVF/pages/_error.js": 2,
+      "static/IBpka6zxngQgns0V9yuVF/pages/features/video.js": 3,
+      "static/IBpka6zxngQgns0V9yuVF/pages/hello.js": 4,
+      "static/IBpka6zxngQgns0V9yuVF/pages/index.js": 5
+    },
+    "bySource": {},
+    "usedIds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  }
+}
