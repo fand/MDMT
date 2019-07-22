@@ -1747,7 +1747,7 @@ MDXContent.frontmatter = {
 
 /***/ }),
 
-/***/ 0:
+/***/ 2:
 /*!******************************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Ffeatures%2Fvideo&absolutePagePath=%2FUsers%2Famagi%2Fsrc%2Fgithub.com%2Ffand%2Fnext-docs-template%2Fpages%2Ffeatures%2Fvideo.md ***!
   \******************************************************************************************************************************************************************************/
@@ -1770,5 +1770,5 @@ module.exports = dll_829b10deddf10e1653a8;
 
 /***/ })
 
-},[[0,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=video.js.map

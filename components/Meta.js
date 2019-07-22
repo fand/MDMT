@@ -1,26 +1,25 @@
-import React from "react";
-import Helmet from "react-helmet";
-import sanitize from 'sanitize.css';
+import * as React from "react";
+// import Document, { Head, Main, NextScript } from "next/document";
+import Head from "next/head";
 
-const Meta = ({
+export default ({
   url,
   title,
   image,
   description,
   siteName,
-  lang
-}) => (
-  <div>
-    <Helmet>
+  lang,
+  twitter
+}) => {
+  return (
+    <Head>
       <html lang={lang || "en"} />
       <meta charSet="utf-8" />
       <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-      <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1"
-      />
-      <title>{title}</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="Description" content={description} />
+
+      <title>{title || ''}</title>
 
       {/* Facebook */}
       <meta property="og:url" content={url} />
@@ -33,17 +32,12 @@ const Meta = ({
 
       {/* Twitter Cards */}
       <meta name="twitter:card" content="summary" />
-      <meta name="twitter:site" content="@amagitakayosi" />
-      <meta name="twitter:creator" content="@amagitakayosi" />
+      <meta name="twitter:site" content={twitter} />
+      <meta name="twitter:creator" content={twitter} />
       <meta name="twitter:url" content={url} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
-
-      {/* Google+ / Schema.org */}
-      <meta itemProp="name" content={title} />
-      <meta itemProp="description" content={title} />
-      <meta itemProp="image" content={image} />
 
       {/* Favicons */}
       <link
@@ -63,6 +57,8 @@ const Meta = ({
         sizes="16x16"
         href="/static/favicons/favicon-16x16.png"
       />
+
+      {/* PWA */}
       <link rel="manifest" href="/static/favicons/manifest.json" />
       <link
         rel="mask-icon"
@@ -70,9 +66,6 @@ const Meta = ({
         color="#5bbad5"
       />
       <meta name="theme-color" content="#ffffff" />
-    </Helmet>
-    <style dangerouslySetInnerHTML={{ __html: sanitize }}/>
-  </div>
-);
-
-  export default Meta;
+    </Head>
+  );
+};

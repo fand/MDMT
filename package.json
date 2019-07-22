@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "babel-inline-import-loader": "^0.1.0",
-    "babel-plugin-inline-import": "^3.0.0"
+    "babel-plugin-inline-import": "^3.0.0",
+    "prettier": "^1.18.2"
   }
 }
