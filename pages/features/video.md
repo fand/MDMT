@@ -1,5 +1,5 @@
 ---
-title: Loading videos - VEDA.js
+title: Loading Videos - VEDA \#VEDAJS
 description: How to use video files in GLSL with VEDA.js
 ---
 

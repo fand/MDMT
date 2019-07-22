@@ -355,6 +355,10 @@ function MDXContent(_ref) {
 }
 ;
 MDXContent.isMDXComponent = true;
+MDXContent.frontmatter = {
+  title: 'Loading Videos - VEDA \#VEDAJS',
+  description: 'How to use video files in GLSL with VEDA.js'
+};
 
 /***/ }),
 

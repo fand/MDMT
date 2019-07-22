@@ -117,12 +117,13 @@ var _jsxFileName = "/Users/amagi/src/github.com/fand/next-docs-template/componen
   var children = _ref.children,
       className = _ref.className;
   var language = className.replace(/language-/, '');
+  var code = children.trim();
   return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(prism_react_renderer__WEBPACK_IMPORTED_MODULE_3___default.a, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, prism_react_renderer__WEBPACK_IMPORTED_MODULE_3__["defaultProps"], {
-    code: children,
+    code: code,
     language: language,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
+      lineNumber: 9
     },
     __self: this
   }), function (_ref2) {
@@ -138,7 +139,7 @@ var _jsxFileName = "/Users/amagi/src/github.com/fand/next-docs-template/componen
       }),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 10
+        lineNumber: 11
       },
       __self: this
     }, tokens.map(function (line, i) {
@@ -150,7 +151,7 @@ var _jsxFileName = "/Users/amagi/src/github.com/fand/next-docs-template/componen
       }), {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 12
+          lineNumber: 13
         },
         __self: this
       }), line.map(function (token, key) {
@@ -162,7 +163,7 @@ var _jsxFileName = "/Users/amagi/src/github.com/fand/next-docs-template/componen
         }), {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 14
+            lineNumber: 15
           },
           __self: this
         }));
@@ -1381,17 +1382,7 @@ var _jsxFileName = "/Users/amagi/src/github.com/fand/next-docs-template/pages/_a
  // MDX components
 
 var components = {
-  code: _components_CodeBlock__WEBPACK_IMPORTED_MODULE_11__["default"],
-  wrapper: function wrapper(props) {
-    console.log(props);
-    return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("main", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 12
-      },
-      __self: this
-    }, props.children);
-  }
+  code: _components_CodeBlock__WEBPACK_IMPORTED_MODULE_11__["default"]
 };
 
 var MyApp =
@@ -1411,48 +1402,56 @@ function (_App) {
       var _this$props = this.props,
           Component = _this$props.Component,
           pageProps = _this$props.pageProps;
-      console.log(this.props);
+
+      if (typeof document !== 'undefined') {
+        if (Component.frontmatter && Component.frontmatter.title) {
+          document.title = Component.frontmatter.title;
+        } else {
+          document.title = 'VEDAJS';
+        }
+      }
+
       return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(next_app__WEBPACK_IMPORTED_MODULE_9__["Container"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 31
+          lineNumber: 36
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_mdx_js_react__WEBPACK_IMPORTED_MODULE_10__["MDXProvider"], {
         components: components,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 32
+          lineNumber: 37
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("nav", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 33
+          lineNumber: 38
         },
         __self: this
       }, "sidebar"), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("header", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 36
+          lineNumber: 41
         },
         __self: this
       }, "Header"), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("main", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 37
+          lineNumber: 43
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(Component, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, pageProps, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 38
+          lineNumber: 44
         },
         __self: this
       }))), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("footer", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 40
+          lineNumber: 47
         },
         __self: this
       }, "Footer")));

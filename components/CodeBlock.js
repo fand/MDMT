@@ -3,9 +3,10 @@ import Highlight, {defaultProps} from 'prism-react-renderer'
 
 export default ({children, className}) => {
   const language = className.replace(/language-/, '')
+  const code = children.trim();
 
   return (
-    <Highlight {...defaultProps} code={children} language={language}>
+    <Highlight {...defaultProps} code={code} language={language}>
       {({className, style, tokens, getLineProps, getTokenProps}) => (
         <pre className={className} style={{...style, padding: '20px'}}>
           {tokens.map((line, i) => (

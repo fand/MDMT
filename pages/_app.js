@@ -7,10 +7,6 @@ import CodeBlock from '../components/CodeBlock';
 // MDX components
 const components = {
   code: CodeBlock,
-  wrapper: (props) =>  {
-    console.log(props);
-    return <main>{props.children}</main>
-  }
 }
 
 export default class MyApp extends App {
@@ -26,7 +22,16 @@ export default class MyApp extends App {
 
   render () {
     const { Component, pageProps } = this.props
-console.log(this.props);
+
+    if (typeof document !== 'undefined') {
+      if (Component.frontmatter && Component.frontmatter.title) {
+        document.title = Component.frontmatter.title
+      }
+      else {
+        document.title = 'VEDAJS';
+      }
+    }
+
     return (
       <Container>
         <MDXProvider components={components}>
@@ -34,9 +39,11 @@ console.log(this.props);
           sidebar
           </nav>
           <header>Header</header>
+
           <main>
             <Component {...pageProps} />
           </main>
+
           <footer>Footer</footer>
         </MDXProvider>
       </Container>
