@@ -2,8 +2,7 @@ import React from "react";
 import App, { Container } from "next/app";
 import Head from "next/head";
 import { MDXProvider } from "@mdx-js/react";
-import Header from "../components/Header";
-import Meta from "../components/Meta";
+import Layout from "../components/Layout";
 import CodeBlock from "../components/CodeBlock";
 
 // MDX components
@@ -41,16 +40,9 @@ export default class MyApp extends App {
     return (
       <Container>
         <MDXProvider components={components}>
-          <Meta/>
-
-          <Header />
-          <nav>sidebar</nav>
-
-          <main>
-            <Component {...pageProps} />
-          </main>
-
-          <footer>Footer</footer>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
         </MDXProvider>
       </Container>
     );
