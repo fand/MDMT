@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useReducer } from "react";
 import App, { Container } from "next/app";
 import Head from "next/head";
 import { MDXProvider } from "@mdx-js/react";
 import Layout from "../components/Layout";
 import CodeBlock from "../components/CodeBlock";
+import { Provider } from "../lib/context";
 
 // MDX components
 const components = {
@@ -40,9 +41,11 @@ export default class MyApp extends App {
     return (
       <Container>
         <MDXProvider components={components}>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+          <Provider>
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
+          </Provider>
         </MDXProvider>
       </Container>
     );

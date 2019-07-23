@@ -1,68 +1,43 @@
 <div align="center">
   <img alt="logo" src="/static/images/logo_720h.png" width="192"/>
-  <h1>VEDA</h1><i>VJ system on Atom</i>
+  <h1>MDMX</h1><i>Deadsimple Markdown Docs generator with Next.js</i>
   <br/>
 </div>
 
+## Features
 
-<!-- ## Let your Atom blink. -->
+- MDX support
+- Multi Language Support
+- Header Search
 
-VEDA is an Atom package for VJ / Livecoding with GLSL.
+## Not Supported
 
-![](https://user-images.githubusercontent.com/1403842/28673275-1d42b062-731d-11e7-92b0-bde5ca1f1cae.gif)
+- No CLI command
+- No server
+- No theme
 
+You don't wanna install global npm package, right?
+`npm` does everything I want ٩(ˊᗜˋ*)و
 
-### Easy GLSL runtime
+## Install
 
-VEDA supports both fragment shaders and vertex shaders.
-In fragment shaders, you can use uniform variables like <a target="\_blank" href="http://glslsandbox.com/">GLSL Sandbox</a>.
-In vertex shaders, you can use uniform variables like <a target="\_blank" href="https://vertexshaderart.com/">vertexshaderart.com</a>.
+```
+$ npm i @fand/mdmx
+```
 
+## Why?
 
-### Cross-platform by design
+I tried soooooo many existing solutions, but...
 
-VEDA is built on web technologies and provided as an Atom package.
-It works on Windows, macOS, and Linux.
+- Too complicated
+  - Docusaurus
+  - VuePress
+- Too simple
+  - Next.js
+  - Nuxt.js
 
-
-### Auto-completion, Linters, ...
-
-Because VEDA runs on Atom, you can write GLSL with your favorite settings, package, and snippets.
-Also, VEDA automatically installs <a target="\_blank" href="https://atom.io/packages/autocomplete-glsl">autocomplete-glsl</a> and <a target="\_blank" href="https://atom.io/packages/autocomplete-glsl">linter-glsl</a> for rapid GLSL development.
-
-
-### Audio, MIDI, OSC, and more!
-
-VEDA supports a variety of inputs such as:
-
-- Audio
-- MIDI
-- OSC
-- WebCam
-- Gamepad
-- Keyboard
-- Mouse
-
-<br/>
-
-<!-- ## VEDA.js
-
-VEDA.js is a GLSL framework for modern web development.
-It was created as a part of VEDA, and published to npm later.
-
-[VEDA.js](/vedajs) -->
-
-
-<!-- ## LICENSE
-
-Projects around VEDA is licensed in **MIT** license.
-So you can use them anywhere you want! -->
-
+So I created another one 🐹←btw I love this emoji
 
 ---
-
-
-If you like it, please post to Twitter with hashtag `#VEDAJS`.
-We'll be happy to see your tweets!😸
 
 <a href="https://twitter.com/intent/tweet?url=https://veda.gl/&hashtags=vedajs" target="\_blank">Tweet with #VEDAJS</a>
