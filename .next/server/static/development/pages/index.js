@@ -510,7 +510,9 @@ function MDXContent(_ref) {
 }
 ;
 MDXContent.isMDXComponent = true;
-MDXContent.frontmatter = {};
+MDXContent.frontmatter = {
+  color: 'rgba(0, 223, 255, 0.7)'
+};
 
 /***/ }),
 
