@@ -13,9 +13,9 @@ const Nav = styled.nav`
   box-sizing: border-box;
 
   -webkit-overflow-scrolling: touch;
-  @media (max-width: ${constants.mobile}px) {
+  /* @media (max-width: ${constants.mobile}px) {
     width: 82vw;
-  }
+  } */
 
   padding: 10px 20px 100px;
   background: rgba(10, 10, 10, 0.6);
