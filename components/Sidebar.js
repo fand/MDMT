@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 import Link from "next/link";
-import Router from "next/router";
+import Router, { useRouter } from "next/router";
 import LazyLoad from "react-lazyload";
 import constants from "./constants";
 import { AppContext, DispatchContext } from "../lib/context";
@@ -10,45 +10,34 @@ import * as config from '../config';
 const Nav = styled.nav`
   width: 100%;
   height: 100%;
-  box-sizing: border-box;
-
-  -webkit-overflow-scrolling: touch;
-  /* @media (max-width: ${constants.mobile}px) {
-    width: 82vw;
-  } */
-
-  padding: 10px 20px 100px;
+  padding: 10px 30px 100px;
   background: rgba(10, 10, 10, 0.6);
-  border-right: 1px solid rgb(24, 26, 31);
-  text-shadow: 0 2px 5px black;
+  border-right: 1px solid gray;
+
   overflow: auto;
+  -webkit-overflow-scrolling: touch;
+
   * {
-    font-weight: 400;
-  }
-  h4 {
-    margin: 1em 0 0;
-    font-weight: 700;
+    color: ${constants.fg};
+    text-shadow: 0 2px 5px black !important;
   }
   ul {
     padding-left: 0;
     margin: 0;
   }
   li {
-    display: block;
-    width: 100%;
     line-height: 2.5em;
     &.active {
-      box-shadow: -200px 0 0 black, 200px 0 0 black;
-      background: black;
-      * {
-        font-weight: 700;
-      }
+      position: relative;
+      text-decoration: none;
+      font-weight: bold;
+      font-style: italic;
+      color: white;
     }
   }
   li a {
     display: block;
     text-decoration: none;
-    color: ${constants.fg};
     &:hover {
       color: ${constants.link};
       text-decoration: underline;
@@ -88,16 +77,14 @@ const isActive = (path, to) => {
 
 const prefetch = to => () => Router.prefetch(to);
 
-const Li = ({ to, children }) => {
-  // const { path } = this.props;
-
-  // if (isActive(path, to)) {
-  //   return (
-  //     <li className="active" onClick={this.hideMenu}>
-  //       {children}
-  //     </li>
-  //   );
-  // }
+const Li = ({ to, children, route }) => {
+  if (isActive(route, to)) {
+    return (
+      <li className="active">
+        {children}
+      </li>
+    );
+  }
 
   const state = useContext(AppContext);
   const dispatch = useContext(DispatchContext);
@@ -113,17 +100,17 @@ const Li = ({ to, children }) => {
   );
 };
 
-const renderSidebarItems = (items, indent) => {
+const renderSidebarItems = (items, route, indent) => {
   return (
-    <ul style={{ textIndent: indent * 20 }}>
+    <ul style={{ textIndent: indent * 30 }}>
       {items.map(([label, content]) => {
         if (typeof content === 'string') {
-          return <Li key={content} to={content}>{label}</Li>
+          return <Li key={content} route={route} to={content}>{label}</Li>
         } else {
           return (
             <li key={label}>
               <span>{label}</span>
-              {renderSidebarItems(content, indent + 1)}
+              {renderSidebarItems(content, route, indent + 1)}
             </li>
           );
         }
@@ -136,6 +123,7 @@ const renderSidebarItems = (items, indent) => {
 const Sidebar = props => {
   const { lang } = props;
 
+  const route = useRouter().pathname;
   const sidebarItems = config.sidebar.en;
 
   return (
@@ -159,7 +147,7 @@ const Sidebar = props => {
         </a>
       </Header>
 
-      {renderSidebarItems(sidebarItems, 0)}
+      {renderSidebarItems(sidebarItems, route, 0)}
     </Nav>
   );
 };

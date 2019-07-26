@@ -830,7 +830,7 @@ var _jsxFileName = "/Users/amagi/src/github.com/fand/next-docs-template/componen
 var Nav = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.nav.withConfig({
   displayName: "sidebar__Nav",
   componentId: "sc-1nsoz3g-0"
-})(["width:100%;height:100%;box-sizing:border-box;-webkit-overflow-scrolling:touch;padding:10px 20px 100px;background:rgba(10,10,10,0.6);border-right:1px solid rgb(24,26,31);text-shadow:0 2px 5px black;overflow:auto;*{font-weight:400;}h4{margin:1em 0 0;font-weight:700;}ul{padding-left:0;margin:0;}li{display:block;width:100%;line-height:2.5em;&.active{box-shadow:-200px 0 0 black,200px 0 0 black;background:black;*{font-weight:700;}}}li a{display:block;text-decoration:none;color:", ";&:hover{color:", ";text-decoration:underline;}&:visited{color:", ";}}"], _constants__WEBPACK_IMPORTED_MODULE_6__["default"].fg, _constants__WEBPACK_IMPORTED_MODULE_6__["default"].link, _constants__WEBPACK_IMPORTED_MODULE_6__["default"].fg);
+})(["width:100%;height:100%;padding:10px 30px 100px;background:rgba(10,10,10,0.6);border-right:1px solid gray;overflow:auto;-webkit-overflow-scrolling:touch;*{color:", ";text-shadow:0 2px 5px black !important;}ul{padding-left:0;margin:0;}li{line-height:2.5em;&.active{position:relative;text-decoration:none;font-weight:bold;font-style:italic;color:white;}}li a{display:block;text-decoration:none;&:hover{color:", ";text-decoration:underline;}&:visited{color:", ";}}"], _constants__WEBPACK_IMPORTED_MODULE_6__["default"].fg, _constants__WEBPACK_IMPORTED_MODULE_6__["default"].link, _constants__WEBPACK_IMPORTED_MODULE_6__["default"].fg);
 var Header = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div.withConfig({
   displayName: "sidebar__Header",
   componentId: "sc-1nsoz3g-1"
@@ -849,15 +849,20 @@ var prefetch = function prefetch(to) {
 
 var Li = function Li(_ref) {
   var to = _ref.to,
-      children = _ref.children;
-  // const { path } = this.props;
-  // if (isActive(path, to)) {
-  //   return (
-  //     <li className="active" onClick={this.hideMenu}>
-  //       {children}
-  //     </li>
-  //   );
-  // }
+      children = _ref.children,
+      route = _ref.route;
+
+  if (isActive(route, to)) {
+    return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+      className: "active",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 83
+      },
+      __self: this
+    }, children);
+  }
+
   var state = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_lib_context__WEBPACK_IMPORTED_MODULE_7__["AppContext"]);
   var dispatch = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_lib_context__WEBPACK_IMPORTED_MODULE_7__["DispatchContext"]);
 
@@ -872,33 +877,33 @@ var Li = function Li(_ref) {
     onMouseOver: prefetch(to),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 108
+      lineNumber: 95
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
     href: to,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 109
+      lineNumber: 96
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 110
+      lineNumber: 97
     },
     __self: this
   }, children)));
 };
 
-var renderSidebarItems = function renderSidebarItems(items, indent) {
+var renderSidebarItems = function renderSidebarItems(items, route, indent) {
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
     style: {
-      textIndent: indent * 20
+      textIndent: indent * 30
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 118
+      lineNumber: 105
     },
     __self: this
   }, items.map(function (_ref2) {
@@ -909,10 +914,11 @@ var renderSidebarItems = function renderSidebarItems(items, indent) {
     if (typeof content === 'string') {
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Li, {
         key: content,
+        route: route,
         to: content,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 121
+          lineNumber: 108
         },
         __self: this
       }, label);
@@ -921,46 +927,47 @@ var renderSidebarItems = function renderSidebarItems(items, indent) {
         key: label,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 124
+          lineNumber: 111
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 125
+          lineNumber: 112
         },
         __self: this
-      }, label), renderSidebarItems(content, indent + 1));
+      }, label), renderSidebarItems(content, route, indent + 1));
     }
   }));
 };
 
 var Sidebar = function Sidebar(props) {
   var lang = props.lang;
+  var route = Object(next_router__WEBPACK_IMPORTED_MODULE_4__["useRouter"])().pathname;
   var sidebarItems = _config__WEBPACK_IMPORTED_MODULE_8__["sidebar"].en;
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Nav, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 142
+      lineNumber: 130
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Header, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 143
+      lineNumber: 131
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
     href: "/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 144
+      lineNumber: 132
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 145
+      lineNumber: 133
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
@@ -969,7 +976,7 @@ var Sidebar = function Sidebar(props) {
     alt: "MDMX header",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 146
+      lineNumber: 134
     },
     __self: this
   }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
@@ -978,7 +985,7 @@ var Sidebar = function Sidebar(props) {
     href: "https://twitter.com/search?f=tweets&q=%23mdmx&src=typd",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 153
+      lineNumber: 141
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
@@ -986,10 +993,10 @@ var Sidebar = function Sidebar(props) {
     src: "/static/images/hashtag.png",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 158
+      lineNumber: 146
     },
     __self: this
-  }))), renderSidebarItems(sidebarItems, 0));
+  }))), renderSidebarItems(sidebarItems, route, 0));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Sidebar);
