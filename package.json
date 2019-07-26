@@ -1,8 +1,6 @@
 {
   "scripts": {
-    "start": "run-p start:next start:indexer",
-    "start:next": "next",
-    "start:indexer": "node lib/navigation-indexer.js",
+    "start": "next",
     "build": "NODE_ENV=PRODUCTION next build && next export -o docs"
   },
   "dependencies": {
@@ -16,6 +14,7 @@
     "lodash.throttle": "^4.1.1",
     "marked": "^0.7.0",
     "next": "^9.0.2",
+    "polished": "^3.4.1",
     "prism-react-renderer": "^0.1.7",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",

@@ -1,3 +1,6 @@
+---
+color: rgba(0, 223, 255, 0.7)
+---
 <div align="center">
   <img alt="logo" src="/static/images/logo_720h.png" width="192"/>
   <h1>MDMX</h1><i>Deadsimple Markdown Docs generator with Next.js</i>

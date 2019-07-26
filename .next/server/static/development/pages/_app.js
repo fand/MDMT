@@ -195,7 +195,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _sidebar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./sidebar */ "./components/sidebar.js");
 /* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./header */ "./components/header.js");
 /* harmony import */ var _meta__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./meta */ "./components/meta.js");
-/* harmony import */ var _lib_context__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../lib/context */ "./lib/context.js");
+/* harmony import */ var _background__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./background */ "./components/background.js");
+/* harmony import */ var _lib_context__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../lib/context */ "./lib/context.js");
 var _jsxFileName = "/Users/amagi/src/github.com/fand/next-docs-template/components/Layout.js";
 
 
@@ -204,7 +205,7 @@ var _jsxFileName = "/Users/amagi/src/github.com/fand/next-docs-template/componen
 
 
 
- // import Shader from "./shader";
+
 
 
 var Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.div.withConfig({
@@ -229,8 +230,8 @@ var HeaderWrapper = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.div
 })(["position:absolute;top:0;width:100%;z-index:2;"]);
 
 var Layout = function Layout(props) {
-  var state = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_lib_context__WEBPACK_IMPORTED_MODULE_8__["AppContext"]);
-  var dispatch = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_lib_context__WEBPACK_IMPORTED_MODULE_8__["DispatchContext"]);
+  var state = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_lib_context__WEBPACK_IMPORTED_MODULE_9__["AppContext"]);
+  var dispatch = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_lib_context__WEBPACK_IMPORTED_MODULE_9__["DispatchContext"]);
   var bodyEl = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null);
   var watchScroll = lodash_throttle__WEBPACK_IMPORTED_MODULE_2___default()(function () {
     if (bodyEl.current.scrollTop > 100) {
@@ -256,52 +257,52 @@ var Layout = function Layout(props) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96
+      lineNumber: 95
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_meta__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 97
+      lineNumber: 96
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Wrapper, {
     className: sc,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 98
+      lineNumber: 97
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SidebarWrapper, {
     className: sc,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99
+      lineNumber: 98
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_sidebar__WEBPACK_IMPORTED_MODULE_5__["default"], {
     path: path,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 100
+      lineNumber: 99
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(BodyColumn, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 102
+      lineNumber: 101
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(HeaderWrapper, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 103
+      lineNumber: 102
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 104
+      lineNumber: 103
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(MainWrapper, {
@@ -309,13 +310,63 @@ var Layout = function Layout(props) {
     className: "body",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 106
+      lineNumber: 105
     },
     __self: this
-  }, props.children))));
+  }, props.children))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_background__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    color: state.color,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 110
+    },
+    __self: this
+  }));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Layout);
+
+/***/ }),
+
+/***/ "./components/background.js":
+/*!**********************************!*\
+  !*** ./components/background.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var polished__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! polished */ "polished");
+/* harmony import */ var polished__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(polished__WEBPACK_IMPORTED_MODULE_2__);
+var _jsxFileName = "/Users/amagi/src/github.com/fand/next-docs-template/components/background.js";
+
+
+
+var BG = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+  displayName: "background__BG",
+  componentId: "sc-1swrgvy-0"
+})(["position:fixed;width:100%;height:100%;z-index:-1;left:0;top:0;background:repeating-linear-gradient( 130deg,", ",", ",", " );background-size:200% 200%;animation:bg 12s ease infinite;@keyframes bg{0%{background-position:0 0;}50%{background-position:100% 100%;}100%{background-position:0 0;}}"], function (p) {
+  return Object(polished__WEBPACK_IMPORTED_MODULE_2__["adjustHue"])(90, p.color);
+}, function (p) {
+  return p.color;
+}, function (p) {
+  return Object(polished__WEBPACK_IMPORTED_MODULE_2__["lighten"])(0.2, Object(polished__WEBPACK_IMPORTED_MODULE_2__["adjustHue"])(-60, p.color));
+});
+/* harmony default export */ __webpack_exports__["default"] = (function (_ref) {
+  var color = _ref.color;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(BG, {
+    color: color,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 35
+    },
+    __self: this
+  });
+});
 
 /***/ }),
 
@@ -985,34 +1036,38 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DispatchContext", function() { return DispatchContext; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Provider", function() { return Provider; });
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/slicedToArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/slicedToArray.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _lib_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../lib/reducer */ "./lib/reducer.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _lib_reducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../lib/reducer */ "./lib/reducer.js");
+
 
 var _jsxFileName = "/Users/amagi/src/github.com/fand/next-docs-template/lib/context.js";
 
 
 
-var AppContext = Object(react__WEBPACK_IMPORTED_MODULE_1__["createContext"])({});
-var DispatchContext = Object(react__WEBPACK_IMPORTED_MODULE_1__["createContext"])({});
+var AppContext = Object(react__WEBPACK_IMPORTED_MODULE_2__["createContext"])({});
+var DispatchContext = Object(react__WEBPACK_IMPORTED_MODULE_2__["createContext"])({});
 var Provider = function Provider(props) {
-  var _useReducer = Object(react__WEBPACK_IMPORTED_MODULE_1__["useReducer"])(_lib_reducer__WEBPACK_IMPORTED_MODULE_2__["default"], _lib_reducer__WEBPACK_IMPORTED_MODULE_2__["initialState"]),
+  var iState = Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({}, _lib_reducer__WEBPACK_IMPORTED_MODULE_3__["initialState"], props.metadata || {});
+
+  var _useReducer = Object(react__WEBPACK_IMPORTED_MODULE_2__["useReducer"])(_lib_reducer__WEBPACK_IMPORTED_MODULE_3__["default"], iState),
       _useReducer2 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useReducer, 2),
       state = _useReducer2[0],
       dispatch = _useReducer2[1];
 
-  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(AppContext.Provider, {
+  return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(AppContext.Provider, {
     value: state,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 16
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(DispatchContext.Provider, {
+  }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(DispatchContext.Provider, {
     value: dispatch,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 17
     },
     __self: this
   }, props.children));
@@ -1035,7 +1090,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var initialState = {
   isHeaderVisible: false,
-  isMenuVisible: false
+  isMenuVisible: false,
+  color: '#FFDD0088'
 };
 function reducer(state, action) {
   switch (action.type) {
@@ -2797,6 +2853,7 @@ function (_App) {
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_lib_context__WEBPACK_IMPORTED_MODULE_14__["Provider"], {
+        metadata: Component.frontmatter,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 44
@@ -3142,6 +3199,17 @@ module.exports = require("next/head");
 /***/ (function(module, exports) {
 
 module.exports = require("next/router");
+
+/***/ }),
+
+/***/ "polished":
+/*!***************************!*\
+  !*** external "polished" ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("polished");
 
 /***/ }),
 

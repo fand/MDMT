@@ -6,7 +6,7 @@ import constants from "./constants";
 import Sidebar from "./sidebar";
 import Header from "./header";
 import Meta from "./meta";
-// import Shader from "./shader";
+import Background from "./background";
 import { AppContext, DispatchContext } from "../lib/context";
 
 const Wrapper = styled.div`
@@ -63,7 +63,6 @@ const HeaderWrapper = styled.div`
   z-index: 2;
 `;
 
-
 const Layout = (props) => {
   const state = useContext(AppContext);
   const dispatch = useContext(DispatchContext);
@@ -108,7 +107,7 @@ const Layout = (props) => {
           </MainWrapper>
         </BodyColumn>
       </Wrapper>
-      {/* <Shader shader={this.props.shader} /> */}
+      <Background color={state.color} />
     </div>
   );
 };

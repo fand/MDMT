@@ -41,7 +41,7 @@ export default class MyApp extends App {
     return (
       <Container>
         <MDXProvider components={components}>
-          <Provider>
+          <Provider metadata={Component.frontmatter}>
             <Layout>
               <Component {...pageProps} />
             </Layout>
