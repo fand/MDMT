@@ -116,7 +116,7 @@ var _jsxFileName = "/Users/amagi/src/github.com/fand/next-docs-template/componen
 /* harmony default export */ __webpack_exports__["default"] = (function (_ref) {
   var children = _ref.children,
       className = _ref.className;
-  var language = className.replace(/language-/, "");
+  var language = className ? className.replace(/language-/, "") : "";
   var code = children.trim();
   return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(prism_react_renderer__WEBPACK_IMPORTED_MODULE_3___default.a, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, prism_react_renderer__WEBPACK_IMPORTED_MODULE_3__["defaultProps"], {
     code: code,
@@ -751,18 +751,22 @@ var _jsxFileName = "/Users/amagi/src/github.com/fand/next-docs-template/componen
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/router */ "next/router");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var react_lazyload__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-lazyload */ "react-lazyload");
-/* harmony import */ var react_lazyload__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_lazyload__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./constants */ "./components/constants.js");
-/* harmony import */ var _lib_context__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../lib/context */ "./lib/context.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/slicedToArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/slicedToArray.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var react_lazyload__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-lazyload */ "react-lazyload");
+/* harmony import */ var react_lazyload__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_lazyload__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./constants */ "./components/constants.js");
+/* harmony import */ var _lib_context__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../lib/context */ "./lib/context.js");
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../config */ "./config.js");
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_config__WEBPACK_IMPORTED_MODULE_8__);
+
 var _jsxFileName = "/Users/amagi/src/github.com/fand/next-docs-template/components/sidebar.js";
 
 
@@ -771,15 +775,16 @@ var _jsxFileName = "/Users/amagi/src/github.com/fand/next-docs-template/componen
 
 
 
-var Nav = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.nav.withConfig({
+
+var Nav = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.nav.withConfig({
   displayName: "sidebar__Nav",
   componentId: "sc-1nsoz3g-0"
-})(["width:270px;-webkit-overflow-scrolling:touch;@media (max-width:", "px){width:82vw;}", " ", " padding:10px 20px 100px;background:rgba(10,10,10,0.6);border-right:1px solid rgb(24,26,31);text-shadow:0 2px 5px black;overflow:auto;*{font-weight:400;}h4{margin:1em 0 0;font-weight:700;}ul{padding-left:0;margin:0;}li{display:block;width:100%;line-height:2.5em;&.active{box-shadow:-200px 0 0 black,200px 0 0 black;background:black;*{font-weight:700;}}}li a{display:block;text-decoration:none;color:", ";&:hover{color:", ";text-decoration:underline;}&:visited{color:", ";}}"], _constants__WEBPACK_IMPORTED_MODULE_5__["default"].mobile, ""
+})(["width:270px;-webkit-overflow-scrolling:touch;@media (max-width:", "px){width:82vw;}", " ", " padding:10px 20px 100px;background:rgba(10,10,10,0.6);border-right:1px solid rgb(24,26,31);text-shadow:0 2px 5px black;overflow:auto;*{font-weight:400;}h4{margin:1em 0 0;font-weight:700;}ul{padding-left:0;margin:0;}li{display:block;width:100%;line-height:2.5em;&.active{box-shadow:-200px 0 0 black,200px 0 0 black;background:black;*{font-weight:700;}}}li a{display:block;text-decoration:none;color:", ";&:hover{color:", ";text-decoration:underline;}&:visited{color:", ";}}"], _constants__WEBPACK_IMPORTED_MODULE_6__["default"].mobile, ""
 /* width: 100%; */
 , ""
 /* height: 100%; */
-, _constants__WEBPACK_IMPORTED_MODULE_5__["default"].fg, _constants__WEBPACK_IMPORTED_MODULE_5__["default"].link, _constants__WEBPACK_IMPORTED_MODULE_5__["default"].fg);
-var Header = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+, _constants__WEBPACK_IMPORTED_MODULE_6__["default"].fg, _constants__WEBPACK_IMPORTED_MODULE_6__["default"].link, _constants__WEBPACK_IMPORTED_MODULE_6__["default"].fg);
+var Header = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div.withConfig({
   displayName: "sidebar__Header",
   componentId: "sc-1nsoz3g-1"
 })(["margin-bottom:30px;.logo{width:100%;padding:5px 10px;margin-left:-10px;a{display:block;}}.banners{width:180px;margin:20px auto;transform:translateX(-5px);display:flex;justify-content:space-between;img{height:20px;}}"]);
@@ -791,7 +796,7 @@ var isActive = function isActive(path, to) {
 
 var prefetch = function prefetch(to) {
   return function () {
-    return next_router__WEBPACK_IMPORTED_MODULE_3___default.a.prefetch(to);
+    return next_router__WEBPACK_IMPORTED_MODULE_4___default.a.prefetch(to);
   };
 };
 
@@ -806,8 +811,8 @@ var Li = function Li(_ref) {
   //     </li>
   //   );
   // }
-  var state = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_lib_context__WEBPACK_IMPORTED_MODULE_6__["AppContext"]);
-  var dispatch = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_lib_context__WEBPACK_IMPORTED_MODULE_6__["DispatchContext"]);
+  var state = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_lib_context__WEBPACK_IMPORTED_MODULE_7__["AppContext"]);
+  var dispatch = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_lib_context__WEBPACK_IMPORTED_MODULE_7__["DispatchContext"]);
 
   var toggleMenu = function toggleMenu() {
     return dispatch({
@@ -815,296 +820,199 @@ var Li = function Li(_ref) {
     });
   };
 
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
     onClick: toggleMenu,
     onMouseOver: prefetch(to),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 107
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
-    href: to,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 108
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    href: to,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 109
     },
     __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 110
+    },
+    __self: this
   }, children)));
+};
+
+var renderSidebarItems = function renderSidebarItems(items, indent) {
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
+    style: {
+      textIndent: indent * 20
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 118
+    },
+    __self: this
+  }, items.map(function (_ref2) {
+    var _ref3 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_ref2, 2),
+        label = _ref3[0],
+        content = _ref3[1];
+
+    if (typeof content === 'string') {
+      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Li, {
+        key: content,
+        to: content,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 121
+        },
+        __self: this
+      }, label);
+    } else {
+      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+        key: label,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 124
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 125
+        },
+        __self: this
+      }, label), renderSidebarItems(content, indent + 1));
+    }
+  }));
 };
 
 var Sidebar = function Sidebar(props) {
   var lang = props.lang;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Nav, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 119
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Header, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 120
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
-    href: "/",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 121
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 122
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    className: "logo",
-    src: "/static/images/logo_header.png",
-    alt: "VEDA Header",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 123
-    },
-    __self: this
-  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "banners",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 130
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    className: "github",
-    target: "\\_blank",
-    href: "https://github.com/fand/veda",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 131
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_lazyload__WEBPACK_IMPORTED_MODULE_4___default.a, {
-    once: true,
-    placeholder: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-      alt: "GitHub Stars",
-      src: "/static/images/shield_dummy.png",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 139
-      },
-      __self: this
-    }),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 136
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    alt: "GitHub Stars",
-    src: "https://img.shields.io/github/stars/fand/veda.svg?style=social&maxAge=259200",
+  var sidebarItems = _config__WEBPACK_IMPORTED_MODULE_8__["sidebar"].en;
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Nav, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 142
     },
     __self: this
-  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    className: "twitter",
-    target: "\\_blank",
-    href: "https://twitter.com/search?f=tweets&q=%23vedajs&src=typd",
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Header, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 148
+      lineNumber: 143
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    alt: "hashtag #vedajs",
-    src: "/static/images/hashtag.png",
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    href: "/",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 144
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 145
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
+    className: "logo",
+    src: "/static/images/logo_header.png",
+    alt: "VEDA Header",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 146
+    },
+    __self: this
+  }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "banners",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 153
     },
     __self: this
-  })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+    className: "github",
+    target: "\\_blank",
+    href: "https://github.com/fand/veda",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 158
+      lineNumber: 154
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_lazyload__WEBPACK_IMPORTED_MODULE_5___default.a, {
+    once: true,
+    placeholder: react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
+      alt: "GitHub Stars",
+      src: "/static/images/shield_dummy.png",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 162
+      },
+      __self: this
+    }),
     __source: {
       fileName: _jsxFileName,
       lineNumber: 159
     },
     __self: this
-  }, "VEDA for Atom"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 160
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-    style: {
-      textIndent: "20px"
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 161
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Li, {
-    to: "/install",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 162
-    },
-    __self: this
-  }, "Install"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Li, {
-    to: "/usage",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 163
-    },
-    __self: this
-  }, "Usage"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Li, {
-    to: "/commands",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 164
-    },
-    __self: this
-  }, "Commands"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Li, {
-    to: "/settings",
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
+    alt: "GitHub Stars",
+    src: "https://img.shields.io/github/stars/fand/veda.svg?style=social&maxAge=259200",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 165
     },
     __self: this
-  }, "Settings"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Li, {
-    to: "/features",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 166
-    },
-    __self: this
-  }, "Features"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-    style: {
-      textIndent: "40px"
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 167
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Li, {
-    to: "/features/fragment",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 168
-    },
-    __self: this
-  }, "Fragment Shaders"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Li, {
-    to: "/features/vertex",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 169
-    },
-    __self: this
-  }, "Vertex Shaders"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Li, {
-    to: "/features/image",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 170
-    },
-    __self: this
-  }, "Images & Videos"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Li, {
-    to: "/features/audio",
+  }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+    className: "twitter",
+    target: "\\_blank",
+    href: "https://twitter.com/search?f=tweets&q=%23vedajs&src=typd",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 171
     },
     __self: this
-  }, "Audio"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Li, {
-    to: "/features/midi",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 172
-    },
-    __self: this
-  }, "MIDI"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Li, {
-    to: "/features/osc",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 173
-    },
-    __self: this
-  }, "OSC"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Li, {
-    to: "/features/webcam",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 174
-    },
-    __self: this
-  }, "WebCam"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Li, {
-    to: "/features/keyboard",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 175
-    },
-    __self: this
-  }, "Keyboard"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Li, {
-    to: "/features/gamepad",
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
+    alt: "hashtag #vedajs",
+    src: "/static/images/hashtag.png",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 176
     },
     __self: this
-  }, "Gamepad"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Li, {
-    to: "/features/server",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 177
-    },
-    __self: this
-  }, "Server Mode"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Li, {
-    to: "/features/recording",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 178
-    },
-    __self: this
-  }, "Recording")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Li, {
-    to: "/vedajs",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 182
-    },
-    __self: this
-  }, "VEDA.js"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Li, {
-    to: "/faq",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 183
-    },
-    __self: this
-  }, "FAQ"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Li, {
-    to: "/contributing",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 184
-    },
-    __self: this
-  }, "CONTRIBUTING")));
+  })))), renderSidebarItems(sidebarItems, 0));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Sidebar);
+
+/***/ }),
+
+/***/ "./config.js":
+/*!*******************!*\
+  !*** ./config.js ***!
+  \*******************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = {
+  defaultLanguage: 'en',
+  languages: {
+    en: 'English',
+    ja: '日本語'
+  },
+  sidebar: {
+    en: [['Home', '/'], ['Getting Started', '/getting-started'], ['FAQ', '/faq'], ['Features', [['CLI', '/features/cli']]]],
+    ja: [['ホーム', '/'], ['使い方', '/getting-started'], ['よくある質問', '/faq'], ['機能', [['CLI', '/features/cli']]]]
+  },
+  header: {
+    en: [['GitHub', 'https://github.com/fand/mdmx']]
+  }
+};
 
 /***/ }),
 

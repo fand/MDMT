@@ -5,6 +5,7 @@ import Router from "next/router";
 import LazyLoad from "react-lazyload";
 import constants from "./constants";
 import { AppContext, DispatchContext } from "../lib/context";
+import * as config from '../config';
 
 const Nav = styled.nav`
   width: 270px;
@@ -112,8 +113,30 @@ const Li = ({ to, children }) => {
   );
 };
 
+const renderSidebarItems = (items, indent) => {
+  return (
+    <ul style={{ textIndent: indent * 20 }}>
+      {items.map(([label, content]) => {
+        if (typeof content === 'string') {
+          return <Li key={content} to={content}>{label}</Li>
+        } else {
+          return (
+            <li key={label}>
+              <span>{label}</span>
+              {renderSidebarItems(content, indent + 1)}
+            </li>
+          );
+        }
+      })}
+    </ul>
+  );
+};
+
+
 const Sidebar = props => {
   const { lang } = props;
+
+  const sidebarItems = config.sidebar.en;
 
   return (
     <Nav>
@@ -155,34 +178,7 @@ const Sidebar = props => {
         </div>
       </Header>
 
-      <ul>
-        <li>VEDA for Atom</li>
-        <li>
-          <ul style={{ textIndent: "20px" }}>
-            <Li to="/install">Install</Li>
-            <Li to="/usage">Usage</Li>
-            <Li to="/commands">Commands</Li>
-            <Li to="/settings">Settings</Li>
-            <Li to="/features">Features</Li>
-            <ul style={{ textIndent: "40px" }}>
-              <Li to="/features/fragment">Fragment Shaders</Li>
-              <Li to="/features/vertex">Vertex Shaders</Li>
-              <Li to="/features/image">Images & Videos</Li>
-              <Li to="/features/audio">Audio</Li>
-              <Li to="/features/midi">MIDI</Li>
-              <Li to="/features/osc">OSC</Li>
-              <Li to="/features/webcam">WebCam</Li>
-              <Li to="/features/keyboard">Keyboard</Li>
-              <Li to="/features/gamepad">Gamepad</Li>
-              <Li to="/features/server">Server Mode</Li>
-              <Li to="/features/recording">Recording</Li>
-            </ul>
-          </ul>
-        </li>
-        <Li to="/vedajs">VEDA.js</Li>
-        <Li to="/faq">FAQ</Li>
-        <Li to="/contributing">CONTRIBUTING</Li>
-      </ul>
+      {renderSidebarItems(sidebarItems, 0)}
     </Nav>
   );
 };

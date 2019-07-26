@@ -2,7 +2,7 @@ import React from "react";
 import Highlight, { defaultProps } from "prism-react-renderer";
 
 export default ({ children, className }) => {
-  const language = className.replace(/language-/, "");
+  const language = className ? className.replace(/language-/, "") : "";
   const code = children.trim();
 
   return (
