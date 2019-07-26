@@ -52,6 +52,8 @@ const MainWrapper = styled.main`
   width: 100%;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
+  padding: 20px;
 `;
 
 const HeaderWrapper = styled.div`

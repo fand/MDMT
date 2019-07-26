@@ -8,14 +8,14 @@ import { AppContext, DispatchContext } from "../lib/context";
 import * as config from '../config';
 
 const Nav = styled.nav`
-  width: 270px;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+
   -webkit-overflow-scrolling: touch;
   @media (max-width: ${constants.mobile}px) {
     width: 82vw;
   }
-
-  ${"" /* width: 100%; */}
-  ${"" /* height: 100%; */}
 
   padding: 10px 20px 100px;
   background: rgba(10, 10, 10, 0.6);
@@ -146,36 +146,17 @@ const Sidebar = props => {
             <img
               className="logo"
               src="/static/images/logo_header.png"
-              alt="VEDA Header"
+              alt="MDMX header"
             />
           </a>
         </Link>
-        <div className="banners">
-          <a
-            className="github"
-            target="\_blank"
-            href="https://github.com/fand/veda"
-          >
-            <LazyLoad
-              once
-              placeholder={
-                <img alt="GitHub Stars" src="/static/images/shield_dummy.png" />
-              }
-            >
-              <img
-                alt="GitHub Stars"
-                src="https://img.shields.io/github/stars/fand/veda.svg?style=social&maxAge=259200"
-              />
-            </LazyLoad>
-          </a>
-          <a
-            className="twitter"
-            target="\_blank"
-            href="https://twitter.com/search?f=tweets&q=%23vedajs&src=typd"
-          >
-            <img alt="hashtag #vedajs" src="/static/images/hashtag.png" />
-          </a>
-        </div>
+        <a
+          className="twitter"
+          target="\_blank"
+          href="https://twitter.com/search?f=tweets&q=%23mdmx&src=typd"
+        >
+          <img alt="hashtag #vedajs" src="/static/images/hashtag.png" />
+        </a>
       </Header>
 
       {renderSidebarItems(sidebarItems, 0)}

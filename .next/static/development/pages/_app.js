@@ -127,7 +127,7 @@ var BodyColumn = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div.w
 var MainWrapper = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].main.withConfig({
   displayName: "Layout__MainWrapper",
   componentId: "bk4rf0-3"
-})(["position:absolute;top:0;left:0;height:100%;width:100%;overflow:auto;-webkit-overflow-scrolling:touch;"]);
+})(["position:absolute;top:0;left:0;height:100%;width:100%;overflow:auto;-webkit-overflow-scrolling:touch;box-sizing:border-box;padding:20px;"]);
 var HeaderWrapper = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div.withConfig({
   displayName: "Layout__HeaderWrapper",
   componentId: "bk4rf0-4"
@@ -161,52 +161,52 @@ var Layout = function Layout(props) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94
+      lineNumber: 96
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_meta__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95
+      lineNumber: 97
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Wrapper, {
     className: sc,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96
+      lineNumber: 98
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SidebarWrapper, {
     className: sc,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 97
+      lineNumber: 99
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_sidebar__WEBPACK_IMPORTED_MODULE_5__["default"], {
     path: path,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 98
+      lineNumber: 100
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(BodyColumn, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 100
+      lineNumber: 102
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(HeaderWrapper, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101
+      lineNumber: 103
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 102
+      lineNumber: 104
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(MainWrapper, {
@@ -214,7 +214,7 @@ var Layout = function Layout(props) {
     className: "body",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 104
+      lineNumber: 106
     },
     __self: this
   }, props.children))));
@@ -682,11 +682,7 @@ var _jsxFileName = "/Users/amagi/src/github.com/fand/next-docs-template/componen
 var Nav = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].nav.withConfig({
   displayName: "sidebar__Nav",
   componentId: "sc-1nsoz3g-0"
-})(["width:270px;-webkit-overflow-scrolling:touch;@media (max-width:", "px){width:82vw;}", " ", " padding:10px 20px 100px;background:rgba(10,10,10,0.6);border-right:1px solid rgb(24,26,31);text-shadow:0 2px 5px black;overflow:auto;*{font-weight:400;}h4{margin:1em 0 0;font-weight:700;}ul{padding-left:0;margin:0;}li{display:block;width:100%;line-height:2.5em;&.active{box-shadow:-200px 0 0 black,200px 0 0 black;background:black;*{font-weight:700;}}}li a{display:block;text-decoration:none;color:", ";&:hover{color:", ";text-decoration:underline;}&:visited{color:", ";}}"], _constants__WEBPACK_IMPORTED_MODULE_6__["default"].mobile, ""
-/* width: 100%; */
-, ""
-/* height: 100%; */
-, _constants__WEBPACK_IMPORTED_MODULE_6__["default"].fg, _constants__WEBPACK_IMPORTED_MODULE_6__["default"].link, _constants__WEBPACK_IMPORTED_MODULE_6__["default"].fg);
+})(["width:100%;height:100%;box-sizing:border-box;-webkit-overflow-scrolling:touch;@media (max-width:", "px){width:82vw;}padding:10px 20px 100px;background:rgba(10,10,10,0.6);border-right:1px solid rgb(24,26,31);text-shadow:0 2px 5px black;overflow:auto;*{font-weight:400;}h4{margin:1em 0 0;font-weight:700;}ul{padding-left:0;margin:0;}li{display:block;width:100%;line-height:2.5em;&.active{box-shadow:-200px 0 0 black,200px 0 0 black;background:black;*{font-weight:700;}}}li a{display:block;text-decoration:none;color:", ";&:hover{color:", ";text-decoration:underline;}&:visited{color:", ";}}"], _constants__WEBPACK_IMPORTED_MODULE_6__["default"].mobile, _constants__WEBPACK_IMPORTED_MODULE_6__["default"].fg, _constants__WEBPACK_IMPORTED_MODULE_6__["default"].link, _constants__WEBPACK_IMPORTED_MODULE_6__["default"].fg);
 var Header = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
   displayName: "sidebar__Header",
   componentId: "sc-1nsoz3g-1"
@@ -822,59 +818,19 @@ var Sidebar = function Sidebar(props) {
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
     className: "logo",
     src: "/static/images/logo_header.png",
-    alt: "VEDA Header",
+    alt: "MDMX header",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 146
     },
     __self: this
-  }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    className: "banners",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 153
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-    className: "github",
-    target: "\\_blank",
-    href: "https://github.com/fand/veda",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 154
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_lazyload__WEBPACK_IMPORTED_MODULE_5___default.a, {
-    once: true,
-    placeholder: react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
-      alt: "GitHub Stars",
-      src: "/static/images/shield_dummy.png",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 162
-      },
-      __self: this
-    }),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 159
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
-    alt: "GitHub Stars",
-    src: "https://img.shields.io/github/stars/fand/veda.svg?style=social&maxAge=259200",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 165
-    },
-    __self: this
   }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
     className: "twitter",
     target: "\\_blank",
-    href: "https://twitter.com/search?f=tweets&q=%23vedajs&src=typd",
+    href: "https://twitter.com/search?f=tweets&q=%23mdmx&src=typd",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 171
+      lineNumber: 153
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
@@ -882,10 +838,10 @@ var Sidebar = function Sidebar(props) {
     src: "/static/images/hashtag.png",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 176
+      lineNumber: 158
     },
     __self: this
-  })))), renderSidebarItems(sidebarItems, 0));
+  }))), renderSidebarItems(sidebarItems, 0));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Sidebar);
