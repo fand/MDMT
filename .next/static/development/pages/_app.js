@@ -351,15 +351,22 @@ var _jsxFileName = "/Users/amagi/src/github.com/fand/next-docs-template/componen
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var polished__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! polished */ "./node_modules/polished/dist/polished.es.js");
-/* harmony import */ var _lib_context__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../lib/context */ "./lib/context.js");
-/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./constants */ "./components/constants.js");
-/* harmony import */ var _hamburger__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./hamburger */ "./components/hamburger.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/slicedToArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/slicedToArray.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_entries__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/entries */ "./node_modules/@babel/runtime-corejs2/core-js/object/entries.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_entries__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_entries__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var polished__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! polished */ "./node_modules/polished/dist/polished.es.js");
+/* harmony import */ var _lib_context__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../lib/context */ "./lib/context.js");
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./constants */ "./components/constants.js");
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../config */ "./config.js");
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_config__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _hamburger__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./hamburger */ "./components/hamburger.js");
+
+
 var _jsxFileName = "/Users/amagi/src/github.com/fand/next-docs-template/components/header.js";
 
 
@@ -368,36 +375,31 @@ var _jsxFileName = "/Users/amagi/src/github.com/fand/next-docs-template/componen
 
 
 
-var Nav = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
+
+var Nav = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div.withConfig({
   displayName: "header__Nav",
   componentId: "sc-1o68dil-0"
-})(["position:relative;width:100%;height:56px;", " transition:0.5s;background:transparent;.mobile{display:none;}@media (max-width:", "px){&.visible{background:linear-gradient( to bottom,", ",", " );}.mobile{display:block;}.pc{display:none;}}"], ''
-/* line-height: 56px; */
-, _constants__WEBPACK_IMPORTED_MODULE_5__["default"].mobile, function (p) {
-  return Object(polished__WEBPACK_IMPORTED_MODULE_3__["opacify"])(1, p.color);
+})(["position:relative;width:100%;height:56px;transition:0.5s;background:transparent;@media (max-width:", "px){&.visible{background:linear-gradient( to bottom,", ",", " );}}"], _constants__WEBPACK_IMPORTED_MODULE_7__["default"].mobile, function (p) {
+  return Object(polished__WEBPACK_IMPORTED_MODULE_5__["opacify"])(1, p.color);
 }, function (p) {
   return p.color;
 });
-var Logo = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
+var Logo = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div.withConfig({
   displayName: "header__Logo",
   componentId: "sc-1o68dil-1"
-})(["height:100%;padding:4px 0;position:absolute;left:50%;transform:translateX(-50%);opacity:0;@media (max-width:", "px){transition:opacity 1s;&.visible{opacity:1;}}a,img{display:block;height:100%;text-decoration:none;}img{margin-left:-10px;}"], _constants__WEBPACK_IMPORTED_MODULE_5__["default"].mobile);
-var Left = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
+})(["height:100%;padding:4px 0;position:absolute;left:50%;transform:translateX(-50%);opacity:0;@media (max-width:", "px){transition:opacity 1s;&.visible{opacity:1;}}"], _constants__WEBPACK_IMPORTED_MODULE_7__["default"].mobile);
+var Left = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div.withConfig({
   displayName: "header__Left",
   componentId: "sc-1o68dil-2"
 })(["position:absolute;left:0;"]);
-var Right = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
+var Right = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div.withConfig({
   displayName: "header__Right",
   componentId: "sc-1o68dil-3"
 })(["position:absolute;display:flex;right:0;"]);
-var Button = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
-  displayName: "header__Button",
-  componentId: "sc-1o68dil-4"
-})(["cursor:pointer;color:#ddd;user-select:none;& > img{display:block;width:56px;height:56px;padding:15px;font-size:24px;line-height:27px;}span{padding:15px;position:relative;display:block;top:-1em;}&:hover{opacity:1;color:#fff;}.inner{position:absolute;top:100%;right:0;background:rgba(0,0,0,0.8);color:#fff;text-align:center;a{text-decoration:none;color:white;&:hover{text-decoration:underline;}}i{margin-right:10px;text-align:center;}display:none;opacity:0;transition:opacity 0.5s;&.visible{width:180px;display:block;opacity:1;}&:before{content:\"\";position:absolute;top:-30px;right:12px;border:15px solid transparent;border-bottom:15px solid black;}}"]);
 
 var Header = function Header(props) {
-  var state = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_lib_context__WEBPACK_IMPORTED_MODULE_4__["AppContext"]);
-  var dispatch = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_lib_context__WEBPACK_IMPORTED_MODULE_4__["DispatchContext"]);
+  var state = Object(react__WEBPACK_IMPORTED_MODULE_2__["useContext"])(_lib_context__WEBPACK_IMPORTED_MODULE_6__["AppContext"]);
+  var dispatch = Object(react__WEBPACK_IMPORTED_MODULE_2__["useContext"])(_lib_context__WEBPACK_IMPORTED_MODULE_6__["DispatchContext"]);
 
   var toggleMenu = function toggleMenu() {
     return dispatch({
@@ -405,91 +407,96 @@ var Header = function Header(props) {
     });
   };
 
-  var toggleLanguage = function toggleLanguage() {
+  var setLanguage = function setLanguage(lang) {
     return dispatch({
-      type: 'toggleLanguage'
+      type: 'setLanguage',
+      lang: lang
     });
   };
 
   var cls = state.isHeaderVisible ? "visible" : ""; // const { lang } = props;
 
   var lang = 'en';
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Nav, {
+  return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Nav, {
     className: cls,
     color: state.color,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 144
+      lineNumber: 68
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Logo, {
+  }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Logo, {
     className: cls,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 145
+      lineNumber: 69
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+  }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
     href: lang === "en" ? "/" : "/?lang=".concat(lang),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 146
+      lineNumber: 70
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+  }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("a", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 147
+      lineNumber: 71
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+  }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("img", {
     src: "/static/images/logo_header.png",
     alt: "VEDA logo",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 148
+      lineNumber: 72
     },
     __self: this
-  })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Left, {
+  })))), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Left, {
+    className: "mobile",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 153
+      lineNumber: 77
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_hamburger__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_hamburger__WEBPACK_IMPORTED_MODULE_9__["default"], {
     active: state.isMenuVisible,
     onClick: toggleMenu,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 154
+      lineNumber: 78
     },
     __self: this
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Right, {
+  })), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Right, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 156
+      lineNumber: 80
     },
     __self: this
-  }, props.i18n && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Button, {
-    onClick: toggleLanguage,
+  }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("ul", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 158
+      lineNumber: 81
     },
     __self: this
-  }, lang === "en" && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 159
-    },
-    __self: this
-  }, "\u65E5\u672C\u8A9E"), lang === "ja" && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 160
-    },
-    __self: this
-  }, "English"))));
+  }, _babel_runtime_corejs2_core_js_object_entries__WEBPACK_IMPORTED_MODULE_1___default()(_config__WEBPACK_IMPORTED_MODULE_8___default.a.languages).map(function (_ref) {
+    var _ref2 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_ref, 2),
+        id = _ref2[0],
+        label = _ref2[1];
+
+    return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("li", {
+      key: id,
+      onClick: function onClick() {
+        return setLanguage(id);
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 83
+      },
+      __self: this
+    }, label);
+  }))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Header);
@@ -1048,6 +1055,10 @@ var initialState = {
   color: '#FFDD0088'
 };
 function reducer(state, action) {
+  if (true) {
+    console.log('>> action', action);
+  }
+
   switch (action.type) {
     case "reset":
       {
@@ -1169,6 +1180,17 @@ module.exports = __webpack_require__(/*! core-js/library/fn/object/create */ "./
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! core-js/library/fn/object/define-property */ "./node_modules/core-js/library/fn/object/define-property.js");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/object/entries.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/object/entries.js ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/object/entries */ "./node_modules/core-js/library/fn/object/entries.js");
 
 /***/ }),
 
@@ -2904,6 +2926,19 @@ var $Object = __webpack_require__(/*! ../../modules/_core */ "./node_modules/cor
 module.exports = function defineProperty(it, key, desc) {
   return $Object.defineProperty(it, key, desc);
 };
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/library/fn/object/entries.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/core-js/library/fn/object/entries.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! ../../modules/es7.object.entries */ "./node_modules/core-js/library/modules/es7.object.entries.js");
+module.exports = __webpack_require__(/*! ../../modules/_core */ "./node_modules/core-js/library/modules/_core.js").Object.entries;
 
 
 /***/ }),
@@ -4769,6 +4804,38 @@ module.exports = function (KEY, exec) {
 
 /***/ }),
 
+/***/ "./node_modules/core-js/library/modules/_object-to-array.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/core-js/library/modules/_object-to-array.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var DESCRIPTORS = __webpack_require__(/*! ./_descriptors */ "./node_modules/core-js/library/modules/_descriptors.js");
+var getKeys = __webpack_require__(/*! ./_object-keys */ "./node_modules/core-js/library/modules/_object-keys.js");
+var toIObject = __webpack_require__(/*! ./_to-iobject */ "./node_modules/core-js/library/modules/_to-iobject.js");
+var isEnum = __webpack_require__(/*! ./_object-pie */ "./node_modules/core-js/library/modules/_object-pie.js").f;
+module.exports = function (isEntries) {
+  return function (it) {
+    var O = toIObject(it);
+    var keys = getKeys(O);
+    var length = keys.length;
+    var i = 0;
+    var result = [];
+    var key;
+    while (length > i) {
+      key = keys[i++];
+      if (!DESCRIPTORS || isEnum.call(O, key)) {
+        result.push(isEntries ? [key, O[key]] : O[key]);
+      }
+    }
+    return result;
+  };
+};
+
+
+/***/ }),
+
 /***/ "./node_modules/core-js/library/modules/_perform.js":
 /*!**********************************************************!*\
   !*** ./node_modules/core-js/library/modules/_perform.js ***!
@@ -6427,6 +6494,26 @@ __webpack_require__(/*! ./_set-collection-of */ "./node_modules/core-js/library/
 var $export = __webpack_require__(/*! ./_export */ "./node_modules/core-js/library/modules/_export.js");
 
 $export($export.P + $export.R, 'Map', { toJSON: __webpack_require__(/*! ./_collection-to-json */ "./node_modules/core-js/library/modules/_collection-to-json.js")('Map') });
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/library/modules/es7.object.entries.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/core-js/library/modules/es7.object.entries.js ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// https://github.com/tc39/proposal-object-values-entries
+var $export = __webpack_require__(/*! ./_export */ "./node_modules/core-js/library/modules/_export.js");
+var $entries = __webpack_require__(/*! ./_object-to-array */ "./node_modules/core-js/library/modules/_object-to-array.js")(true);
+
+$export($export.S, 'Object', {
+  entries: function entries(it) {
+    return $entries(it);
+  }
+});
 
 
 /***/ }),

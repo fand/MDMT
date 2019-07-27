@@ -4,18 +4,16 @@ import styled from "styled-components";
 import { opacify } from 'polished';
 import { AppContext, DispatchContext } from "../lib/context";
 import constants from "./constants";
+import config from "../config";
 import Hamburger from './hamburger';
 
 const Nav = styled.div`
   position: relative;
   width: 100%;
   height: 56px;
-  ${'' /* line-height: 56px; */}
   transition: 0.5s;
   background: transparent;
-  .mobile {
-    display: none;
-  }
+
   @media (max-width: ${constants.mobile}px) {
     &.visible {
       background: linear-gradient(
@@ -23,12 +21,6 @@ const Nav = styled.div`
         ${p => opacify(1, p.color)},
         ${p => p.color}
       );
-    }
-    .mobile {
-      display: block;
-    }
-    .pc {
-      display: none;
     }
   }
 `;
@@ -47,85 +39,17 @@ const Logo = styled.div`
       opacity: 1;
     }
   }
-
-  a,
-  img {
-    display: block;
-    height: 100%;
-    text-decoration: none;
-  }
-  img {
-    margin-left: -10px;
-  }
 `;
 
 const Left = styled.div`
   position: absolute;
   left: 0;
 `;
+
 const Right = styled.div`
   position: absolute;
   display: flex;
   right: 0;
-`;
-const Button = styled.div`
-  cursor: pointer;
-  color: #ddd;
-  user-select: none;
-  & > img {
-    display: block;
-    width: 56px;
-    height: 56px;
-    padding: 15px;
-    font-size: 24px;
-    line-height: 27px;
-  }
-  span {
-    padding: 15px;
-    position: relative;
-    display: block;
-    top: -1em;
-  }
-  &:hover {
-    opacity: 1;
-    color: #fff;
-  }
-
-  .inner {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    text-align: center;
-    a {
-      text-decoration: none;
-      color: white;
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-    i {
-      margin-right: 10px;
-      text-align: center;
-    }
-    display: none;
-    opacity: 0;
-    transition: opacity 0.5s;
-    &.visible {
-      width: 180px;
-      display: block;
-      opacity: 1;
-    }
-    &:before {
-      content: "";
-      position: absolute;
-      top: -30px;
-      right: 12px;
-      border: 15px solid transparent;
-      border-bottom: 15px solid black;
-    }
-  }
 `;
 
 const Header = (props) => {
@@ -133,7 +57,7 @@ const Header = (props) => {
   const dispatch = useContext(DispatchContext);
 
   const toggleMenu = () => dispatch({ type: 'toggleMenu' });
-  const toggleLanguage = () => dispatch({ type: 'toggleLanguage' });
+  const setLanguage = (lang) => dispatch({ type: 'setLanguage', lang });
 
   const cls = state.isHeaderVisible ? "visible" : "";
 
@@ -150,16 +74,15 @@ const Header = (props) => {
         </Link>
       </Logo>
 
-      <Left>
+      <Left className="mobile">
         <Hamburger active={state.isMenuVisible} onClick={toggleMenu} />
       </Left>
       <Right>
-        {props.i18n && (
-          <Button onClick={toggleLanguage}>
-            {lang === "en" && <span>日本語</span>}
-            {lang === "ja" && <span>English</span>}
-          </Button>
-        )}
+        <ul>
+          {Object.entries(config.languages).map(([id, label]) =>
+            <li key={id} onClick={() => setLanguage(id)}>{label}</li>
+          )}
+        </ul>
       </Right>
     </Nav>
   );
