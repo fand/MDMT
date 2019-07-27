@@ -4,16 +4,19 @@ import styled from "styled-components";
 import { opacify } from 'polished';
 import { AppContext, DispatchContext } from "../lib/context";
 import constants from "./constants";
-import config from "../config";
 import Hamburger from './hamburger';
+import Language from './Language';
 
 const Nav = styled.div`
   position: relative;
   width: 100%;
   height: 56px;
+  display: flex;
+  justify-content: space-between;
+
+  ${'' /* // animation */}
   transition: 0.5s;
   background: transparent;
-
   @media (max-width: ${constants.mobile}px) {
     &.visible {
       background: linear-gradient(
@@ -42,14 +45,14 @@ const Logo = styled.div`
 `;
 
 const Left = styled.div`
-  position: absolute;
-  left: 0;
+  ${'' /* position: absolute; */}
+  ${'' /* left: 0; */}
 `;
 
 const Right = styled.div`
-  position: absolute;
-  display: flex;
-  right: 0;
+  ${'' /* position: absolute; */}
+  ${'' /* display: flex; */}
+  ${'' /* right: 0; */}
 `;
 
 const Header = (props) => {
@@ -57,12 +60,11 @@ const Header = (props) => {
   const dispatch = useContext(DispatchContext);
 
   const toggleMenu = () => dispatch({ type: 'toggleMenu' });
-  const setLanguage = (lang) => dispatch({ type: 'setLanguage', lang });
 
   const cls = state.isHeaderVisible ? "visible" : "";
 
-  // const { lang } = props;
-  const lang = 'en';
+  // const { lang } = state;
+  const { lang } = 'en';
 
   return (
     <Nav className={cls} color={state.color}>
@@ -78,11 +80,7 @@ const Header = (props) => {
         <Hamburger active={state.isMenuVisible} onClick={toggleMenu} />
       </Left>
       <Right>
-        <ul>
-          {Object.entries(config.languages).map(([id, label]) =>
-            <li key={id} onClick={() => setLanguage(id)}>{label}</li>
-          )}
-        </ul>
+        <Language lang={lang}/>
       </Right>
     </Nav>
   );
