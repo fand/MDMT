@@ -211,11 +211,11 @@ var _jsxFileName = "/Users/amagi/src/github.com/fand/next-docs-template/componen
 var Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.div.withConfig({
   displayName: "Layout__Wrapper",
   componentId: "bk4rf0-0"
-})(["position:fixed;top:0;left:0;height:100%;width:100vw;overflow:visible;display:flex;transition:left 0.3s;@media (max-width:", "px){width:auto;left:-100vw;&.menu{left:0;}}"], _constants__WEBPACK_IMPORTED_MODULE_4__["default"].mobile);
+})(["position:fixed;top:0;left:0;height:100%;width:100vw;overflow:visible;display:flex;transition:left 0.3s;@media (max-width:", "px){width:auto;left:-75vw;&.menu{left:0;}}"], _constants__WEBPACK_IMPORTED_MODULE_4__["default"].mobile);
 var SidebarWrapper = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.div.withConfig({
   displayName: "Layout__SidebarWrapper",
   componentId: "bk4rf0-1"
-})(["width:270px;-webkit-overflow-scrolling:touch;@media (max-width:", "px){width:100vw;}"], _constants__WEBPACK_IMPORTED_MODULE_4__["default"].mobile);
+})(["width:270px;-webkit-overflow-scrolling:touch;@media (max-width:", "px){width:75vw;}"], _constants__WEBPACK_IMPORTED_MODULE_4__["default"].mobile);
 var BodyColumn = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.div.withConfig({
   displayName: "Layout__BodyColumn",
   componentId: "bk4rf0-2"
@@ -324,6 +324,7 @@ var Layout = function Layout(props) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Layout);
+2;
 
 /***/ }),
 
@@ -396,6 +397,49 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./components/hamburger.js":
+/*!*********************************!*\
+  !*** ./components/hamburger.js ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_burgers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-burgers */ "react-burgers");
+/* harmony import */ var react_burgers__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_burgers__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./constants */ "./components/constants.js");
+var _jsxFileName = "/Users/amagi/src/github.com/fand/next-docs-template/components/hamburger.js";
+
+
+
+ // Just a wrapper for react-burgers
+
+/* harmony default export */ __webpack_exports__["default"] = (function (_ref) {
+  var active = _ref.active,
+      onClick = _ref.onClick;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_burgers__WEBPACK_IMPORTED_MODULE_1__["Arrow"], {
+    width: 32,
+    active: active,
+    onClick: onClick,
+    borderRadius: 2,
+    lineSpacing: 4,
+    color: _constants__WEBPACK_IMPORTED_MODULE_3__["default"].fg,
+    padding: "18px",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7
+    },
+    __self: this
+  });
+});
+
+/***/ }),
+
 /***/ "./components/header.js":
 /*!******************************!*\
   !*** ./components/header.js ***!
@@ -407,35 +451,46 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./constants */ "./components/constants.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var polished__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! polished */ "polished");
+/* harmony import */ var polished__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(polished__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _lib_context__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../lib/context */ "./lib/context.js");
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./constants */ "./components/constants.js");
+/* harmony import */ var _hamburger__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./hamburger */ "./components/hamburger.js");
 var _jsxFileName = "/Users/amagi/src/github.com/fand/next-docs-template/components/header.js";
 
 
 
 
 
-var Nav = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+
+
+var Nav = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div.withConfig({
   displayName: "header__Nav",
   componentId: "sc-1o68dil-0"
-})(["position:relative;width:100%;height:56px;line-height:56px;transition:0.5s;background:transparent;.mobile{display:none;}@media (max-width:", "px){&.visible{background:linear-gradient( to bottom,rgba(0,0,30,1),rgba(0,0,30,0.5) );}.mobile{display:block;}.pc{display:none;}}"], _constants__WEBPACK_IMPORTED_MODULE_3__["default"].mobile);
-var Logo = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+})(["position:relative;width:100%;height:56px;", " transition:0.5s;background:transparent;.mobile{display:none;}@media (max-width:", "px){&.visible{background:linear-gradient( to bottom,", ",", " );}.mobile{display:block;}.pc{display:none;}}"], ''
+/* line-height: 56px; */
+, _constants__WEBPACK_IMPORTED_MODULE_5__["default"].mobile, function (p) {
+  return Object(polished__WEBPACK_IMPORTED_MODULE_3__["opacify"])(1, p.color);
+}, function (p) {
+  return p.color;
+});
+var Logo = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div.withConfig({
   displayName: "header__Logo",
   componentId: "sc-1o68dil-1"
-})(["height:100%;padding:4px 0;position:absolute;left:50%;transform:translateX(-50%);opacity:0;@media (max-width:", "px){transition:opacity 1s;&.visible{opacity:1;}}a,img{display:block;height:100%;text-decoration:none;}img{margin-left:-10px;}"], _constants__WEBPACK_IMPORTED_MODULE_3__["default"].mobile);
-var Left = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+})(["height:100%;padding:4px 0;position:absolute;left:50%;transform:translateX(-50%);opacity:0;@media (max-width:", "px){transition:opacity 1s;&.visible{opacity:1;}}a,img{display:block;height:100%;text-decoration:none;}img{margin-left:-10px;}"], _constants__WEBPACK_IMPORTED_MODULE_5__["default"].mobile);
+var Left = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div.withConfig({
   displayName: "header__Left",
   componentId: "sc-1o68dil-2"
 })(["position:absolute;left:0;"]);
-var Right = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+var Right = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div.withConfig({
   displayName: "header__Right",
   componentId: "sc-1o68dil-3"
 })(["position:absolute;display:flex;right:0;"]);
-var Button = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+var Button = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div.withConfig({
   displayName: "header__Button",
   componentId: "sc-1o68dil-4"
 })(["cursor:pointer;color:#ddd;user-select:none;& > img{display:block;width:56px;height:56px;padding:15px;font-size:24px;line-height:27px;}span{padding:15px;position:relative;display:block;top:-1em;}&:hover{opacity:1;color:#fff;}.inner{position:absolute;top:100%;right:0;background:rgba(0,0,0,0.8);color:#fff;text-align:center;a{text-decoration:none;color:white;&:hover{text-decoration:underline;}}i{margin-right:10px;text-align:center;}display:none;opacity:0;transition:opacity 0.5s;&.visible{width:180px;display:block;opacity:1;}&:before{content:\"\";position:absolute;top:-30px;right:12px;border:15px solid transparent;border-bottom:15px solid black;}}"]);
@@ -461,29 +516,30 @@ var Header = function Header(props) {
   var lang = 'en';
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Nav, {
     className: cls,
+    color: state.color,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 142
+      lineNumber: 144
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Logo, {
     className: cls,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 143
+      lineNumber: 145
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
     href: lang === "en" ? "/" : "/?lang=".concat(lang),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 144
+      lineNumber: 146
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 145
+      lineNumber: 147
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -491,32 +547,24 @@ var Header = function Header(props) {
     alt: "VEDA logo",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 146
+      lineNumber: 148
     },
     __self: this
   })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Left, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 151
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Button, {
-    className: "mobile",
-    onClick: toggleMenu,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 152
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: "/static/images/i_menu.png",
-    alt: "Menu",
-    __source: {
-      fileName: _jsxFileName,
       lineNumber: 153
     },
     __self: this
-  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Right, {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_hamburger__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    active: state.isMenuVisible,
+    onClick: toggleMenu,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 154
+    },
+    __self: this
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Right, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 156
@@ -3261,6 +3309,17 @@ module.exports = require("prop-types-exact");
 /***/ (function(module, exports) {
 
 module.exports = require("react");
+
+/***/ }),
+
+/***/ "react-burgers":
+/*!********************************!*\
+  !*** external "react-burgers" ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-burgers");
 
 /***/ }),
 

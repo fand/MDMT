@@ -21,7 +21,7 @@ const Wrapper = styled.div`
   transition: left 0.3s;
   @media (max-width: ${constants.mobile}px) {
     width: auto;
-    left: -100vw;
+    left: -75vw;
     &.menu {
       left: 0;
     }
@@ -32,7 +32,7 @@ const SidebarWrapper = styled.div`
   width: 270px;
   -webkit-overflow-scrolling: touch;
   @media (max-width: ${constants.mobile}px) {
-    width: 100vw;
+    width: 75vw;
   }
 `;
 
@@ -113,3 +113,4 @@ const Layout = (props) => {
 };
 
 export default Layout;
+2

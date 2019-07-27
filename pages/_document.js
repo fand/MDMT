@@ -2,7 +2,6 @@ import * as React from "react";
 import Document, { Head, Main, NextScript } from "next/document";
 import { ServerStyleSheet } from "styled-components";
 import sanitize from 'sanitize.css';
-import hamburgers from 'hamburgers';
 
 export default class extends Document {
   static async getInitialProps(...args) {
@@ -23,7 +22,6 @@ export default class extends Document {
             content="width=device-width, initial-scale=1"
           />
           <style dangerouslySetInnerHTML={{ __html: sanitize }}/>
-          <style dangerouslySetInnerHTML={{ __html: hamburgers }}/>
           {this.props.styleTags}
         </Head>
         <body>

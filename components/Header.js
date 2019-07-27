@@ -1,14 +1,16 @@
 import React, { useContext } from "react";
-import styled from "styled-components";
 import Link from "next/link";
-import constants from "./constants";
+import styled from "styled-components";
+import { opacify } from 'polished';
 import { AppContext, DispatchContext } from "../lib/context";
+import constants from "./constants";
+import Hamburger from './hamburger';
 
 const Nav = styled.div`
   position: relative;
   width: 100%;
   height: 56px;
-  line-height: 56px;
+  ${'' /* line-height: 56px; */}
   transition: 0.5s;
   background: transparent;
   .mobile {
@@ -18,8 +20,8 @@ const Nav = styled.div`
     &.visible {
       background: linear-gradient(
         to bottom,
-        rgba(0, 0, 30, 1),
-        rgba(0, 0, 30, 0.5)
+        ${p => opacify(1, p.color)},
+        ${p => p.color}
       );
     }
     .mobile {
@@ -139,7 +141,7 @@ const Header = (props) => {
   const lang = 'en';
 
   return (
-    <Nav className={cls}>
+    <Nav className={cls} color={state.color}>
       <Logo className={cls}>
         <Link href={lang === "en" ? "/" : `/?lang=${lang}`}>
           <a>
@@ -149,9 +151,7 @@ const Header = (props) => {
       </Logo>
 
       <Left>
-        <Button className="mobile" onClick={toggleMenu}>
-          <img src="/static/images/i_menu.png" alt="Menu" />
-        </Button>
+        <Hamburger active={state.isMenuVisible} onClick={toggleMenu} />
       </Left>
       <Right>
         {props.i18n && (
