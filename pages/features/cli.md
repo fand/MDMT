@@ -1,22 +1,28 @@
 ---
-title: Loading Videos - VEDA \#VEDAJS
-description: How to use video files in GLSL with VEDA.js
+title: CLI 💊 MDMT - Markdown Document Template \#MDMT
 ---
 
-# Loading videos
+# CLI
 
-## Usage
+No CLI commands......wait, We can use npx and npm scripts as CLI comamnds, right?
 
-```js
-veda.loadTexture('texture_name', textureUrlOrPath);
+
+## Create Document
+
+```
+git clone https://github.com/fand/mdmx (SITE_NAME)
+cd (SITE_NAME)
+npm i
 ```
 
-You can also unload the texture to reduce memory usage.
+## Launch Server
 
-```js
-veda.loadTexture('texture_name', textureUrlOrPath);
+```
+npm start
 ```
 
----
+## Build
 
-Video by [beeple - ANGULAR](https://vimeo.com/174504082)
+```
+npm run build
+```

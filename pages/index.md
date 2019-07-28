@@ -1,10 +1,10 @@
 ---
-title: MDMX - DEADSIMPLE Markdown document generator
+title: 💊MDMT💊 Markdown Document Template \#MDMT
 color: rgba(0, 223, 255, 0.7)
 ---
 <div align="center">
   <img alt="logo" src="/static/images/logo_720h.png" width="192"/>
-  <h1>MDMX</h1><i>Deadsimple Markdown Docs generator with Next.js</i>
+  <h1>MDMT</h1><i>💊Create Document Site with MDX💊</i>
   <br/>
 </div>
 
@@ -44,4 +44,5 @@ So I created another one 🐹←btw I love this emoji
 
 ---
 
-<a href="https://twitter.com/intent/tweet?url=https://veda.gl/&hashtags=vedajs" target="\_blank">Tweet with #VEDAJS</a>
+<a href="https://twitter.com/intent/tweet?url=https://gmork.in/mdmt/&hashtags=mdmt" target="\_blank">Tweet with #MDMT</a>
+p

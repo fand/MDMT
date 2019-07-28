@@ -1,7 +1,47 @@
 ---
-title: MDMX - かんたんMarkdownドキュメントジェネレーター
-bg: orange
+title: 💊MDMT💊 Markdown Document Template \#MDMT
+color: rgba(0, 223, 255, 0.7)
 ---
-# MDMX - DEADSIMPLE Markdown Docs generator
+<div align="center">
+  <img alt="logo" src="/static/images/logo_720h.png" width="192"/>
+  <h1>MDMT</h1><i>💊Create Document Site with MDX💊</i>
+  <br/>
+</div>
 
-こにちは
+## できること
+
+- MDX support
+- Multi Language Support
+- Header Search
+
+## できないこと
+
+- No CLI command
+- No server
+- No theme
+
+You don't wanna install global npm package, right?
+`npm` does everything I want ٩(ˊᗜˋ*)و
+
+## インストール
+
+```
+$ npm i @fand/mdmx
+```
+
+## 作った理由
+
+既存のヤツいろいろ試したんだけど……
+
+- 複雑すぎ
+  - Docusaurus
+  - VuePress
+- 素朴すぎ
+  - Next.js
+  - Nuxt.js
+
+なので新しいのを作りました 🐹（←この絵文字かわいい）
+
+---
+
+<a href="https://twitter.com/intent/tweet?url=https://gmork.in/mdmt/&hashtags=mdmt" target="\_blank">#MDMTについてツイート</a>

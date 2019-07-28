@@ -1,3 +1,7 @@
+---
+title: CLI 💊 MDMT - Markdown Document Template \#MDMT
+---
+
 # CLI
 
 CLIコマンドは無いです……いや、npxとかnpm scriptsもCLIコマンドと言えるのかな
