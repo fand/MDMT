@@ -82,7 +82,7 @@ const Language = () => {
   const router = useRouter();
   const currentLang =
     Object.keys(config.languages).find(lang =>
-      router.pathname.match(`^/${lang}/`)
+      router.asPath.match(`^/${lang}/`)
     ) || config.defaultLanguage;
   const realPath =
     currentLang === config.defaultLanguage

@@ -5,7 +5,7 @@ import Router, { useRouter } from "next/router";
 import LazyLoad from "react-lazyload";
 import constants from "./constants";
 import { AppContext, DispatchContext } from "../lib/context";
-import * as config from '../config';
+import * as config from "../config";
 
 const Nav = styled.nav`
   width: 100%;
@@ -79,11 +79,7 @@ const prefetch = to => () => Router.prefetch(to);
 
 const Li = ({ to, children, route }) => {
   if (isActive(route, to)) {
-    return (
-      <li className="active">
-        {children}
-      </li>
-    );
+    return <li className="active">{children}</li>;
   }
 
   const state = useContext(AppContext);
@@ -104,8 +100,12 @@ const renderSidebarItems = (items, route, indent) => {
   return (
     <ul style={{ textIndent: indent * 30 }}>
       {items.map(([label, content]) => {
-        if (typeof content === 'string') {
-          return <Li key={content} route={route} to={content}>{label}</Li>
+        if (typeof content === "string") {
+          return (
+            <Li key={content} route={route} to={content}>
+              {label}
+            </Li>
+          );
         } else {
           return (
             <li key={label}>
@@ -119,12 +119,15 @@ const renderSidebarItems = (items, route, indent) => {
   );
 };
 
-
 const Sidebar = props => {
   const { lang } = props;
 
-  const route = useRouter().pathname;
-  const sidebarItems = config.sidebar.en;
+  const router = useRouter();
+  const currentLang =
+    Object.keys(config.languages).find(lang =>
+      router.asPath.match(`^/${lang}/`)
+    ) || config.defaultLanguage;
+  const sidebarItems = config.sidebar[currentLang];
 
   return (
     <Nav>
@@ -147,7 +150,7 @@ const Sidebar = props => {
         </a>
       </Header>
 
-      {renderSidebarItems(sidebarItems, route, 0)}
+      {renderSidebarItems(sidebarItems, router.pathname, 0)}
     </Nav>
   );
 };

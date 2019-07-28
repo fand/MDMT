@@ -14,11 +14,11 @@ module.exports = {
       ]],
     ],
     ja: [
-      ['ホーム', '/'],
-      ['使い方', '/getting-started'],
-      ['よくある質問', '/faq'],
+      ['ホーム', '/ja/'],
+      ['使い方', '/ja/getting-started'],
+      ['よくある質問', '/ja/faq'],
       ['機能', [
-        ['CLI', '/features/cli'],
+        ['CLI', '/ja/features/cli'],
       ]],
     ]
   },
