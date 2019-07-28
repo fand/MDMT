@@ -1,4 +1,5 @@
 ---
+title: MDMX - DEADSIMPLE Markdown document generator
 color: rgba(0, 223, 255, 0.7)
 ---
 <div align="center">

@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 import Link from "next/link";
 import styled from "styled-components";
-import { opacify } from 'polished';
+import { opacify } from "polished";
 import { AppContext, DispatchContext } from "../lib/context";
 import constants from "./constants";
-import Hamburger from './hamburger';
-import Language from './Language';
+import Hamburger from "./hamburger";
+import Language from "./Language";
 
 const Nav = styled.div`
   position: relative;
@@ -44,26 +44,27 @@ const Logo = styled.div`
 `;
 
 const Left = styled.div`
-  ${'' /* position: absolute; */}
-  ${'' /* left: 0; */}
+  ${"" /* position: absolute; */}
+  ${"" /* left: 0; */}
 `;
 
 const Right = styled.div`
-  ${'' /* position: absolute; */}
-  ${'' /* display: flex; */}
-  ${'' /* right: 0; */}
+  ${"" /* position: absolute; */}
+  ${"" /* display: flex; */}
+  ${"" /* right: 0; */}
 `;
 
-const Header = (props) => {
+const Header = props => {
   const state = useContext(AppContext);
   const dispatch = useContext(DispatchContext);
 
-  const toggleMenu = () => dispatch({ type: 'toggleMenu' });
+  const toggleMenu = () =>
+    dispatch({ type: state.isMenuVisible ? "hideMenu" : "showMenu" });
 
   const cls = state.isHeaderVisible ? "visible" : "";
 
   // const { lang } = state;
-  const { lang } = 'en';
+  const { lang } = "en";
 
   return (
     <Nav className={cls} color={state.color}>
@@ -79,7 +80,7 @@ const Header = (props) => {
         <Hamburger active={state.isMenuVisible} onClick={toggleMenu} />
       </Left>
       <Right>
-        <Language lang={lang}/>
+        <Language lang={lang} />
       </Right>
     </Nav>
   );

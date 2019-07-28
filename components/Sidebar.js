@@ -6,6 +6,7 @@ import LazyLoad from "react-lazyload";
 import constants from "./constants";
 import { AppContext, DispatchContext } from "../lib/context";
 import * as config from "../config";
+import { useLanguage } from '../lib/hooks';
 
 const Nav = styled.nav`
   width: 100%;
@@ -82,13 +83,11 @@ const Li = ({ to, children, route }) => {
     return <li className="active">{children}</li>;
   }
 
-  const state = useContext(AppContext);
   const dispatch = useContext(DispatchContext);
-
-  const toggleMenu = () => dispatch({ type: "toggleMenu" });
+  const hideMenu = () => dispatch({ type: "hideMenu" });
 
   return (
-    <li onClick={toggleMenu} onMouseOver={prefetch(to)}>
+    <li onClick={hideMenu} onMouseOver={prefetch(to)}>
       <Link href={to}>
         <a>{children}</a>
       </Link>
@@ -120,14 +119,9 @@ const renderSidebarItems = (items, route, indent) => {
 };
 
 const Sidebar = props => {
-  const { lang } = props;
-
   const router = useRouter();
-  const currentLang =
-    Object.keys(config.languages).find(lang =>
-      router.asPath.match(`^/${lang}/`)
-    ) || config.defaultLanguage;
-  const sidebarItems = config.sidebar[currentLang];
+  const lang = useLanguage();
+  const sidebarItems = config.sidebar[lang];
 
   return (
     <Nav>
