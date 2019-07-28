@@ -1,4 +1,6 @@
 import React, { useState, useContext } from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
@@ -62,8 +64,28 @@ const Language = () => {
 
   const [isActive, setActivity] = useState(false);
 
-  const setLanguage = lang => dispatch({ type: "setLanguage", lang });
+  const setLanguage = lang => {
+    setActivity(false);
+    dispatch({ type: "setLanguage", lang });
+  };
   const toggle = () => setActivity(!isActive);
+
+  // Create urls for translation
+  const router = useRouter();
+  const currentLang =
+    Object.keys(config.languages).find(lang =>
+      router.pathname.match(`^/${lang}/`)
+    ) || config.defaultLanguage;
+  const realPath =
+    currentLang === config.defaultLanguage
+      ? router.pathname
+      : router.pathname.replace(`/${currentLang}`, '');
+
+  const createLangUrl = (lang) => (
+    lang === config.defaultLanguage
+      ? realPath
+      : `/${lang}${realPath}`
+  );
 
   return (
     <Wrapper>
@@ -74,9 +96,15 @@ const Language = () => {
         <div className="bg" onClick={toggle} />
         <ul>
           {Object.entries(config.languages).map(([id, label]) => (
-            <li key={id} onClick={() => setLanguage(id)}>
-              {label}
-            </li>
+            id === currentLang ? (
+              <li key={id}>
+                {label}
+              </li>
+            ) : (
+              <li key={id} onClick={() => setLanguage(id)}>
+                <Link href={createLangUrl(id)}><a>{label}</a></Link>
+              </li>
+            )
           ))}
         </ul>
       </Dropdown>

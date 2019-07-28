@@ -16,7 +16,19 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
+    "/features/cli": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
     "/index": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/ja": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/ja/features/cli": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],

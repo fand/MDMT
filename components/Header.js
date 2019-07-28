@@ -14,7 +14,6 @@ const Nav = styled.div`
   display: flex;
   justify-content: space-between;
 
-  ${'' /* // animation */}
   transition: 0.5s;
   background: transparent;
   @media (max-width: ${constants.mobile}px) {
