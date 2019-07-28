@@ -4,7 +4,6 @@ import { useRouter } from "next/router";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
-import { AppContext, DispatchContext } from "../lib/context";
 import config from "../config";
 import constants from "./constants";
 
@@ -30,8 +29,8 @@ const Button = styled.button`
 const Dropdown = styled.div`
   display: ${p => (p.open ? "block" : "none")};
   position: absolute;
-  top: 100%;
-  right: 0;
+  top: calc(100% + 8px);
+  right: 8px;
   background: ${constants.bg};
 
   .bg {
@@ -40,7 +39,7 @@ const Dropdown = styled.div`
     height: 100%;
     left: 0;
     top: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.3);
     z-index: 2;
   }
 
@@ -48,26 +47,35 @@ const Dropdown = styled.div`
     position: relative;
     z-index: 3;
     list-style: none;
-    margin: 0;
-    padding: 8px 20px;
+    margin: 0 8px;
+    padding: 10px 20px;
     line-height: 2em;
     color: ${constants.fg};
   }
   li {
+    position: relative;
     white-space: nowrap;
+    &.is-active:before {
+      content: "";
+      border-style: solid;
+      border-width: 5px 0 5px 5px;
+      border-color: transparent transparent transparent ${constants.fg};
+      position: absolute;
+      left: -16px;
+      top: 10px;
+    }
+  }
+
+  a,
+  a:visited {
+    color: ${constants.fg};
   }
 `;
 
 const Language = () => {
-  const state = useContext(AppContext);
-  const dispatch = useContext(DispatchContext);
-
   const [isActive, setActivity] = useState(false);
 
-  const setLanguage = lang => {
-    setActivity(false);
-    dispatch({ type: "setLanguage", lang });
-  };
+  const hide = () => setActivity(false);
   const toggle = () => setActivity(!isActive);
 
   // Create urls for translation
@@ -79,13 +87,9 @@ const Language = () => {
   const realPath =
     currentLang === config.defaultLanguage
       ? router.pathname
-      : router.pathname.replace(`/${currentLang}`, '');
-
-  const createLangUrl = (lang) => (
-    lang === config.defaultLanguage
-      ? realPath
-      : `/${lang}${realPath}`
-  );
+      : router.pathname.replace(`/${currentLang}`, "");
+  const createLangUrl = lang =>
+    lang === config.defaultLanguage ? realPath : `/${lang}${realPath}`;
 
   return (
     <Wrapper>
@@ -93,19 +97,21 @@ const Language = () => {
         <FontAwesomeIcon icon={faGlobe} />
       </Button>
       <Dropdown open={isActive}>
-        <div className="bg" onClick={toggle} />
+        <div className="bg" onClick={hide} />
         <ul>
-          {Object.entries(config.languages).map(([id, label]) => (
+          {Object.entries(config.languages).map(([id, label]) =>
             id === currentLang ? (
-              <li key={id}>
+              <li key={id} className="is-active">
                 {label}
               </li>
             ) : (
-              <li key={id} onClick={() => setLanguage(id)}>
-                <Link href={createLangUrl(id)}><a>{label}</a></Link>
+              <li key={id} onClick={hide}>
+                <Link href={createLangUrl(id)}>
+                  <a>{label}</a>
+                </Link>
               </li>
             )
-          ))}
+          )}
         </ul>
       </Dropdown>
     </Wrapper>
