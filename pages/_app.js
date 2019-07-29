@@ -1,3 +1,4 @@
+import React from "react";
 import App, { Container } from "next/app";
 import { MDXProvider } from "@mdx-js/react";
 import Layout from "../components/Layout";
@@ -11,7 +12,7 @@ const components = {
 };
 
 export default class MyApp extends App {
-  static async getInitialProps({ Component, router, ctx }) {
+  static async getInitialProps({ Component, ctx }) {
     let pageProps = {};
 
     if (Component.getInitialProps) {

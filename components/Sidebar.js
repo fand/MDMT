@@ -1,13 +1,12 @@
 import React, { useContext } from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
-import Router, { useRouter } from "next/router";
-import LazyLoad from "react-lazyload";
+import { useRouter } from "next/router";
 import constants from "./constants";
-import { AppContext, DispatchContext } from "../lib/context";
+import { DispatchContext } from "../lib/context";
 import * as config from "../config";
 import { useLanguage } from "../lib/hooks";
 import { Link, Img } from "../lib/components";
-import { removePrefixFromPath } from "../lib/utils";
 
 const Nav = styled.nav`
   width: 100%;
@@ -89,6 +88,12 @@ const Li = ({ to, children, route }) => {
   );
 };
 
+Li.propTypes = {
+  to: PropTypes.string.isRequired,
+  route: PropTypes.string.isRequired,
+  children: PropTypes.any
+};
+
 const renderSidebarItems = (items, route, indent) => {
   return (
     <ul style={{ textIndent: indent * 30 }}>
@@ -112,7 +117,7 @@ const renderSidebarItems = (items, route, indent) => {
   );
 };
 
-const Sidebar = props => {
+const Sidebar = () => {
   const router = useRouter();
   const lang = useLanguage();
   const sidebarItems = config.sidebar[lang];

@@ -1,5 +1,7 @@
+import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
-import { lighten, darken, adjustHue } from "polished";
+import { lighten, adjustHue } from "polished";
 
 const BG = styled.div`
   position: fixed;
@@ -31,6 +33,12 @@ const BG = styled.div`
   }
 `;
 
-export default ({ color }) => {
+const Background = ({ color }) => {
   return <BG color={color} />;
 };
+
+Background.propTypes = {
+  color: PropTypes.string.isRequired
+};
+
+export default Background;

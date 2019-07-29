@@ -1,9 +1,8 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/router";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
-import { AppContext } from "../lib/context";
 import config from "../config";
 import constants from "./constants";
 import { useLanguage } from "../lib/hooks";

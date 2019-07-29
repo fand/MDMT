@@ -45,7 +45,7 @@ const Left = styled.div``;
 
 const Right = styled.div``;
 
-const Header = props => {
+const Header = () => {
   const state = useContext(AppContext);
   const dispatch = useContext(DispatchContext);
 

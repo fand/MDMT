@@ -1,17 +1,18 @@
 {
+    "parser": "babel-eslint",
     "env": {
         "es6": true,
         "node": true,
+        "browser": true,
     },
     "extends": [
         "eslint:recommended",
         "plugin:prettier/recommended",
+        "plugin:react/recommended",
     ],
-    "parserOptions": {
-        "ecmaVersion": 2019,
-        "sourceType": "module",
-        "ecmaFeatures": {
-            "jsx": true
-        }
+    "settings": {
+        "react": {
+            "version": "detect",
+        },
     },
 }

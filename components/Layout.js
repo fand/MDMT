@@ -1,5 +1,5 @@
 import React, { useEffect, useContext, useRef } from "react";
-import { useRouter } from "next/router";
+import PropTypes from "prop-types";
 import throttle from "lodash.throttle";
 import styled, { createGlobalStyle } from "styled-components";
 import constants from "./constants";
@@ -117,6 +117,10 @@ const Layout = props => {
       <Background color={state.color} />
     </div>
   );
+};
+
+Layout.propTypes = {
+  children: PropTypes.any
 };
 
 export default Layout;

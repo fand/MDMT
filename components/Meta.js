@@ -1,16 +1,9 @@
-import * as React from "react";
+import React from "react";
+import PropTypes from "prop-types";
 import Head from "next/head";
 import { prefixUrl } from "../lib/utils";
 
-export default ({
-  url,
-  title,
-  image,
-  description,
-  siteName,
-  lang,
-  twitter
-}) => {
+const Meta = ({ url, title, image, description, siteName, lang, twitter }) => {
   return (
     <Head>
       <html lang={lang || "en"} />
@@ -61,3 +54,15 @@ export default ({
     </Head>
   );
 };
+
+Meta.propTypes = {
+  url: PropTypes.string,
+  title: PropTypes.string,
+  image: PropTypes.any,
+  description: PropTypes.string,
+  siteName: PropTypes.string,
+  lang: PropTypes.string,
+  twitter: PropTypes.string
+};
+
+export default Meta;

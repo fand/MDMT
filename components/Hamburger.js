@@ -1,9 +1,10 @@
+import React from "react";
+import PropTypes from "prop-types";
 import { Arrow } from "react-burgers";
-import styled from "styled-components";
 import constants from "./constants";
 
 // Just a wrapper for react-burgers
-export default ({ active, onClick }) => (
+const Hamburger = ({ active, onClick }) => (
   <Arrow
     width={32}
     active={active}
@@ -14,3 +15,10 @@ export default ({ active, onClick }) => (
     padding="18px"
   />
 );
+
+Hamburger.propTypes = {
+  active: PropTypes.bool.isRequired,
+  onClick: PropTypes.func.isRequired
+};
+
+export default Hamburger;
