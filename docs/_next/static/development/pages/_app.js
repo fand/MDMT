@@ -148,13 +148,7 @@ var Language = function Language() {
         lineNumber: 107
       },
       __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("a", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 108
-      },
-      __self: this
-    }, label)));
+    }, label));
   }))));
 };
 
@@ -189,7 +183,7 @@ __webpack_require__.r(__webpack_exports__);
 var _jsxFileName = "/Users/amagi/src/github.com/fand/mdmt/components/Layout.js";
 
 function _templateObject() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  .prism-code {\n    overflow: scroll;\n  }\n"]);
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  .prism-code {\n    overflow-x: auto;\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -535,26 +529,20 @@ var Header = function Header(props) {
       lineNumber: 62
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 63
-    },
-    __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_lib_components__WEBPACK_IMPORTED_MODULE_9__["Img"], {
     src: "/static/images/logo_white.png",
     alt: "MDMT logo",
     height: "48",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64
+      lineNumber: 63
     },
     __self: this
-  })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Left, {
+  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Left, {
     className: "mobile",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73
+      lineNumber: 71
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_hamburger__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -562,19 +550,19 @@ var Header = function Header(props) {
     onClick: toggleMenu,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74
+      lineNumber: 72
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Right, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76
+      lineNumber: 74
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Language__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77
+      lineNumber: 75
     },
     __self: this
   })));
@@ -908,13 +896,7 @@ var Li = function Li(_ref) {
       lineNumber: 87
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 88
-    },
-    __self: this
-  }, children)));
+  }, children));
 };
 
 var renderSidebarItems = function renderSidebarItems(items, route, indent) {
@@ -985,28 +967,22 @@ var Sidebar = function Sidebar(props) {
       lineNumber: 125
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 126
-    },
-    __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_lib_components__WEBPACK_IMPORTED_MODULE_9__["Img"], {
     className: "logo",
     src: "/static/images/logo_white.png",
     alt: "MDMT header",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 127
+      lineNumber: 126
     },
     __self: this
-  }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+  })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
     className: "twitter",
     target: "\\_blank",
     href: "https://twitter.com/search?f=tweets&q=%23MDMTjs&src=typd",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 134
+      lineNumber: 132
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_lib_components__WEBPACK_IMPORTED_MODULE_9__["Img"], {
@@ -1014,7 +990,7 @@ var Sidebar = function Sidebar(props) {
     src: "/static/images/hashtag.png",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 139
+      lineNumber: 137
     },
     __self: this
   }))), renderSidebarItems(sidebarItems, router.pathname, 0));
@@ -1153,17 +1129,30 @@ var Img = function Img(props) {
   }));
 };
 var Link = function Link(props) {
+  var router = Object(next_router__WEBPACK_IMPORTED_MODULE_4__["useRouter"])();
+
   var newProps = Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({}, props, {
-    href: Object(_utils__WEBPACK_IMPORTED_MODULE_6__["prefixUrl"])(props.href)
+    // href: prefixUrl(props.href),
+    href: props.href,
+    as: Object(_utils__WEBPACK_IMPORTED_MODULE_6__["prefixUrl"])(props.href),
+    onClick: function onClick(e) {
+      console.log('push', props.href, Object(_utils__WEBPACK_IMPORTED_MODULE_6__["prefixUrl"])(props.href));
+      router.push(Object(_utils__WEBPACK_IMPORTED_MODULE_6__["prefixUrl"])(props.href));
+      e.preventDefault();
+      e.stopPropagation();
+    }
   });
 
-  return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, newProps, {
+  Object(react__WEBPACK_IMPORTED_MODULE_2__["useEffect"])(function () {
+    router.prefetch(Object(_utils__WEBPACK_IMPORTED_MODULE_6__["prefixUrl"])(props.href));
+  }, []);
+  return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_2___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("a", Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, newProps, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 56
     },
     __self: this
-  }));
+  }))); // return <NextLink {...newProps} />
 };
 
 /***/ }),

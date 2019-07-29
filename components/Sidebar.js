@@ -72,7 +72,10 @@ const isActive = (path, to) => {
   return !!match && match.length > 0 && path === match[1];
 };
 
-const prefetch = to => () => Router.prefetch(removePrefixFromPath(to));
+const prefetch = to => () => {
+  console.log('>> Sidebar prefetch', to);
+  Router.prefetch(removePrefixFromPath(to))
+};
 
 const Li = ({ to, children, route }) => {
   if (isActive(route, to)) {
@@ -85,7 +88,7 @@ const Li = ({ to, children, route }) => {
   return (
     <li onClick={hideMenu} onMouseOver={prefetch(to)}>
       <Link href={to}>
-        <a>{children}</a>
+        {children}
       </Link>
     </li>
   );
@@ -123,13 +126,11 @@ const Sidebar = props => {
     <Nav>
       <Header>
         <Link href="/">
-          <a>
-            <Img
-              className="logo"
-              src="/static/images/logo_white.png"
-              alt="MDMT header"
-            />
-          </a>
+          <Img
+            className="logo"
+            src="/static/images/logo_white.png"
+            alt="MDMT header"
+          />
         </Link>
         <a
           className="twitter"

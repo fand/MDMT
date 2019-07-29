@@ -60,13 +60,11 @@ const Header = props => {
     <Nav className={cls} color={state.color}>
       <Logo className={cls}>
         <Link href={getPathForLang(lang, "/")}>
-          <a>
-            <Img
-              src="/static/images/logo_white.png"
-              alt="MDMT logo"
-              height="48"
-            />
-          </a>
+          <Img
+            src="/static/images/logo_white.png"
+            alt="MDMT logo"
+            height="48"
+          />
         </Link>
       </Logo>
 

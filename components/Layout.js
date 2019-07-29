@@ -69,7 +69,7 @@ const HeaderWrapper = styled.div`
 // Patch for prism
 const GlobalStyle = createGlobalStyle`
   .prism-code {
-    overflow: scroll;
+    overflow-x: auto;
   }
 `;
 

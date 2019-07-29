@@ -105,7 +105,7 @@ const Language = () => {
             ) : (
               <li key={langId} onClick={hide}>
                 <Link href={createLangUrl(langId)}>
-                  <a>{label}</a>
+                  {label}
                 </Link>
               </li>
             )
