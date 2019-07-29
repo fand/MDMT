@@ -14,7 +14,7 @@ module.exports = {
       ]],
     ],
     ja: [
-      ['ホーム', '/ja/'],
+      ['ホーム', '/ja'],
       ['使い方', '/ja/getting-started'],
       ['よくある質問', '/ja/faq'],
       ['機能', [
