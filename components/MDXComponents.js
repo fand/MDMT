@@ -1,6 +1,6 @@
 import React from "react";
 import Highlight, { defaultProps } from "prism-react-renderer";
-import getConfig from 'next/config';
+import nextConfig from '../next.config.js';
 
 export const CodeBlock = ({ children, className }) => {
   const language = className ? className.replace(/language-/, "") : "";
@@ -26,12 +26,11 @@ export const CodeBlock = ({ children, className }) => {
 export const Img = (props) => {
   const newProps = { ...props };
 
-
+  // Convert root-relative URLs
   const m = props.src.match(/^\/(.*)$/)
   if (m) {
-    const { assetPrefix } = getConfig();
-    console.log(assetPrefix);
-    newProps.src = `/${assetPrefix}/${m[1]}`;
+    const prefix = nextConfig.assetPrefix;
+    newProps.src = `${prefix}/${m[1]}`;
   }
 
   return <img {...newProps} />;

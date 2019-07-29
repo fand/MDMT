@@ -1579,10 +1579,10 @@ setToStringTag(global.JSON, 'JSON', true);
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Famagi%2Fsrc%2Fgithub.com%2Ffand%2Fnext-docs-template%2Fpages%2Findex.md!./":
-/*!***********************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Famagi%2Fsrc%2Fgithub.com%2Ffand%2Fnext-docs-template%2Fpages%2Findex.md ***!
-  \***********************************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Famagi%2Fsrc%2Fgithub.com%2Ffand%2Fmdmt%2Fpages%2Findex.md!./":
+/*!*********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Famagi%2Fsrc%2Fgithub.com%2Ffand%2Fmdmt%2Fpages%2Findex.md ***!
+  \*********************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1630,7 +1630,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mdx_js_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @mdx-js/react */ "./node_modules/@mdx-js/react/dist/index.es.js");
 
 
-var _jsxFileName = "/Users/amagi/src/github.com/fand/next-docs-template/pages/index.md";
+var _jsxFileName = "/Users/amagi/src/github.com/fand/mdmt/pages/index.md";
 
 /* @jsx mdx */
 
@@ -1909,13 +1909,13 @@ MDXContent.frontmatter = {
 /***/ }),
 
 /***/ 0:
-/*!***************************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Famagi%2Fsrc%2Fgithub.com%2Ffand%2Fnext-docs-template%2Fpages%2Findex.md ***!
-  \***************************************************************************************************************************************************/
+/*!*************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Famagi%2Fsrc%2Fgithub.com%2Ffand%2Fmdmt%2Fpages%2Findex.md ***!
+  \*************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Famagi%2Fsrc%2Fgithub.com%2Ffand%2Fnext-docs-template%2Fpages%2Findex.md! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Famagi%2Fsrc%2Fgithub.com%2Ffand%2Fnext-docs-template%2Fpages%2Findex.md!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Famagi%2Fsrc%2Fgithub.com%2Ffand%2Fmdmt%2Fpages%2Findex.md! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Famagi%2Fsrc%2Fgithub.com%2Ffand%2Fmdmt%2Fpages%2Findex.md!./");
 
 
 /***/ }),

@@ -7,7 +7,7 @@ import { Provider } from "../lib/context";
 // MDX components
 const components = {
   code: CodeBlock,
-  // img: Img,
+  img: Img,
 };
 
 export default class MyApp extends App {
