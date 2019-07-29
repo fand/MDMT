@@ -1,5 +1,4 @@
 import React, { useState, useContext } from "react";
-import Link from "./Link";
 import { useRouter } from "next/router";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -8,6 +7,7 @@ import { AppContext } from "../lib/context";
 import config from "../config";
 import constants from "./constants";
 import { useLanguage } from "../lib/hooks";
+import { Link } from '../lib/components';
 import { getPathForLang, removePrefixFromPath, removeLanguageFromPath } from "../lib/utils";
 
 const Wrapper = styled.div`

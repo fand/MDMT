@@ -1,7 +1,7 @@
 import App, { Container } from "next/app";
 import { MDXProvider } from "@mdx-js/react";
 import Layout from "../components/Layout";
-import { Img, CodeBlock } from "../components/MDXComponents";
+import { Img, CodeBlock } from "../lib/components";
 import { Provider } from "../lib/context";
 
 // MDX components

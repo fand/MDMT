@@ -1,13 +1,12 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
-import Link from "./Link";
 import Router, { useRouter } from "next/router";
 import LazyLoad from "react-lazyload";
 import constants from "./constants";
 import { AppContext, DispatchContext } from "../lib/context";
 import * as config from "../config";
 import { useLanguage } from "../lib/hooks";
-import { prefixUrl } from "../lib/utils";
+import { Link, Img } from "../lib/components";
 
 const Nav = styled.nav`
   width: 100%;
@@ -124,9 +123,9 @@ const Sidebar = props => {
       <Header>
         <Link href="/">
           <a>
-            <img
+            <Img
               className="logo"
-              src={prefixUrl("/static/images/logo_white.png")}
+              src="/static/images/logo_white.png"
               alt="MDMT header"
             />
           </a>
@@ -136,9 +135,9 @@ const Sidebar = props => {
           target="\_blank"
           href="https://twitter.com/search?f=tweets&q=%23MDMTjs&src=typd"
         >
-          <img
+          <Img
             alt="hashtag #MDMTjs"
-            src={prefixUrl("/static/images/hashtag.png")}
+            src="/static/images/hashtag.png"
           />
         </a>
       </Header>

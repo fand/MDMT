@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import Link from "next/link";
 import styled from "styled-components";
 import { opacify } from "polished";
 import { AppContext, DispatchContext } from "../lib/context";
@@ -8,6 +7,7 @@ import Hamburger from "./hamburger";
 import Language from "./Language";
 import { useLanguage } from "../lib/hooks";
 import { getPathForLang } from "../lib/utils";
+import { Link, Img } from "../lib/components";
 
 const Nav = styled.div`
   position: relative;
@@ -61,7 +61,7 @@ const Header = props => {
       <Logo className={cls}>
         <Link href={getPathForLang(lang, "/")}>
           <a>
-            <img
+            <Img
               src="/static/images/logo_white.png"
               alt="MDMT logo"
               height="48"
