@@ -1,12 +1,13 @@
 import App, { Container } from "next/app";
 import { MDXProvider } from "@mdx-js/react";
 import Layout from "../components/Layout";
-import CodeBlock from "../components/CodeBlock";
+import { Img, CodeBlock } from "../components/MDXComponents";
 import { Provider } from "../lib/context";
 
 // MDX components
 const components = {
-  code: CodeBlock
+  code: CodeBlock,
+  // img: Img,
 };
 
 export default class MyApp extends App {
