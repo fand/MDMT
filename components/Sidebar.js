@@ -72,11 +72,6 @@ const isActive = (path, to) => {
   return !!match && match.length > 0 && path === match[1];
 };
 
-const prefetch = to => () => {
-  console.log('>> Sidebar prefetch', to);
-  Router.prefetch(removePrefixFromPath(to))
-};
-
 const Li = ({ to, children, route }) => {
   if (isActive(route, to)) {
     return <li className="active">{children}</li>;
@@ -86,8 +81,8 @@ const Li = ({ to, children, route }) => {
   const hideMenu = () => dispatch({ type: "hideMenu" });
 
   return (
-    <li onClick={hideMenu} onMouseOver={prefetch(to)}>
-      <Link href={to}>
+    <li onClick={hideMenu}>
+      <Link href={to} prefetch>
         {children}
       </Link>
     </li>
