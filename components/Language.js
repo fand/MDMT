@@ -86,7 +86,7 @@ const Language = () => {
   // Create urls for translation
   const router = useRouter();
   const path = removeLanguageFromPath(removePrefixFromPath(router.asPath), lang);
-
+console.log('>>>>', path, getPathForLang('ja', path));
   const createLangUrl = langId => getPathForLang(langId, path);
 
   return (
