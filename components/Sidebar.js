@@ -7,6 +7,7 @@ import { AppContext, DispatchContext } from "../lib/context";
 import * as config from "../config";
 import { useLanguage } from "../lib/hooks";
 import { Link, Img } from "../lib/components";
+import { removePrefixFromPath } from "../lib/utils";
 
 const Nav = styled.nav`
   width: 100%;
@@ -71,7 +72,7 @@ const isActive = (path, to) => {
   return !!match && match.length > 0 && path === match[1];
 };
 
-const prefetch = to => () => Router.prefetch(to);
+const prefetch = to => () => Router.prefetch(removePrefixFromPath(to));
 
 const Li = ({ to, children, route }) => {
   if (isActive(route, to)) {
