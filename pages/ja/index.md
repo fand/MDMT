@@ -44,4 +44,4 @@ $ npm i @fand/mdmx
 
 ---
 
-<a href="https://twitter.com/intent/tweet?url=https://gmork.in/mdmt/&hashtags=mdmt" target="\_blank">#MDMTについてツイート</a>
+<a href="https://twitter.com/intent/tweet?url=https://gmork.in/mdmt/&hashtags=MDMTjs" target="\_blank">#MDMTについてツイート</a>

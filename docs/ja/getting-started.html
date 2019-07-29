@@ -1,0 +1,595 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1"/><style>/* Document
+ * ========================================================================== */
+
+/**
+ * Add border box sizing in all browsers (opinionated).
+ */
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/**
+ * 1. Add text decoration inheritance in all browsers (opinionated).
+ * 2. Add vertical alignment inheritance in all browsers (opinionated).
+ */
+
+::before,
+::after {
+  text-decoration: inherit; /* 1 */
+  vertical-align: inherit; /* 2 */
+}
+
+/**
+ * 1. Use the default cursor in all browsers (opinionated).
+ * 2. Change the line height in all browsers (opinionated).
+ * 3. Use a 4-space tab width in all browsers (opinionated).
+ * 4. Remove the grey highlight on links in iOS (opinionated).
+ * 5. Prevent adjustments of font size after orientation changes in
+ *    IE on Windows Phone and in iOS.
+ * 6. Breaks words to prevent overflow in all browsers (opinionated).
+ */
+
+html {
+  cursor: default; /* 1 */
+  line-height: 1.5; /* 2 */
+  -moz-tab-size: 4; /* 3 */
+  tab-size: 4; /* 3 */
+  -webkit-tap-highlight-color: transparent /* 4 */;
+  -ms-text-size-adjust: 100%; /* 5 */
+  -webkit-text-size-adjust: 100%; /* 5 */
+  word-break: break-word; /* 6 */
+}
+
+/* Sections
+ * ========================================================================== */
+
+/**
+ * Remove the margin in all browsers (opinionated).
+ */
+
+body {
+  margin: 0;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Edge, Firefox, and Safari.
+ */
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+ * ========================================================================== */
+
+/**
+ * Remove the margin on nested lists in Chrome, Edge, IE, and Safari.
+ */
+
+dl dl,
+dl ol,
+dl ul,
+ol dl,
+ul dl {
+  margin: 0;
+}
+
+/**
+ * Remove the margin on nested lists in Edge 18- and IE.
+ */
+
+ol ol,
+ol ul,
+ul ol,
+ul ul {
+  margin: 0;
+}
+
+/**
+ * 1. Add the correct sizing in Firefox.
+ * 2. Show the overflow in Edge 18- and IE.
+ */
+
+hr {
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+/**
+ * Add the correct display in IE.
+ */
+
+main {
+  display: block;
+}
+
+/**
+ * Remove the list style on navigation lists in all browsers (opinionated).
+ */
+
+nav ol,
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/* Text-level semantics
+ * ========================================================================== */
+
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+
+a {
+  background-color: transparent;
+}
+
+/**
+ * Add the correct text decoration in Edge 18-, IE, and Safari.
+ */
+
+abbr[title] {
+  text-decoration: underline;
+  text-decoration: underline dotted;
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+
+small {
+  font-size: 80%;
+}
+
+/* Embedded content
+ * ========================================================================== */
+
+/*
+ * Change the alignment on media elements in all browsers (opinionated).
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/**
+ * Add the correct display in IE 9-.
+ */
+
+audio,
+video {
+  display: inline-block;
+}
+
+/**
+ * Add the correct display in iOS 4-7.
+ */
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Remove the border on iframes in all browsers (opinionated).
+ */
+
+iframe {
+  border-style: none;
+}
+
+/**
+ * Remove the border on images within links in IE 10-.
+ */
+
+img {
+  border-style: none;
+}
+
+/**
+ * Change the fill color to match the text color in all browsers (opinionated).
+ */
+
+svg:not([fill]) {
+  fill: currentColor;
+}
+
+/**
+ * Hide the overflow in IE.
+ */
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Tabular data
+ * ========================================================================== */
+
+/**
+ * Collapse border spacing in all browsers (opinionated).
+ */
+
+table {
+  border-collapse: collapse;
+}
+
+/* Forms
+ * ========================================================================== */
+
+/**
+ * Remove the margin on controls in Safari.
+ */
+
+button,
+input,
+select {
+  margin: 0;
+}
+
+/**
+ * 1. Show the overflow in IE.
+ * 2. Remove the inheritance of text transform in Edge 18-, Firefox, and IE.
+ */
+
+button {
+  overflow: visible; /* 1 */
+  text-transform: none; /* 2 */
+}
+
+/**
+ * Correct the inability to style buttons in iOS and Safari.
+ */
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+/**
+ * 1. Change the inconsistent appearance in all browsers (opinionated).
+ * 2. Correct the padding in Firefox.
+ */
+
+fieldset {
+  border: 1px solid #a0a0a0; /* 1 */
+  padding: 0.35em 0.75em 0.625em; /* 2 */
+}
+
+/**
+ * Show the overflow in Edge 18- and IE.
+ */
+
+input {
+  overflow: visible;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge 18- and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ */
+
+legend {
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  white-space: normal; /* 1 */
+}
+
+/**
+ * 1. Add the correct display in Edge 18- and IE.
+ * 2. Add the correct vertical alignment in Chrome, Edge, and Firefox.
+ */
+
+progress {
+  display: inline-block; /* 1 */
+  vertical-align: baseline; /* 2 */
+}
+
+/**
+ * Remove the inheritance of text transform in Firefox.
+ */
+
+select {
+  text-transform: none;
+}
+
+/**
+ * 1. Remove the margin in Firefox and Safari.
+ * 2. Remove the default vertical scrollbar in IE.
+ * 3. Change the resize direction in all browsers (opinionated).
+ */
+
+textarea {
+  margin: 0; /* 1 */
+  overflow: auto; /* 2 */
+  resize: vertical; /* 3 */
+}
+
+/**
+ * Remove the padding in IE 10-.
+ */
+
+[type="checkbox"],
+[type="radio"] {
+  padding: 0;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome, Edge, and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+
+[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Safari.
+ */
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * Correct the text style of placeholders in Chrome, Edge, and Safari.
+ */
+
+::-webkit-input-placeholder {
+  color: inherit;
+  opacity: 0.54;
+}
+
+/**
+ * Remove the inner padding in Chrome, Edge, and Safari on macOS.
+ */
+
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style upload buttons in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/**
+ * Remove the inner border and padding of focus outlines in Firefox.
+ */
+
+::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus outline styles unset by the previous rule in Firefox.
+ */
+
+:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Remove the additional :invalid styles in Firefox.
+ */
+
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+/* Interactive
+ * ========================================================================== */
+
+/*
+ * Add the correct display in Edge 18- and IE.
+ */
+
+details {
+  display: block;
+}
+
+/*
+ * Add the correct styles in Edge 18-, IE, and Safari.
+ */
+
+dialog {
+  background-color: white;
+  border: solid;
+  color: black;
+  display: block;
+  height: -moz-fit-content;
+  height: -webkit-fit-content;
+  height: fit-content;
+  left: 0;
+  margin: auto;
+  padding: 1em;
+  position: absolute;
+  right: 0;
+  width: -moz-fit-content;
+  width: -webkit-fit-content;
+  width: fit-content;
+}
+
+dialog:not([open]) {
+  display: none;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+
+summary {
+  display: list-item;
+}
+
+/* Scripting
+ * ========================================================================== */
+
+/**
+ * Add the correct display in IE 9-.
+ */
+
+canvas {
+  display: inline-block;
+}
+
+/**
+ * Add the correct display in IE.
+ */
+
+template {
+  display: none;
+}
+
+/* User interaction
+ * ========================================================================== */
+
+/*
+ * 1. Remove the tapping delay in IE 10.
+ * 2. Remove the tapping delay on clickable elements
+      in all browsers (opinionated).
+ */
+
+a,
+area,
+button,
+input,
+label,
+select,
+summary,
+textarea,
+[tabindex] {
+  -ms-touch-action: manipulation; /* 1 */
+  touch-action: manipulation; /* 2 */
+}
+
+/**
+ * Add the correct display in IE 10-.
+ */
+
+[hidden] {
+  display: none;
+}
+
+/* Accessibility
+ * ========================================================================== */
+
+/**
+ * Change the cursor on busy elements in all browsers (opinionated).
+ */
+
+[aria-busy="true"] {
+  cursor: progress;
+}
+
+/*
+ * Change the cursor on control elements in all browsers (opinionated).
+ */
+
+[aria-controls] {
+  cursor: pointer;
+}
+
+/*
+ * Change the cursor on disabled, not-editable, or otherwise
+ * inoperable elements in all browsers (opinionated).
+ */
+
+[aria-disabled="true"],
+[disabled] {
+  cursor: not-allowed;
+}
+
+/*
+ * Change the display on visually hidden accessible elements
+ * in all browsers (opinionated).
+ */
+
+[aria-hidden="false"][hidden] {
+  display: initial;
+}
+
+[aria-hidden="false"][hidden]:not(:focus) {
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}
+</style><style data-styled="bexPMe kCwveV fWyQbr fucyES cipENH kWRQCg fDDjJH hHgjwR jLWnfX eKkhqg fzESZO dzOAvA frxGdT dXkwbs dGbapy cBippo kyinSe" data-styled-version="4.3.2">
+/* sc-component-id: sidebar__Nav-sc-1nsoz3g-0 */
+.fWyQbr{width:100%;height:100%;padding:10px 30px 100px;background:rgba(10,10,10,0.6);border-right:1px solid gray;overflow:auto;-webkit-overflow-scrolling:touch;} .fWyQbr *{color:#FFFFFF;text-shadow:0 2px 5px black !important;} .fWyQbr ul{padding-left:0;margin:0;} .fWyQbr li{line-height:2.5em;} .fWyQbr li.active{position:relative;-webkit-text-decoration:none;text-decoration:none;font-weight:bold;font-style:italic;color:white;} .fWyQbr li a{display:block;-webkit-text-decoration:none;text-decoration:none;} .fWyQbr li a:hover{color:#88eeff;-webkit-text-decoration:underline;text-decoration:underline;} .fWyQbr li a:visited{color:#FFFFFF;}
+/* sc-component-id: sidebar__Header-sc-1nsoz3g-1 */
+.fucyES{margin-bottom:30px;text-align:center;} .fucyES .logo{width:100%;padding:20px 0;} .fucyES .twitter{display:block;margin:10px auto;} .fucyES .twitter img{height:24px;}
+/* sc-component-id: Language__Wrapper-sc-9kihq3-0 */
+.dzOAvA{position:relative;height:100%;width:auto;}
+/* sc-component-id: Language__Button-sc-9kihq3-1 */
+.frxGdT{color:#FFFFFF;font-size:27px;padding:15px;border:none;background:transparent;cursor:pointer;outline:none;} .frxGdT:hover{opacity:0.8;}
+/* sc-component-id: Language__Dropdown-sc-9kihq3-2 */
+.dXkwbs{display:none;position:absolute;top:calc(100% + 8px);right:8px;background:#282c34;} .dXkwbs .bg{position:fixed;width:100%;height:100%;left:0;top:0;background:rgba(0,0,0,0.3);z-index:2;} .dXkwbs ul{position:relative;z-index:3;list-style:none;margin:0 8px;padding:10px 20px;line-height:2em;color:#FFFFFF;} .dXkwbs li{position:relative;white-space:nowrap;} .dXkwbs li.is-active:before{content:"";border-style:solid;border-width:5px 0 5px 5px;border-color:transparent transparent transparent #FFFFFF;position:absolute;left:-16px;top:10px;} .dXkwbs a,.dXkwbs a:visited{color:#FFFFFF;}
+/* sc-component-id: header__Nav-sc-1o68dil-0 */
+.fDDjJH{position:relative;width:100%;height:56px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;-webkit-transition:0.5s;transition:0.5s;background:transparent;} @media (max-width:767px){.fDDjJH.visible{background:#fd0;}}.hHgjwR{position:relative;width:100%;height:56px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;-webkit-transition:0.5s;transition:0.5s;background:transparent;} @media (max-width:767px){.hHgjwR.visible{background:#00dfff;}}
+/* sc-component-id: header__Logo-sc-1o68dil-1 */
+.jLWnfX{height:100%;padding:4px 0;position:absolute;left:50%;-webkit-transform:translateX(-50%);-ms-transform:translateX(-50%);transform:translateX(-50%);opacity:0;} @media (max-width:767px){.jLWnfX{-webkit-transition:opacity 1s;transition:opacity 1s;}.jLWnfX.visible{opacity:1;}}
+/* sc-component-id: background__BG-sc-1swrgvy-0 */
+.cBippo{position:fixed;width:100%;height:100%;z-index:-1;left:0;top:0;background:repeating-linear-gradient( 130deg,rgba(0,255,94,0.53),#FFDD0088,rgba(255,102,122,0.53) );background-size:200% 200%;-webkit-animation:bg 12s ease infinite;animation:bg 12s ease infinite;} @-webkit-keyframes bg{0%{background-position:0 0;}50%{background-position:100% 100%;}100%{background-position:0 0;}} @keyframes bg{0%{background-position:0 0;}50%{background-position:100% 100%;}100%{background-position:0 0;}}.kyinSe{position:fixed;width:100%;height:100%;z-index:-1;left:0;top:0;background:repeating-linear-gradient( 130deg,rgba(159,0,255,0.7),rgba(0,223,255,0.7),rgba(102,255,121,0.7) );background-size:200% 200%;-webkit-animation:bg 12s ease infinite;animation:bg 12s ease infinite;} @-webkit-keyframes bg{0%{background-position:0 0;}50%{background-position:100% 100%;}100%{background-position:0 0;}} @keyframes bg{0%{background-position:0 0;}50%{background-position:100% 100%;}100%{background-position:0 0;}}
+/* sc-component-id: Layout__Wrapper-bk4rf0-0 */
+.bexPMe{position:fixed;top:0;left:0;height:100%;width:100vw;overflow:visible;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-transition:left 0.3s;transition:left 0.3s;} @media (max-width:767px){.bexPMe{width:auto;left:-75vw;}.bexPMe.menu{left:0;}}
+/* sc-component-id: Layout__SidebarWrapper-bk4rf0-1 */
+.kCwveV{width:270px;-webkit-overflow-scrolling:touch;} @media (max-width:767px){.kCwveV{width:75vw;}}
+/* sc-component-id: Layout__BodyColumn-bk4rf0-2 */
+.cipENH{-webkit-flex:1;-ms-flex:1;flex:1;position:relative;} @media (max-width:767px){.cipENH{width:100vw;}}
+/* sc-component-id: Layout__MainWrapper-bk4rf0-3 */
+.dGbapy{height:100%;width:100%;max-width:720px;margin:0 auto;overflow:auto;-webkit-overflow-scrolling:touch;padding:20px;padding-top:60px;padding-bottom:80px;}
+/* sc-component-id: Layout__HeaderWrapper-bk4rf0-4 */
+.kWRQCg{position:absolute;top:0;width:100%;z-index:2;}
+/* sc-component-id: sc-global-535682278 */
+.prism-code{overflow:scroll;}</style><script defer="" async="" src="https://platform.twitter.com/widgets.js"></script><html lang="en" class="next-head"></html><meta charSet="utf-8" class="next-head"/><meta http-equiv="x-ua-compatible" content="ie=edge" class="next-head"/><meta name="viewport" content="width=device-width, initial-scale=1" class="next-head"/><meta name="Description" class="next-head"/><title></title><meta property="og:url" class="next-head"/><meta property="og:type" content="website" class="next-head"/><meta property="og:title" class="next-head"/><meta property="og:image" class="next-head"/><meta property="og:description" class="next-head"/><meta property="og:site_name" class="next-head"/><meta property="og:locale" content="en_US" class="next-head"/><meta name="twitter:card" content="summary" class="next-head"/><meta name="twitter:site" class="next-head"/><meta name="twitter:creator" class="next-head"/><meta name="twitter:url" class="next-head"/><meta name="twitter:title" class="next-head"/><meta name="twitter:description" class="next-head"/><meta name="twitter:image" class="next-head"/><link rel="apple-touch-icon" sizes="180x180" href="/static/favicons/apple-touch-icon.png" class="next-head"/><link rel="icon" type="image/png" sizes="32x32" href="/static/favicons/favicon-32x32.png" class="next-head"/><link rel="icon" type="image/png" sizes="16x16" href="/static/favicons/favicon-16x16.png" class="next-head"/><link rel="manifest" href="/static/favicons/manifest.json" class="next-head"/><link rel="mask-icon" href="/static/favicons/safari-pinned-tab.svg" color="#5bbad5" class="next-head"/><meta name="theme-color" content="#ffffff" class="next-head"/><link rel="preload" href="/_next/static/kQELQ_0h8wJbdaYhZuEnU/pages/ja/getting-started.js" as="script"/><link rel="preload" href="/_next/static/kQELQ_0h8wJbdaYhZuEnU/pages/_app.js" as="script"/><link rel="preload" href="/_next/static/runtime/webpack-3df6523e264ff2ac6548.js" as="script"/><link rel="preload" href="/_next/static/chunks/commons.6a3f3f1d6d241740b4cc.js" as="script"/><link rel="preload" href="/_next/static/runtime/main-c802fd00618f5b2b570a.js" as="script"/></head><body><div id="__next"><div><div class="Layout__Wrapper-bk4rf0-0 bexPMe"><div class="Layout__SidebarWrapper-bk4rf0-1 kCwveV"><nav class="sidebar__Nav-sc-1nsoz3g-0 fWyQbr"><div class="sidebar__Header-sc-1nsoz3g-1 fucyES"><a href="/"><img class="logo" src="/static/images/logo_white.png" alt="MDMT header"/></a><a class="twitter" target="\_blank" href="https://twitter.com/search?f=tweets&amp;q=%23MDMTjs&amp;src=typd"><img alt="hashtag #MDMTjs" src="/static/images/hashtag.png"/></a></div><ul style="text-indent:0"><li><a href="/">Home</a></li><li><a href="/getting-started">Getting Started</a></li><li><a href="/faq">FAQ</a></li><li><span>Features</span><ul style="text-indent:30px"><li><a href="/features/cli">CLI</a></li></ul></li></ul></nav></div><div class="Layout__BodyColumn-bk4rf0-2 cipENH"><div class="Layout__HeaderWrapper-bk4rf0-4 kWRQCg"><div class="header__Nav-sc-1o68dil-0 hHgjwR" color="rgba(0, 223, 255, 0.7)"><div class="header__Logo-sc-1o68dil-1 jLWnfX"><a href="/"><img src="/static/images/logo_white.png" alt="MDMT logo" height="48"/></a></div><div class="mobile header__Left-sc-1o68dil-2 eKkhqg"><button class="jsx-316289044 BurgerArrow Burger"><div class="jsx-316289044 BurgerBox"><div class="jsx-316289044 BurgerInner"></div></div></button></div><div class="header__Right-sc-1o68dil-3 fzESZO"><div class="Language__Wrapper-sc-9kihq3-0 dzOAvA"><button type="button" class="Language__Button-sc-9kihq3-1 frxGdT"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="globe" class="svg-inline--fa fa-globe fa-w-16 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M336.5 160C322 70.7 287.8 8 248 8s-74 62.7-88.5 152h177zM152 256c0 22.2 1.2 43.5 3.3 64h185.3c2.1-20.5 3.3-41.8 3.3-64s-1.2-43.5-3.3-64H155.3c-2.1 20.5-3.3 41.8-3.3 64zm324.7-96c-28.6-67.9-86.5-120.4-158-141.6 24.4 33.8 41.2 84.7 50 141.6h108zM177.2 18.4C105.8 39.6 47.8 92.1 19.3 160h108c8.7-56.9 25.5-107.8 49.9-141.6zM487.4 192H372.7c2.1 21 3.3 42.5 3.3 64s-1.2 43-3.3 64h114.6c5.5-20.5 8.6-41.8 8.6-64s-3.1-43.5-8.5-64zM120 256c0-21.5 1.2-43 3.3-64H8.6C3.2 212.5 0 233.8 0 256s3.2 43.5 8.6 64h114.6c-2-21-3.2-42.5-3.2-64zm39.5 96c14.5 89.3 48.7 152 88.5 152s74-62.7 88.5-152h-177zm159.3 141.6c71.4-21.2 129.4-73.7 158-141.6h-108c-8.8 56.9-25.6 107.8-50 141.6zM19.3 352c28.6 67.9 86.5 120.4 158 141.6-24.4-33.8-41.2-84.7-50-141.6h-108z"></path></svg></button><div class="Language__Dropdown-sc-9kihq3-2 dXkwbs"><div class="bg"></div><ul><li class="is-active">English</li><li><a href="/ja/ja/getting-started">日本語</a></li></ul></div></div></div></div></div><main class="body Layout__MainWrapper-bk4rf0-3 dGbapy"><h1>使い方</h1><h2>yo</h2><p>yeah</p></main></div></div><div color="rgba(0, 223, 255, 0.7)" class="background__BG-sc-1swrgvy-0 kyinSe"></div></div></div><script id="__NEXT_DATA__" type="application/json">{"dataManager":"[]","props":{"pageProps":{}},"page":"/ja/getting-started","query":{},"buildId":"kQELQ_0h8wJbdaYhZuEnU","dynamicBuildId":false,"nextExport":true}</script><script async="" id="__NEXT_PAGE__/ja/getting-started" src="/_next/static/kQELQ_0h8wJbdaYhZuEnU/pages/ja/getting-started.js"></script><script async="" id="__NEXT_PAGE__/_app" src="/_next/static/kQELQ_0h8wJbdaYhZuEnU/pages/_app.js"></script><script src="/_next/static/runtime/webpack-3df6523e264ff2ac6548.js" async=""></script><script src="/_next/static/chunks/commons.6a3f3f1d6d241740b4cc.js" async=""></script><script src="/_next/static/runtime/main-c802fd00618f5b2b570a.js" async=""></script></body></html>

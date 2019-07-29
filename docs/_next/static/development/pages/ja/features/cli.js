@@ -1690,7 +1690,9 @@ function MDXContent(_ref) {
     __self: this
   }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("code", Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({
     parentName: "pre"
-  }, {}, {
+  }, {
+    "className": "language-sh"
+  }, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 24
@@ -1699,52 +1701,58 @@ function MDXContent(_ref) {
   }), "git clone https://github.com/fand/mdmx \u4F5C\u308A\u305F\u3044\u30D5\u30A9\u30EB\u30C0\u540D\ncd \u4F5C\u308A\u305F\u3044\u30D5\u30A9\u30EB\u30C0\u540D\nnpm i\n")), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("h2", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28
+      lineNumber: 30
     },
     __self: this
   }, "\u30B5\u30FC\u30D0\u30FC\u8D77\u52D5"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("pre", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29
+      lineNumber: 31
     },
     __self: this
   }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("code", Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({
     parentName: "pre"
-  }, {}, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 29
-    },
-    __self: this
-  }), "npm start\n")), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("h2", {
+  }, {
+    "className": "language-sh"
+  }, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 31
     },
     __self: this
+  }), "npm start\n")), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("h2", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 35
+    },
+    __self: this
   }, "\u30D3\u30EB\u30C9"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("pre", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 36
     },
     __self: this
   }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("code", Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({
     parentName: "pre"
-  }, {}, {
+  }, {
+    "className": "language-sh"
+  }, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 36
     },
     __self: this
   }), "npm run build\n")));
 }
 ;
 MDXContent.isMDXComponent = true;
-MDXContent.frontmatter = {};
+MDXContent.frontmatter = {
+  title: 'CLI 💊 MDMT - Markdown Document Template \#MDMT'
+};
 
 /***/ }),
 
-/***/ 2:
+/***/ 1:
 /*!************************************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fja%2Ffeatures%2Fcli&absolutePagePath=%2FUsers%2Famagi%2Fsrc%2Fgithub.com%2Ffand%2Fnext-docs-template%2Fpages%2Fja%2Ffeatures%2Fcli.md ***!
   \************************************************************************************************************************************************************************************/
@@ -1767,5 +1775,5 @@ module.exports = dll_829b10deddf10e1653a8;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=cli.js.map
