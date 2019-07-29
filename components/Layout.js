@@ -44,16 +44,19 @@ const BodyColumn = styled.div`
   }
 `;
 
-const MainWrapper = styled.main`
+const MainWrapper = styled.div`
   height: 100%;
   width: 100%;
-  max-width: 720px;
-  margin: 0 auto;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   padding: 20px;
   padding-top: 60px; /* Header height + padding */
   padding-bottom: 80px;
+`;
+
+const Main = styled.main`
+  max-width: 720px;
+  margin: 0 auto;
 `;
 
 const HeaderWrapper = styled.div`
@@ -107,7 +110,9 @@ const Layout = (props) => {
             <Header />
           </HeaderWrapper>
           <MainWrapper ref={bodyEl} className="body">
-            {props.children}
+            <Main>
+              {props.children}
+            </Main>
           </MainWrapper>
         </BodyColumn>
       </Wrapper>
