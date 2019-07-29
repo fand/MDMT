@@ -1,5 +1,6 @@
 import * as React from "react";
 import Head from "next/head";
+import { prefixUrl } from '../lib/utils';
 
 export default ({
   url,
@@ -43,17 +44,17 @@ export default ({
         rel="icon"
         type="image/x-icon"
         sizes="16x16 32x32"
-        href="/static/images/favicon.ico"
+        href={prefixUrl("/static/images/favicon.ico")}
       />
       <link
         rel="apple-touch-icon"
         sizes="180x180"
-        href="/static/images/favicon-180.png"
+        href={prefixUrl("/static/images/favicon-180.png")}
       />
       <link
         rel="icon"
         sizes="192x192"
-        href="/static/images/favicon-192.png"
+        href={prefixUrl("/static/images/favicon-192.png")}
       />
 
       <meta name="theme-color" content="#ffffff" />
