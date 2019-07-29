@@ -26,7 +26,7 @@ export const CodeBlock = ({ children, className }) => {
 export const Img = (props) => {
   const newProps = {
     ...props,
-    url: prefixUrl(props.src),
+    src: prefixUrl(props.src),
   };
   return <img {...newProps} />;
 };
