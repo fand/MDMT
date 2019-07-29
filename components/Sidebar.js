@@ -132,10 +132,7 @@ const Sidebar = props => {
           target="\_blank"
           href="https://twitter.com/search?f=tweets&q=%23MDMTjs&src=typd"
         >
-          <Img
-            alt="hashtag #MDMTjs"
-            src="/static/images/hashtag.png"
-          />
+          <Img alt="hashtag #MDMTjs" src="/static/images/hashtag.png" />
         </a>
       </Header>
 

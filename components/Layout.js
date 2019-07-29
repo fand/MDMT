@@ -1,5 +1,5 @@
 import React, { useEffect, useContext, useRef } from "react";
-import { useRouter } from 'next/router'
+import { useRouter } from "next/router";
 import throttle from "lodash.throttle";
 import styled, { createGlobalStyle } from "styled-components";
 import constants from "./constants";
@@ -73,16 +73,16 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const Layout = (props) => {
+const Layout = props => {
   const state = useContext(AppContext);
   const dispatch = useContext(DispatchContext);
   const bodyEl = useRef(null);
 
   const watchScroll = throttle(() => {
     if (bodyEl.current.scrollTop > 100) {
-      dispatch({ type: 'showHeader' });
+      dispatch({ type: "showHeader" });
     } else {
-      dispatch({ type: 'hideHeader' });
+      dispatch({ type: "hideHeader" });
     }
   }, 100);
 
@@ -92,7 +92,7 @@ const Layout = (props) => {
 
     return () => {
       bodyEl.current.removeEventListener("scroll", watchScroll);
-    }
+    };
   }, []);
 
   const sc = state.isMenuVisible ? "menu" : "";
@@ -110,9 +110,7 @@ const Layout = (props) => {
             <Header />
           </HeaderWrapper>
           <MainWrapper ref={bodyEl} className="body">
-            <Main>
-              {props.children}
-            </Main>
+            <Main>{props.children}</Main>
           </MainWrapper>
         </BodyColumn>
       </Wrapper>

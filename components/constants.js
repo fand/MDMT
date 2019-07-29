@@ -15,5 +15,5 @@ export default {
     Moreover, It supports Audio inputs , MIDI inputs, loading videos and images, etc...!!!!
     `.trim(),
     image: "/static/images/logo_720h.png"
-  },
+  }
 };

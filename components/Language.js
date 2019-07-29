@@ -7,8 +7,12 @@ import { AppContext } from "../lib/context";
 import config from "../config";
 import constants from "./constants";
 import { useLanguage } from "../lib/hooks";
-import { Link } from '../lib/components';
-import { getPathForLang, removePrefixFromPath, removeLanguageFromPath } from "../lib/utils";
+import { Link } from "../lib/components";
+import {
+  getPathForLang,
+  removePrefixFromPath,
+  removeLanguageFromPath
+} from "../lib/utils";
 
 const Wrapper = styled.div`
   position: relative;
@@ -85,7 +89,10 @@ const Language = () => {
 
   // Create urls for translation
   const router = useRouter();
-  const path = removeLanguageFromPath(removePrefixFromPath(router.asPath), lang);
+  const path = removeLanguageFromPath(
+    removePrefixFromPath(router.asPath),
+    lang
+  );
 
   const createLangUrl = langId => getPathForLang(langId, path);
 
@@ -104,9 +111,7 @@ const Language = () => {
               </li>
             ) : (
               <li key={langId} onClick={hide}>
-                <Link href={createLangUrl(langId)}>
-                  {label}
-                </Link>
+                <Link href={createLangUrl(langId)}>{label}</Link>
               </li>
             )
           )}

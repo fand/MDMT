@@ -4,9 +4,9 @@
 // I'll remove this when basePath is supported in Next.js.
 // See https://github.com/zeit/next.js/issues/4998
 
-const fs = require('fs-extra');
-const path = require('path');
-const nextConfig = require('../next.config');
+const fs = require("fs-extra");
+const path = require("path");
+const nextConfig = require("../next.config");
 
 // Exit if assetPrefix doesn't exist
 if (!nextConfig.assetPrefix) {
@@ -14,13 +14,18 @@ if (!nextConfig.assetPrefix) {
 }
 
 // Get build directory path
-const dirs = fs.readdirSync(path.resolve(__dirname, '../docs/_next/static'));
+const dirs = fs.readdirSync(path.resolve(__dirname, "../docs/_next/static"));
 dirs.forEach(dir => {
   if (dir.match(/chunks|development|runtime|webpack/)) {
     return;
   }
 
-  const pagesDir = path.resolve(__dirname, '../docs/_next/static', dir, 'pages');
+  const pagesDir = path.resolve(
+    __dirname,
+    "../docs/_next/static",
+    dir,
+    "pages"
+  );
 
   const prefix = nextConfig.assetPrefix.substr(1);
   const dstDir = path.resolve(pagesDir, prefix);
@@ -32,7 +37,7 @@ dirs.forEach(dir => {
     if (s === prefix) {
       return;
     }
-    if (s === 'index.js') {
+    if (s === "index.js") {
       const dst = path.resolve(pagesDir, `${prefix}.js`);
       fs.copySync(src, dst);
     } else {
@@ -40,4 +45,4 @@ dirs.forEach(dir => {
       fs.copySync(src, dst);
     }
   });
-})
+});

@@ -1,6 +1,6 @@
 import * as React from "react";
 import Head from "next/head";
-import { prefixUrl } from '../lib/utils';
+import { prefixUrl } from "../lib/utils";
 
 export default ({
   url,
@@ -19,7 +19,7 @@ export default ({
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="Description" content={description} />
 
-      <title>{title || ''}</title>
+      <title>{title || ""}</title>
 
       {/* Facebook */}
       <meta property="og:url" content={url} />
