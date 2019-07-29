@@ -1,7 +1,12 @@
 {
   "scripts": {
     "start": "next",
-    "build": "NODE_ENV=production next build && next export -o docs && touch docs/.nojekyll && node scripts/copy-preload.js",
+    "build": "NODE_ENV=production run-s clean build:build build:export build:nojekyll build:preload",
+    "build:build": "next build",
+    "build:export": "next export -o docs",
+    "build:nojekyll": "touch docs/.nojekyll",
+    "build:preload": "node scripts/copy-preload.js",
+    "clean": "rm -rf .next docs",
     "test": "NODE_ENV=production babel-node test/index.js"
   },
   "dependencies": {

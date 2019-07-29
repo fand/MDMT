@@ -1,4 +1,9 @@
 #!/usr/bin/env node
+
+// This script is just a dirty hack to supress prefetch errors.
+// I'll remove this when basePath is supported in Next.js.
+// See https://github.com/zeit/next.js/issues/4998
+
 const fs = require('fs-extra');
 const path = require('path');
 const nextConfig = require('../next.config');
@@ -29,11 +34,9 @@ dirs.forEach(dir => {
     }
     if (s === 'index.js') {
       const dst = path.resolve(pagesDir, `${prefix}.js`);
-      // console.log(`Copy ${src} to ${dst}`);
       fs.copySync(src, dst);
     } else {
       const dst = path.resolve(dstDir, s);
-      // console.log(`Copy ${src} to ${dst}`);
       fs.copySync(src, dst);
     }
   });
