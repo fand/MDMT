@@ -1699,7 +1699,7 @@ MDXContent.frontmatter = {
 
 /***/ }),
 
-/***/ 4:
+/***/ 0:
 /*!**************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Ffaq&absolutePagePath=%2FUsers%2Famagi%2Fsrc%2Fgithub.com%2Ffand%2Fmdmt%2Fpages%2Ffaq.md ***!
   \**************************************************************************************************************************************/
@@ -1722,5 +1722,5 @@ module.exports = dll_829b10deddf10e1653a8;
 
 /***/ })
 
-},[[4,"static/runtime/webpack.js"]]]);
+},[[0,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=faq.js.map

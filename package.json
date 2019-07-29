@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start": "next",
-    "build": "NODE_ENV=production next build && next export -o docs && touch docs/.nojekyll",
+    "build": "NODE_ENV=production next build && next export -o docs && touch docs/.nojekyll && node scripts/copy-preload.js",
     "test": "NODE_ENV=production babel-node test/index.js"
   },
   "dependencies": {
@@ -36,6 +36,7 @@
     "@babel/node": "^7.5.5",
     "babel-inline-import-loader": "^0.1.0",
     "babel-plugin-inline-import": "^3.0.0",
+    "fs-extra": "^8.1.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^1.18.2",
     "tape": "^4.11.0"
