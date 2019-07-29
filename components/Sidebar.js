@@ -6,7 +6,8 @@ import LazyLoad from "react-lazyload";
 import constants from "./constants";
 import { AppContext, DispatchContext } from "../lib/context";
 import * as config from "../config";
-import { useLanguage } from '../lib/hooks';
+import { useLanguage } from "../lib/hooks";
+import { prefixUrl } from "../lib/utils";
 
 const Nav = styled.nav`
   width: 100%;
@@ -125,7 +126,7 @@ const Sidebar = props => {
           <a>
             <img
               className="logo"
-              src="/static/images/logo_white.png"
+              src={prefixUrl("/static/images/logo_white.png")}
               alt="MDMT header"
             />
           </a>
@@ -135,7 +136,10 @@ const Sidebar = props => {
           target="\_blank"
           href="https://twitter.com/search?f=tweets&q=%23MDMTjs&src=typd"
         >
-          <img alt="hashtag #MDMTjs" src="/static/images/hashtag.png" />
+          <img
+            alt="hashtag #MDMTjs"
+            src={prefixUrl("/static/images/hashtag.png")}
+          />
         </a>
       </Header>
 

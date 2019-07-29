@@ -73,7 +73,6 @@ var Language = function Language() {
 
   var router = Object(next_router__WEBPACK_IMPORTED_MODULE_4__["useRouter"])();
   var path = Object(_lib_utils__WEBPACK_IMPORTED_MODULE_12__["removeLanguageFromPath"])(Object(_lib_utils__WEBPACK_IMPORTED_MODULE_12__["removePrefixFromPath"])(router.asPath), lang);
-  console.log('>>> path', path);
 
   var createLangUrl = function createLangUrl(langId) {
     return Object(_lib_utils__WEBPACK_IMPORTED_MODULE_12__["getPathForLang"])(langId, path);
@@ -464,7 +463,7 @@ var CodeBlock = function CodeBlock(_ref) {
 };
 var Img = function Img(props) {
   var newProps = Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({}, props, {
-    url: Object(_lib_utils__WEBPACK_IMPORTED_MODULE_4__["prefixUrl"])(props.src)
+    src: Object(_lib_utils__WEBPACK_IMPORTED_MODULE_4__["prefixUrl"])(props.src)
   });
 
   return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("img", Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, newProps, {
@@ -1391,6 +1390,10 @@ var getPathForLang = function getPathForLang(lang, path) {
 }; // Convert root-relative URLs
 
 var prefixUrl = function prefixUrl(url) {
+  if (!_next_config__WEBPACK_IMPORTED_MODULE_1___default.a.assetPrefix) {
+    return url;
+  }
+
   var m = url.match(/^\/(.*)$/);
 
   if (m) {
