@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
-import Link from "next/link";
+import Link from "./Link";
 import Router, { useRouter } from "next/router";
 import LazyLoad from "react-lazyload";
 import constants from "./constants";
