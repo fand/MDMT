@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import * as React from "react";
+import { useState } from "react";
 import { useRouter } from "next/router";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -32,7 +33,7 @@ const Button = styled.button`
   }
 `;
 
-const Dropdown = styled.div`
+const Dropdown = styled.div<{ open: boolean }>`
   display: ${p => (p.open ? "block" : "none")};
   position: absolute;
   top: calc(100% + 8px);
@@ -78,11 +79,11 @@ const Dropdown = styled.div`
   }
 `;
 
-const Language = () => {
+const Language = (): React.ReactElement => {
   const [isActive, setActivity] = useState(false);
 
-  const hide = () => setActivity(false);
-  const toggle = () => setActivity(!isActive);
+  const hide = (): void => setActivity(false);
+  const toggle = (): void => setActivity(!isActive);
 
   const lang = useLanguage();
 
@@ -93,7 +94,8 @@ const Language = () => {
     lang
   );
 
-  const createLangUrl = langId => getPathForLang(langId, path);
+  const createLangUrl = (langId: string): string =>
+    getPathForLang(langId, path);
 
   return (
     <Wrapper>

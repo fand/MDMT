@@ -1,7 +1,8 @@
-import React, { useContext } from "react";
+import React, { useContext, Dispatch } from "react";
 import styled from "styled-components";
 import { opacify } from "polished";
 import { AppContext, DispatchContext } from "../lib/context";
+import { AppState, Action } from "../lib/reducer";
 import constants from "./constants";
 import Hamburger from "./hamburger";
 import Language from "./Language";
@@ -9,7 +10,7 @@ import { useLanguage } from "../lib/hooks";
 import { getPathForLang } from "../lib/utils";
 import { Link, Img } from "../lib/components";
 
-const Nav = styled.div`
+const Nav = styled.div<{ color: string }>`
   position: relative;
   width: 100%;
   height: 56px;
@@ -45,11 +46,11 @@ const Left = styled.div``;
 
 const Right = styled.div``;
 
-const Header = () => {
-  const state = useContext(AppContext);
-  const dispatch = useContext(DispatchContext);
+const Header = (): React.ReactElement => {
+  const state = useContext(AppContext) as AppState;
+  const dispatch = useContext(DispatchContext) as Dispatch<Action>;
 
-  const toggleMenu = () =>
+  const toggleMenu = (): void =>
     dispatch({ type: state.isMenuVisible ? "hideMenu" : "showMenu" });
 
   const cls = state.isHeaderVisible ? "visible" : "";

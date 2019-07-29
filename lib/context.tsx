@@ -1,12 +1,16 @@
 import React, { useEffect, useReducer, createContext } from "react";
-import PropTypes from "prop-types";
 import reducer, { initialState } from "../lib/reducer";
 import config from "../config";
 
 export const AppContext = createContext({});
 export const DispatchContext = createContext({});
 
-export const Provider = props => {
+interface Props {
+  metadata: any;
+  children: React.ReactElement[];
+}
+
+export const Provider = (props: Props): React.ReactElement => {
   const metadata = props.metadata || {};
 
   const [state, dispatch] = useReducer(reducer, {
@@ -16,9 +20,7 @@ export const Provider = props => {
 
   useEffect(() => {
     if (typeof document !== "undefined") {
-      document.title = metadata.title
-        ? metadata.title + config.titleSuffix
-        : config.defaultTitle;
+      document.title = metadata.title || config.defaultTitle;
     }
   }, [metadata.title]);
 
@@ -31,7 +33,4 @@ export const Provider = props => {
   );
 };
 
-Provider.propTypes = {
-  metadata: PropTypes.any,
-  children: PropTypes.any
-};
+Provider.propTypes = {};

@@ -1,5 +1,5 @@
 ---
-title: 💊MDMT💊 Markdown Document Template \#MDMT
+title: 💊MDMT💊 Markdown Document Template \#MDMTjs
 color: rgba(0, 223, 255, 0.7)
 ---
 <div align="center">
