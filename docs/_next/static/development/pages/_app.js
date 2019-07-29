@@ -14,8 +14,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/slicedToArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/slicedToArray.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _Link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Link */ "./components/Link.js");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
@@ -73,20 +72,17 @@ var Language = function Language() {
   var lang = Object(_lib_hooks__WEBPACK_IMPORTED_MODULE_11__["useLanguage"])(); // Create urls for translation
 
   var router = Object(next_router__WEBPACK_IMPORTED_MODULE_4__["useRouter"])();
-  var realPath = lang === _config__WEBPACK_IMPORTED_MODULE_9___default.a.defaultLanguage ? router.asPath : router.asPath.replace("/".concat(lang), "");
-
-  if (realPath === "") {
-    realPath = "/";
-  }
+  var path = Object(_lib_utils__WEBPACK_IMPORTED_MODULE_12__["removeLanguageFromPath"])(Object(_lib_utils__WEBPACK_IMPORTED_MODULE_12__["removePrefixFromPath"])(router.asPath), lang);
+  console.log('>>> path', path);
 
   var createLangUrl = function createLangUrl(langId) {
-    return Object(_lib_utils__WEBPACK_IMPORTED_MODULE_12__["getPathForLang"])(langId, realPath);
+    return Object(_lib_utils__WEBPACK_IMPORTED_MODULE_12__["getPathForLang"])(langId, path);
   };
 
   return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Wrapper, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99
+      lineNumber: 93
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Button, {
@@ -94,21 +90,21 @@ var Language = function Language() {
     onClick: toggle,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 100
+      lineNumber: 94
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_6__["FontAwesomeIcon"], {
     icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__["faGlobe"],
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101
+      lineNumber: 95
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Dropdown, {
     open: isActive,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 103
+      lineNumber: 97
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
@@ -116,13 +112,13 @@ var Language = function Language() {
     onClick: hide,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 104
+      lineNumber: 98
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("ul", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 105
+      lineNumber: 99
     },
     __self: this
   }, _babel_runtime_corejs2_core_js_object_entries__WEBPACK_IMPORTED_MODULE_0___default()(_config__WEBPACK_IMPORTED_MODULE_9___default.a.languages).map(function (_ref) {
@@ -135,7 +131,7 @@ var Language = function Language() {
       className: "is-active",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 108
+        lineNumber: 102
       },
       __self: this
     }, label) : react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("li", {
@@ -143,20 +139,20 @@ var Language = function Language() {
       onClick: hide,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 112
+        lineNumber: 106
       },
       __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Link__WEBPACK_IMPORTED_MODULE_3__["default"], {
       href: createLangUrl(langId),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 113
+        lineNumber: 107
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("a", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 114
+        lineNumber: 108
       },
       __self: this
     }, label)));
@@ -225,13 +221,17 @@ var BodyColumn = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div.w
   displayName: "Layout__BodyColumn",
   componentId: "bk4rf0-2"
 })(["flex:1;position:relative;@media (max-width:", "px){width:100vw;}"], _constants__WEBPACK_IMPORTED_MODULE_5__["default"].mobile);
-var MainWrapper = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].main.withConfig({
+var MainWrapper = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div.withConfig({
   displayName: "Layout__MainWrapper",
   componentId: "bk4rf0-3"
-})(["height:100%;width:100%;max-width:720px;margin:0 auto;overflow:auto;-webkit-overflow-scrolling:touch;padding:20px;padding-top:60px;padding-bottom:80px;"]);
+})(["height:100%;width:100%;overflow:auto;-webkit-overflow-scrolling:touch;padding:20px;padding-top:60px;padding-bottom:80px;"]);
+var Main = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].main.withConfig({
+  displayName: "Layout__Main",
+  componentId: "bk4rf0-4"
+})(["max-width:720px;margin:0 auto;"]);
 var HeaderWrapper = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div.withConfig({
   displayName: "Layout__HeaderWrapper",
-  componentId: "bk4rf0-4"
+  componentId: "bk4rf0-5"
 })(["position:absolute;top:0;width:100%;z-index:2;"]); // Patch for prism
 
 var GlobalStyle = Object(styled_components__WEBPACK_IMPORTED_MODULE_4__["createGlobalStyle"])(_templateObject());
@@ -262,57 +262,57 @@ var Layout = function Layout(props) {
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 98
+      lineNumber: 101
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_meta__WEBPACK_IMPORTED_MODULE_8__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99
+      lineNumber: 102
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(GlobalStyle, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 100
+      lineNumber: 103
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Wrapper, {
     className: sc,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101
+      lineNumber: 104
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(SidebarWrapper, {
     className: sc,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 102
+      lineNumber: 105
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_sidebar__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 103
+      lineNumber: 106
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(BodyColumn, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 105
+      lineNumber: 108
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(HeaderWrapper, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 106
+      lineNumber: 109
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_header__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 107
+      lineNumber: 110
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(MainWrapper, {
@@ -320,14 +320,20 @@ var Layout = function Layout(props) {
     className: "body",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 109
+      lineNumber: 112
     },
     __self: this
-  }, props.children))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_background__WEBPACK_IMPORTED_MODULE_9__["default"], {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Main, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 113
+    },
+    __self: this
+  }, props.children)))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_background__WEBPACK_IMPORTED_MODULE_9__["default"], {
     color: state.color,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 114
+      lineNumber: 119
     },
     __self: this
   }));
@@ -352,8 +358,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _next_config_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../next.config.js */ "./next.config.js");
-/* harmony import */ var _next_config_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_next_config_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _lib_utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../lib/utils */ "./lib/utils.js");
 
 
 var _jsxFileName = "/Users/amagi/src/github.com/fand/mdmt/components/Link.js";
@@ -361,20 +366,14 @@ var _jsxFileName = "/Users/amagi/src/github.com/fand/mdmt/components/Link.js";
 
 
 /* harmony default export */ __webpack_exports__["default"] = (function (props) {
-  var newProps = props; // Convert root-relative URLs
-
-  var m = props.href.match(/^\/(.*)$/);
-
-  if (m) {
-    newProps = Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({}, props);
-    var prefix = _next_config_js__WEBPACK_IMPORTED_MODULE_4___default.a.assetPrefix;
-    newProps.href = "".concat(prefix, "/").concat(m[1]);
-  }
+  var newProps = Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({}, props, {
+    href: Object(_lib_utils__WEBPACK_IMPORTED_MODULE_4__["prefixUrl"])(props.href)
+  });
 
   return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, newProps, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 9
     },
     __self: this
   }));
@@ -398,8 +397,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var prism_react_renderer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! prism-react-renderer */ "./node_modules/prism-react-renderer/es/index.js");
-/* harmony import */ var _next_config_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../next.config.js */ "./next.config.js");
-/* harmony import */ var _next_config_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_next_config_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _lib_utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../lib/utils */ "./lib/utils.js");
 
 
 var _jsxFileName = "/Users/amagi/src/github.com/fand/mdmt/components/MDXComponents.js";
@@ -465,20 +463,14 @@ var CodeBlock = function CodeBlock(_ref) {
   });
 };
 var Img = function Img(props) {
-  var newProps = Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({}, props); // Convert root-relative URLs
-
-
-  var m = props.src.match(/^\/(.*)$/);
-
-  if (m) {
-    var prefix = _next_config_js__WEBPACK_IMPORTED_MODULE_4___default.a.assetPrefix;
-    newProps.src = "".concat(prefix, "/").concat(m[1]);
-  }
+  var newProps = Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({}, props, {
+    url: Object(_lib_utils__WEBPACK_IMPORTED_MODULE_4__["prefixUrl"])(props.src)
+  });
 
   return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("img", Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, newProps, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 31
     },
     __self: this
   }));
@@ -742,7 +734,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/head */ "./node_modules/next-server/dist/lib/head.js");
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _lib_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../lib/utils */ "./lib/utils.js");
 var _jsxFileName = "/Users/amagi/src/github.com/fand/mdmt/components/meta.js";
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = (function (_ref) {
@@ -756,21 +750,21 @@ var _jsxFileName = "/Users/amagi/src/github.com/fand/mdmt/components/meta.js";
   return react__WEBPACK_IMPORTED_MODULE_0__["createElement"](next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 15
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("html", {
     lang: lang || "en",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 16
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("meta", {
     charSet: "utf-8",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 17
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("meta", {
@@ -778,7 +772,7 @@ var _jsxFileName = "/Users/amagi/src/github.com/fand/mdmt/components/meta.js";
     content: "ie=edge",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17
+      lineNumber: 18
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("meta", {
@@ -786,7 +780,7 @@ var _jsxFileName = "/Users/amagi/src/github.com/fand/mdmt/components/meta.js";
     content: "width=device-width, initial-scale=1",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 19
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("meta", {
@@ -794,13 +788,13 @@ var _jsxFileName = "/Users/amagi/src/github.com/fand/mdmt/components/meta.js";
     content: description,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 20
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("title", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 22
     },
     __self: this
   }, title || ''), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("meta", {
@@ -808,7 +802,7 @@ var _jsxFileName = "/Users/amagi/src/github.com/fand/mdmt/components/meta.js";
     content: url,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24
+      lineNumber: 25
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("meta", {
@@ -816,7 +810,7 @@ var _jsxFileName = "/Users/amagi/src/github.com/fand/mdmt/components/meta.js";
     content: "website",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25
+      lineNumber: 26
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("meta", {
@@ -824,7 +818,7 @@ var _jsxFileName = "/Users/amagi/src/github.com/fand/mdmt/components/meta.js";
     content: title,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26
+      lineNumber: 27
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("meta", {
@@ -832,7 +826,7 @@ var _jsxFileName = "/Users/amagi/src/github.com/fand/mdmt/components/meta.js";
     content: image,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27
+      lineNumber: 28
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("meta", {
@@ -840,7 +834,7 @@ var _jsxFileName = "/Users/amagi/src/github.com/fand/mdmt/components/meta.js";
     content: description,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28
+      lineNumber: 29
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("meta", {
@@ -848,7 +842,7 @@ var _jsxFileName = "/Users/amagi/src/github.com/fand/mdmt/components/meta.js";
     content: siteName,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29
+      lineNumber: 30
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("meta", {
@@ -856,7 +850,7 @@ var _jsxFileName = "/Users/amagi/src/github.com/fand/mdmt/components/meta.js";
     content: "en_US",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30
+      lineNumber: 31
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("meta", {
@@ -864,7 +858,7 @@ var _jsxFileName = "/Users/amagi/src/github.com/fand/mdmt/components/meta.js";
     content: "summary",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33
+      lineNumber: 34
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("meta", {
@@ -872,7 +866,7 @@ var _jsxFileName = "/Users/amagi/src/github.com/fand/mdmt/components/meta.js";
     content: twitter,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
+      lineNumber: 35
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("meta", {
@@ -880,7 +874,7 @@ var _jsxFileName = "/Users/amagi/src/github.com/fand/mdmt/components/meta.js";
     content: twitter,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 36
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("meta", {
@@ -888,7 +882,7 @@ var _jsxFileName = "/Users/amagi/src/github.com/fand/mdmt/components/meta.js";
     content: url,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 37
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("meta", {
@@ -896,7 +890,7 @@ var _jsxFileName = "/Users/amagi/src/github.com/fand/mdmt/components/meta.js";
     content: title,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 38
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("meta", {
@@ -904,7 +898,7 @@ var _jsxFileName = "/Users/amagi/src/github.com/fand/mdmt/components/meta.js";
     content: description,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 39
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("meta", {
@@ -912,53 +906,35 @@ var _jsxFileName = "/Users/amagi/src/github.com/fand/mdmt/components/meta.js";
     content: image,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39
+      lineNumber: 40
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("link", {
+    rel: "icon",
+    type: "image/x-icon",
+    sizes: "16x16 32x32",
+    href: Object(_lib_utils__WEBPACK_IMPORTED_MODULE_2__["prefixUrl"])("/static/images/favicon.ico"),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 43
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("link", {
     rel: "apple-touch-icon",
     sizes: "180x180",
-    href: "/static/favicons/apple-touch-icon.png",
+    href: Object(_lib_utils__WEBPACK_IMPORTED_MODULE_2__["prefixUrl"])("/static/images/favicon-180.png"),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42
+      lineNumber: 49
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("link", {
     rel: "icon",
-    type: "image/png",
-    sizes: "32x32",
-    href: "/static/favicons/favicon-32x32.png",
+    sizes: "192x192",
+    href: Object(_lib_utils__WEBPACK_IMPORTED_MODULE_2__["prefixUrl"])("/static/images/favicon-192.png"),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47
-    },
-    __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("link", {
-    rel: "icon",
-    type: "image/png",
-    sizes: "16x16",
-    href: "/static/favicons/favicon-16x16.png",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 53
-    },
-    __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("link", {
-    rel: "manifest",
-    href: "/static/favicons/manifest.json",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 61
-    },
-    __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("link", {
-    rel: "mask-icon",
-    href: "/static/favicons/safari-pinned-tab.svg",
-    color: "#5bbad5",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 62
+      lineNumber: 54
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("meta", {
@@ -966,7 +942,7 @@ var _jsxFileName = "/Users/amagi/src/github.com/fand/mdmt/components/meta.js";
     content: "#ffffff",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67
+      lineNumber: 60
     },
     __self: this
   }));
@@ -1289,6 +1265,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../config */ "./config.js");
 /* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_config__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./utils */ "./lib/utils.js");
+
 
 
 
@@ -1302,8 +1280,10 @@ function useLanguage() {
 
   var router = Object(next_router__WEBPACK_IMPORTED_MODULE_3__["useRouter"])();
   Object(react__WEBPACK_IMPORTED_MODULE_2__["useEffect"])(function () {
+    var path = router.asPath;
+    var pathWithoutPrefix = Object(_utils__WEBPACK_IMPORTED_MODULE_5__["removePrefixFromPath"])(path);
     var currentLanguage = _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default()(_config__WEBPACK_IMPORTED_MODULE_4___default.a.languages).find(function (lang) {
-      return router.asPath.match("^/".concat(lang, "(/.*)?$"));
+      return pathWithoutPrefix.match(new RegExp("^/".concat(lang, "(/.*)?$")));
     }) || _config__WEBPACK_IMPORTED_MODULE_4___default.a.defaultLanguage;
     setLanguage(currentLanguage);
   }, [router]);
@@ -1383,17 +1363,61 @@ function reducer(state, action) {
 /*!**********************!*\
   !*** ./lib/utils.js ***!
   \**********************/
-/*! exports provided: getPathForLang */
+/*! exports provided: getPathForLang, prefixUrl, removePrefixFromPath, removeLanguageFromPath */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getPathForLang", function() { return getPathForLang; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "prefixUrl", function() { return prefixUrl; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removePrefixFromPath", function() { return removePrefixFromPath; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removeLanguageFromPath", function() { return removeLanguageFromPath; });
 /* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../config */ "./config.js");
 /* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_config__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _next_config__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../next.config */ "./next.config.js");
+/* harmony import */ var _next_config__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_next_config__WEBPACK_IMPORTED_MODULE_1__);
+
 
 var getPathForLang = function getPathForLang(lang, path) {
-  return lang === _config__WEBPACK_IMPORTED_MODULE_0___default.a.defaultLanguage ? path : "/".concat(lang).concat(path);
+  if (lang === _config__WEBPACK_IMPORTED_MODULE_0___default.a.defaultLanguage) {
+    return path;
+  }
+
+  if (path === '/') {
+    return "/".concat(lang);
+  }
+
+  return "/".concat(lang).concat(path);
+}; // Convert root-relative URLs
+
+var prefixUrl = function prefixUrl(url) {
+  var m = url.match(/^\/(.*)$/);
+
+  if (m) {
+    var prefix = _next_config__WEBPACK_IMPORTED_MODULE_1___default.a.assetPrefix;
+    return "".concat(prefix, "/").concat(m[1]);
+  }
+
+  return url;
+};
+var removePrefixFromPath = function removePrefixFromPath(path) {
+  if (!_next_config__WEBPACK_IMPORTED_MODULE_1___default.a.assetPrefix) {
+    return path;
+  }
+
+  var prefix = _next_config__WEBPACK_IMPORTED_MODULE_1___default.a.assetPrefix;
+  var prefixRe = new RegExp("^/".concat(prefix));
+  var pathWithoutPrefix = path.replace(prefixRe, '');
+  return pathWithoutPrefix || '/';
+};
+var removeLanguageFromPath = function removeLanguageFromPath(path, currentLanguage) {
+  if (currentLanguage === _config__WEBPACK_IMPORTED_MODULE_0___default.a.defaultLanguage) {
+    return path;
+  }
+
+  var langRe = new RegExp("^/".concat(currentLanguage));
+  var pathWithoutLang = path.replace(langRe, '');
+  return pathWithoutLang || '/';
 };
 
 /***/ }),

@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import Link from "next/link";
+import Link from "./Link";
 import { useRouter } from "next/router";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -8,7 +8,7 @@ import { AppContext } from "../lib/context";
 import config from "../config";
 import constants from "./constants";
 import { useLanguage } from "../lib/hooks";
-import { getPathForLang } from "../lib/utils";
+import { getPathForLang, removePrefixFromPath, removeLanguageFromPath } from "../lib/utils";
 
 const Wrapper = styled.div`
   position: relative;
@@ -85,15 +85,9 @@ const Language = () => {
 
   // Create urls for translation
   const router = useRouter();
-  let realPath =
-    lang === config.defaultLanguage
-      ? router.asPath
-      : router.asPath.replace(`/${lang}`, "");
-  if (realPath === "") {
-    realPath = "/";
-  }
+  const path = removeLanguageFromPath(removePrefixFromPath(router.asPath), lang);
 
-  const createLangUrl = langId => getPathForLang(langId, realPath);
+  const createLangUrl = langId => getPathForLang(langId, path);
 
   return (
     <Wrapper>
