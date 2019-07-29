@@ -4,7 +4,7 @@ import { opacify } from "polished";
 import { AppContext, DispatchContext } from "../lib/context";
 import { AppState, Action } from "../lib/reducer";
 import constants from "./constants";
-import Hamburger from "./hamburger";
+import Hamburger from "./Hamburger";
 import Language from "./Language";
 import { useLanguage } from "../lib/hooks";
 import { getPathForLang } from "../lib/utils";

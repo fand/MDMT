@@ -36,7 +36,8 @@ export const CodeBlock = ({
 interface ImgProps {
   src: string;
   alt: string;
-  height: string;
+  height?: string;
+  className?: string;
 }
 
 // Rewrites image source URL with assetPrefix.
@@ -51,7 +52,7 @@ export const Img = (props: ImgProps): React.ReactElement => {
 interface LinkProps {
   href: string;
   prefetch?: boolean;
-  children: any;
+  children?: React.ReactChild;
 }
 
 // This component fixes prefetch behavior with assetPrefix.

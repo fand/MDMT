@@ -26,4 +26,9 @@
     ],
     "@typescript-eslint/indent": ["warn", 2],
   },
+  "settings": {
+    "react": {
+      "version": "detect",
+    },
+  },
 }

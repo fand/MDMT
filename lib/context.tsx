@@ -6,23 +6,23 @@ export const AppContext = createContext({});
 export const DispatchContext = createContext({});
 
 interface Props {
-  metadata: any;
-  children: React.ReactElement[];
+  frontmatter: any; // eslint-disable-line
+  children: React.ReactChild;
 }
 
 export const Provider = (props: Props): React.ReactElement => {
-  const metadata = props.metadata || {};
+  const frontmatter = props.frontmatter || {};
 
   const [state, dispatch] = useReducer(reducer, {
     ...initialState,
-    ...metadata
+    ...frontmatter
   });
 
   useEffect(() => {
     if (typeof document !== "undefined") {
-      document.title = metadata.title || config.defaultTitle;
+      document.title = frontmatter.title || config.defaultTitle;
     }
-  }, [metadata.title]);
+  }, [frontmatter.title]);
 
   return (
     <AppContext.Provider value={state}>
