@@ -23,6 +23,7 @@ export default class extends Document {
           />
           <style dangerouslySetInnerHTML={{ __html: sanitize }}/>
           {this.props.styleTags}
+          <script defer async src="https://platform.twitter.com/widgets.js"/>
         </Head>
         <body>
           <Main />

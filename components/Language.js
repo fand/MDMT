@@ -4,10 +4,11 @@ import { useRouter } from "next/router";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
-import { AppContext } from '../lib/context';
+import { AppContext } from "../lib/context";
 import config from "../config";
 import constants from "./constants";
-import { useLanguage } from '../lib/hooks';
+import { useLanguage } from "../lib/hooks";
+import { getPathForLang } from "../lib/utils";
 
 const Wrapper = styled.div`
   position: relative;
@@ -88,12 +89,11 @@ const Language = () => {
     lang === config.defaultLanguage
       ? router.asPath
       : router.asPath.replace(`/${lang}`, "");
-  if (realPath === '') {
-    realPath = '/';
+  if (realPath === "") {
+    realPath = "/";
   }
 
-  const createLangUrl = langId =>
-    langId === config.defaultLanguage ? realPath : `/${langId}${realPath}`;
+  const createLangUrl = langId => getPathForLang(langId, realPath);
 
   return (
     <Wrapper>

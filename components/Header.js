@@ -6,6 +6,8 @@ import { AppContext, DispatchContext } from "../lib/context";
 import constants from "./constants";
 import Hamburger from "./hamburger";
 import Language from "./Language";
+import { useLanguage } from "../lib/hooks";
+import { getPathForLang } from "../lib/utils";
 
 const Nav = styled.div`
   position: relative;
@@ -18,11 +20,7 @@ const Nav = styled.div`
   background: transparent;
   @media (max-width: ${constants.mobile}px) {
     &.visible {
-      background: linear-gradient(
-        to bottom,
-        ${p => opacify(1, p.color)},
-        ${p => p.color}
-      );
+      background: ${p => opacify(1, p.color)};
     }
   }
 `;
@@ -43,16 +41,9 @@ const Logo = styled.div`
   }
 `;
 
-const Left = styled.div`
-  ${"" /* position: absolute; */}
-  ${"" /* left: 0; */}
-`;
+const Left = styled.div``;
 
-const Right = styled.div`
-  ${"" /* position: absolute; */}
-  ${"" /* display: flex; */}
-  ${"" /* right: 0; */}
-`;
+const Right = styled.div``;
 
 const Header = props => {
   const state = useContext(AppContext);
@@ -63,15 +54,18 @@ const Header = props => {
 
   const cls = state.isHeaderVisible ? "visible" : "";
 
-  // const { lang } = state;
-  const { lang } = "en";
+  const lang = useLanguage();
 
   return (
     <Nav className={cls} color={state.color}>
       <Logo className={cls}>
-        <Link href={lang === "en" ? "/" : `/?lang=${lang}`}>
+        <Link href={getPathForLang(lang, "/")}>
           <a>
-            <img src="/static/images/logo_header.png" alt="VEDA logo" />
+            <img
+              src="/static/images/logo_white.png"
+              alt="MDMT logo"
+              height="48"
+            />
           </a>
         </Link>
       </Logo>
@@ -80,7 +74,7 @@ const Header = props => {
         <Hamburger active={state.isMenuVisible} onClick={toggleMenu} />
       </Left>
       <Right>
-        <Language lang={lang} />
+        <Language />
       </Right>
     </Nav>
   );

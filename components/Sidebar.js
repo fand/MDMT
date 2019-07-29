@@ -51,22 +51,17 @@ const Nav = styled.nav`
 
 const Header = styled.div`
   margin-bottom: 30px;
+  text-align: center;
+
   .logo {
     width: 100%;
-    padding: 5px 10px;
-    margin-left: -10px;
-    a {
-      display: block;
-    }
+    padding: 20px 0;
   }
-  .banners {
-    width: 180px;
-    margin: 20px auto;
-    transform: translateX(-5px);
-    display: flex;
-    justify-content: space-between;
+  .twitter {
+    display: block;
+    margin: 10px auto;
     img {
-      height: 20px;
+      height: 24px;
     }
   }
 `;
@@ -130,17 +125,17 @@ const Sidebar = props => {
           <a>
             <img
               className="logo"
-              src="/static/images/logo_header.png"
-              alt="MDMX header"
+              src="/static/images/logo_white.png"
+              alt="MDMT header"
             />
           </a>
         </Link>
         <a
           className="twitter"
           target="\_blank"
-          href="https://twitter.com/search?f=tweets&q=%23mdmx&src=typd"
+          href="https://twitter.com/search?f=tweets&q=%23MDMTjs&src=typd"
         >
-          <img alt="hashtag #mdmx" src="/static/images/hashtag.png" />
+          <img alt="hashtag #MDMTjs" src="/static/images/hashtag.png" />
         </a>
       </Header>
 

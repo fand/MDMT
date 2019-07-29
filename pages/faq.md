@@ -1,8 +1,8 @@
 ---
-title: よくある質問 💊 MDMT - Markdown Document Template \#MDMT
+title: FAQ 💊 MDMT - Markdown Document Template \#MDMT
 color: rgba(0, 223, 255, 0.7)
 ---
-# よくある質問
+# FAQ
 
 ## タイトルをconfig.jsで設定できないの？
 

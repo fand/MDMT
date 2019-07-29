@@ -3,8 +3,8 @@ title: 💊MDMT💊 Markdown Document Template \#MDMT
 color: rgba(0, 223, 255, 0.7)
 ---
 <div align="center">
-  <img alt="logo" src="/static/images/logo_720h.png" width="192"/>
-  <h1>MDMT</h1><i>💊Create Document Site with MDX💊</i>
+  <img alt="logo" src="/static/images/logo.png" width="192"/><br/><br/>
+  <i>💊Markdown Document Template💊</i>
   <br/>
 </div>
 
