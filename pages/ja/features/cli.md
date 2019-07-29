@@ -9,7 +9,7 @@ CLIコマンドは無いです……いや、npxとかnpm scriptsもCLIコマン
 
 ## ドキュメント作成
 
-```
+```sh
 git clone https://github.com/fand/mdmx 作りたいフォルダ名
 cd 作りたいフォルダ名
 npm i
@@ -17,12 +17,12 @@ npm i
 
 ## サーバー起動
 
-```
+```sh
 npm start
 ```
 
 ## ビルド
 
-```
+```sh
 npm run build
 ```

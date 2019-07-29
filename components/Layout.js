@@ -1,7 +1,7 @@
 import React, { useEffect, useContext, useRef } from "react";
 import { useRouter } from 'next/router'
 import throttle from "lodash.throttle";
-import styled from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 import constants from "./constants";
 import Sidebar from "./sidebar";
 import Header from "./header";
@@ -45,15 +45,15 @@ const BodyColumn = styled.div`
 `;
 
 const MainWrapper = styled.main`
-  position: absolute;
-  top: 0;
-  left: 0;
   height: 100%;
   width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   padding: 20px;
   padding-top: 60px; /* Header height + padding */
+  padding-bottom: 80px;
 `;
 
 const HeaderWrapper = styled.div`
@@ -61,6 +61,13 @@ const HeaderWrapper = styled.div`
   top: 0;
   width: 100%;
   z-index: 2;
+`;
+
+// Patch for prism
+const GlobalStyle = createGlobalStyle`
+  .prism-code {
+    overflow: scroll;
+  }
 `;
 
 const Layout = (props) => {
@@ -85,18 +92,15 @@ const Layout = (props) => {
     }
   }, []);
 
-
-  const router = useRouter();
-  const path = router.pathname;
-
   const sc = state.isMenuVisible ? "menu" : "";
 
   return (
     <div>
       <Meta />
+      <GlobalStyle />
       <Wrapper className={sc}>
         <SidebarWrapper className={sc}>
-          <Sidebar path={path} />
+          <Sidebar />
         </SidebarWrapper>
         <BodyColumn>
           <HeaderWrapper>
@@ -113,4 +117,3 @@ const Layout = (props) => {
 };
 
 export default Layout;
-2

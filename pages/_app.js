@@ -1,5 +1,4 @@
 import App, { Container } from "next/app";
-import Head from "next/head";
 import { MDXProvider } from "@mdx-js/react";
 import Layout from "../components/Layout";
 import CodeBlock from "../components/CodeBlock";
