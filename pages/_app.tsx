@@ -1,5 +1,5 @@
 import React from "react";
-import App, { Container } from "next/app";
+import App, { Container, AppInitialProps, AppContext } from "next/app";
 import Layout from "../components/Layout";
 import { Img, CodeBlock } from "../lib/components";
 import { Provider } from "../lib/context";
@@ -14,7 +14,10 @@ const components = {
 };
 
 export default class MyApp extends App {
-    static async getInitialProps({ Component, ctx }) {
+    public static async getInitialProps({
+        Component,
+        ctx
+    }: AppContext): Promise<AppInitialProps> {
         let pageProps = {};
 
         if (Component.getInitialProps) {
@@ -24,12 +27,12 @@ export default class MyApp extends App {
         return { pageProps };
     }
 
-    render() {
+    public render(): React.ReactElement {
         const { Component, pageProps } = this.props;
 
         // Extract frontmatter data embedded by mdx-loader.
         // eslint-disable-next-line
-        const frontmatter = Component.frontmatter;
+    const frontmatter = (Component as any).frontmatter;
 
         return (
             <Container>

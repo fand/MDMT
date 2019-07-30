@@ -1,19 +1,29 @@
 import React from "react";
-import Document, { Head, Main, NextScript } from "next/document";
+import Document, {
+    Head,
+    Main,
+    NextScript,
+    DocumentContext,
+    DocumentInitialProps
+} from "next/document";
 import { ServerStyleSheet } from "styled-components";
+import sanitize from "../lib/sanitize";
 
-// eslint-disable-next-line
-import sanitize from  "sanitize.css";
+interface DocumentProps extends DocumentInitialProps {
+    styleTags: React.ReactElement[];
+}
 
-export default class extends Document {
-    static async getInitialProps(args) {
+export default class extends Document<DocumentProps> {
+    public static async getInitialProps(
+        args: DocumentContext
+    ): Promise<DocumentProps> {
         const documentProps = await super.getInitialProps(args);
         const sheet = new ServerStyleSheet();
         const styleTags = sheet.getStyleElement();
         return { ...documentProps, styleTags };
     }
 
-    render() {
+    public render(): React.ReactElement {
         return (
             <html>
                 <Head>

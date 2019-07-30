@@ -1,7 +1,7 @@
 {
     "presets": ["next/babel"],
     "plugins": [
-      ["inline-import", { "extensions": [".frag", ".vert", ".css"] }],
+      ["inline-import", { "extensions": [".css"] }],
       ["styled-components", { "ssr": true, "displayName": true, "preprocess": false }],
     ],
 }
