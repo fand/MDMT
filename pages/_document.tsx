@@ -18,8 +18,11 @@ export default class extends Document<DocumentProps> {
         args: DocumentContext
     ): Promise<DocumentProps> {
         const documentProps = await super.getInitialProps(args);
+
+        // Insert styled-components CSS
         const sheet = new ServerStyleSheet();
         const styleTags = sheet.getStyleElement();
+
         return { ...documentProps, styleTags };
     }
 
@@ -35,11 +38,6 @@ export default class extends Document<DocumentProps> {
                     />
                     <style dangerouslySetInnerHTML={{ __html: sanitize }} />
                     {this.props.styleTags}
-                    <script
-                        defer
-                        async
-                        src="https://platform.twitter.com/widgets.js"
-                    />
                 </Head>
                 <body>
                     <Main />
