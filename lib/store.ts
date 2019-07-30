@@ -1,15 +1,12 @@
 export interface AppState {
+    // Global application state
     isHeaderVisible: boolean;
     isMenuVisible: boolean;
+
+    // Data from frontmatter.
+    // If you want to add custom data in frontmatter, add them below.
     color: string;
 }
-
-export type Action =
-    | { type: "reset" }
-    | { type: "showMenu" }
-    | { type: "hideMenu" }
-    | { type: "showHeader" }
-    | { type: "hideHeader" };
 
 export const initialState = {
     isHeaderVisible: false,
@@ -17,15 +14,18 @@ export const initialState = {
     color: "#FFDD0088"
 };
 
-export default function reducer(state: AppState, action: Action): AppState {
+export type Action =
+    | { type: "showMenu" }
+    | { type: "hideMenu" }
+    | { type: "showHeader" }
+    | { type: "hideHeader" };
+
+export function reducer(state: AppState, action: Action): AppState {
     if (process.env.NODE_ENV !== "production") {
         console.log(">> action", action);
     }
 
     switch (action.type) {
-        case "reset": {
-            return initialState;
-        }
         case "showMenu": {
             return {
                 ...state,

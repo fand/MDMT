@@ -7,7 +7,7 @@ import Header from "./Header";
 import Meta from "./Meta";
 import Background from "./Background";
 import { AppContext, DispatchContext } from "../lib/context";
-import { AppState, Action } from "../lib/reducer";
+import { AppState, Action } from "../lib/store";
 
 const Wrapper = styled.div`
     position: fixed;

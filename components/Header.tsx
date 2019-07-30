@@ -2,7 +2,7 @@ import React, { useContext, Dispatch } from "react";
 import styled from "styled-components";
 import { opacify } from "polished";
 import { AppContext, DispatchContext } from "../lib/context";
-import { AppState, Action } from "../lib/reducer";
+import { AppState, Action } from "../lib/store";
 import constants from "./constants";
 import Hamburger from "./Hamburger";
 import Language from "./Language";

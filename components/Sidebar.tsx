@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { useRouter } from "next/router";
 import constants from "./constants";
 import { DispatchContext } from "../lib/context";
-import { Action } from "../lib/reducer";
+import { Action } from "../lib/store";
 import * as config from "../config";
 import { useLanguage } from "../lib/hooks";
 import { Link, Img } from "../lib/components";
