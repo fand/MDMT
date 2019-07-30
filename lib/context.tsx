@@ -1,36 +1,36 @@
-import React, { useEffect, useReducer, createContext } from "react";
-import { reducer, initialState } from "../lib/store";
+import React, { useReducer, createContext, Dispatch } from "react";
+import { reducer, initialState, AppState, Action } from "../lib/store";
 import config from "../config";
 
-export const AppContext = createContext({});
-export const DispatchContext = createContext({});
+type Frontmatter = typeof config.frontmatter;
+
+interface State {
+    state: AppState;
+    dispatch: Dispatch<Action>;
+    frontmatter: Frontmatter;
+}
+
+// eslint-disable-next-line
+export const AppContext = createContext<State>({} as any);
 
 interface Props {
-  frontmatter: any; // eslint-disable-line
+    frontmatter: any; // eslint-disable-line
     children: React.ReactChild;
 }
 
 export const Provider = (props: Props): React.ReactElement => {
-    const frontmatter = props.frontmatter || {};
+    const [state, dispatch] = useReducer(reducer, initialState);
 
-    const [state, dispatch] = useReducer(reducer, {
-        ...initialState,
-        ...frontmatter
-    });
+    const frontmatter: Frontmatter = {
+        ...config.frontmatter,
+        ...props.frontmatter
+    };
 
-    useEffect(() => {
-        if (typeof document !== "undefined") {
-            document.title = frontmatter.title || config.defaultTitle;
-        }
-    }, [frontmatter.title]);
+    const value = { state, frontmatter, dispatch };
 
     return (
-        <AppContext.Provider value={state}>
-            <DispatchContext.Provider value={dispatch}>
-                {props.children}
-            </DispatchContext.Provider>
+        <AppContext.Provider value={value}>
+            {props.children}
         </AppContext.Provider>
     );
 };
-
-Provider.propTypes = {};

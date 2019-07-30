@@ -1,8 +1,8 @@
 import * as React from "react";
 import Head from "next/head";
 import { prefixUrl } from "../lib/utils";
-import config from "../config";
 import { useLanguage } from "../lib/hooks";
+import config from "../config";
 
 interface MetaProps {
     title?: string;

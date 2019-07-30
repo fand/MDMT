@@ -1,13 +1,12 @@
-import React, { useEffect, useContext, useRef, Dispatch } from "react";
+import React, { useEffect, useContext, useRef } from "react";
 import throttle from "lodash.throttle";
 import styled, { createGlobalStyle } from "styled-components";
+import { AppContext } from "../lib/context";
 import constants from "./constants";
 import Sidebar from "./Sidebar";
 import Header from "./Header";
 import Meta from "./Meta";
 import Background from "./Background";
-import { AppContext, DispatchContext } from "../lib/context";
-import { AppState, Action } from "../lib/store";
 
 const Wrapper = styled.div`
     position: fixed;
@@ -78,8 +77,7 @@ interface LayoutProps {
 }
 
 const Layout = (props: LayoutProps): React.ReactElement => {
-    const state = useContext(AppContext) as AppState;
-    const dispatch = useContext(DispatchContext) as Dispatch<Action>;
+    const { state, frontmatter, dispatch } = useContext(AppContext);
     const bodyEl = useRef<HTMLDivElement>(null);
 
     const watchScroll = throttle(() => {
@@ -125,7 +123,7 @@ const Layout = (props: LayoutProps): React.ReactElement => {
                     </MainWrapper>
                 </BodyColumn>
             </Wrapper>
-            <Background color={state.color} />
+            <Background color={frontmatter.color} />
         </div>
     );
 };

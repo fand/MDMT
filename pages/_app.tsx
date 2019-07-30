@@ -32,7 +32,7 @@ export default class MyApp extends App {
 
         // Extract frontmatter data embedded by mdx-loader.
         // eslint-disable-next-line
-        const frontmatter = (Component as any).frontmatter;
+        const frontmatter = (Component as any).frontmatter || {};
 
         return (
             <Container>

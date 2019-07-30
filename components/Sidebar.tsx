@@ -1,12 +1,11 @@
-import React, { useContext, Dispatch } from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import { useRouter } from "next/router";
-import constants from "./constants";
-import { DispatchContext } from "../lib/context";
-import { Action } from "../lib/store";
-import * as config from "../config";
+import { AppContext } from "../lib/context";
 import { useLanguage } from "../lib/hooks";
 import { Link, Img } from "../lib/components";
+import constants from "./constants";
+import * as config from "../config";
 
 const Nav = styled.nav`
     width: 100%;
@@ -82,7 +81,7 @@ const Li = ({ to, children, route }: LiProps): React.ReactElement => {
         return <li className="active">{children}</li>;
     }
 
-    const dispatch = useContext(DispatchContext) as Dispatch<Action>;
+    const { dispatch } = useContext(AppContext);
     const hideMenu = (): void => dispatch({ type: "hideMenu" });
 
     return (

@@ -1,17 +1,19 @@
-export interface AppState {
-    // Global application state
-    isHeaderVisible: boolean;
-    isMenuVisible: boolean;
-
-    // Data from frontmatter.
-    // If you want to add custom data in frontmatter, add them below.
-    color: string;
+// Data from frontmatter.
+// If you want to add custom data in frontmatter, add them below.
+export interface PageState {
+    title?: string;
+    color?: string;
 }
 
-export const initialState = {
+// Global application state.
+export interface AppState {
+    isHeaderVisible: boolean;
+    isMenuVisible: boolean;
+}
+
+export const initialState: AppState = {
     isHeaderVisible: false,
-    isMenuVisible: false,
-    color: "#FFDD0088"
+    isMenuVisible: false
 };
 
 export type Action =

@@ -1,6 +1,11 @@
 module.exports = {
+    // Default values for frontmatter data
+    frontmatter: {
+        title: "💊MDMT💊 Markdown Document Template  #MDMTjs",
+        color: "#FFDD0088"
+    },
+
     // Metadata
-    defaultTitle: "💊MDMT💊 Markdown Document Template #MDMTjs",
     siteName: "💊MDMT💊 Markdown Document Template",
     description:
         "MDMT is a deadsimple document site generator, powered by Next.js and MDX. You can easily create documents with Markdown.",
@@ -34,6 +39,6 @@ module.exports = {
 
     // Header links settings.
     header: {
-        en: [["GitHub", "https://github.com/fand/mdmt"]],
-    },
+        en: [["GitHub", "https://github.com/fand/mdmt"]]
+    }
 };

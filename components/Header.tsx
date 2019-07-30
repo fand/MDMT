@@ -1,8 +1,7 @@
-import React, { useContext, Dispatch } from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import { opacify } from "polished";
-import { AppContext, DispatchContext } from "../lib/context";
-import { AppState, Action } from "../lib/store";
+import { AppContext } from "../lib/context";
 import constants from "./constants";
 import Hamburger from "./Hamburger";
 import Language from "./Language";
@@ -47,8 +46,7 @@ const Left = styled.div``;
 const Right = styled.div``;
 
 const Header = (): React.ReactElement => {
-    const state = useContext(AppContext) as AppState;
-    const dispatch = useContext(DispatchContext) as Dispatch<Action>;
+    const { state, dispatch, frontmatter } = useContext(AppContext);
 
     const toggleMenu = (): void =>
         dispatch({ type: state.isMenuVisible ? "hideMenu" : "showMenu" });
@@ -58,7 +56,7 @@ const Header = (): React.ReactElement => {
     const lang = useLanguage();
 
     return (
-        <Nav className={cls} color={state.color}>
+        <Nav className={cls} color={frontmatter.color}>
             <Logo className={cls}>
                 <Link href={getPathForLang(lang, "/")}>
                     <Img
