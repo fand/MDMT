@@ -1,17 +1,26 @@
-import * as React from "react";
+import React, { useContext } from "react";
 import Head from "next/head";
-import { prefixUrl } from "../lib/utils";
+import { useRouter } from "next/router";
+import { prefixUrl, removePrefixFromPath } from "../lib/utils";
 import { useLanguage } from "../lib/hooks";
+import { AppContext } from "../lib/context";
 import config from "../config";
 
-interface MetaProps {
-    title?: string;
-    description?: string;
-}
-
-const Meta = ({ title, description }: MetaProps): React.ReactElement => {
-    const { url, image, siteName, twitterAccount } = config;
+const Meta = (): React.ReactElement => {
+    const { url, image, name, twitter } = config.meta;
     const lang = useLanguage();
+
+    // Get page data
+    const { frontmatter } = useContext(AppContext);
+    const { title, description, color } = frontmatter;
+
+    // Create actual page URL
+    const router = useRouter();
+    const path = removePrefixFromPath(router.pathname);
+    const actualUrl = `${url}${path}`;
+
+    // Create actual image Url
+    const imageUrl = !!image && prefixUrl(image);
 
     return (
         <Head>
@@ -24,25 +33,25 @@ const Meta = ({ title, description }: MetaProps): React.ReactElement => {
             />
             <meta name="Description" content={description} />
 
-            {/* <title>{title || ""}</title> */}
+            <title>{title}</title>
 
             {/* Facebook */}
-            <meta property="og:url" content={url} />
+            <meta property="og:url" content={actualUrl} />
             <meta property="og:type" content="website" />
             <meta property="og:title" content={title} />
-            {image && <meta property="og:image" content={image} />}
+            {imageUrl && <meta property="og:image" content={imageUrl} />}
             <meta property="og:description" content={description} />
-            <meta property="og:site_name" content={siteName} />
+            <meta property="og:site_name" content={name} />
             <meta property="og:locale" content="en_US" />
 
             {/* Twitter Cards */}
             <meta name="twitter:card" content="summary" />
-            {/* <meta name="twitter:site" content={twitterAccount} /> */}
-            <meta name="twitter:creator" content={twitterAccount} />
-            <meta name="twitter:url" content={url} />
+            <meta name="twitter:site" content={twitter} />
+            <meta name="twitter:creator" content={twitter} />
+            <meta name="twitter:url" content={actualUrl} />
             <meta name="twitter:title" content={title} />
             <meta name="twitter:description" content={description} />
-            {image && <meta name="twitter:image" content={image} />}
+            {imageUrl && <meta name="twitter:image" content={imageUrl} />}
 
             {/* Favicons */}
             <link
@@ -62,7 +71,7 @@ const Meta = ({ title, description }: MetaProps): React.ReactElement => {
                 href={prefixUrl("/static/images/favicon-192.png")}
             />
 
-            <meta name="theme-color" content="#ffffff" />
+            <meta name="theme-color" content={color} />
         </Head>
     );
 };

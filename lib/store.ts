@@ -1,11 +1,3 @@
-// Data from frontmatter.
-// If you want to add custom data in frontmatter, add them below.
-export interface PageState {
-    title?: string;
-    color?: string;
-}
-
-// Global application state.
 export interface AppState {
     isHeaderVisible: boolean;
     isMenuVisible: boolean;
