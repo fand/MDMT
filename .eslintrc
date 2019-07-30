@@ -35,7 +35,6 @@
     {
       "files": ["*.js"],
       "rules": {
-        "@typescript-eslint/indent": ["warn", 2],
         "@typescript-eslint/no-var-requires": 0,
       },
     },

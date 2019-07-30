@@ -85,9 +85,5 @@ export const Link = (props: LinkProps): React.ReactElement => {
         }, []);
     }
 
-    return (
-        <>
-            <a {...newProps} />
-        </>
-    );
+    return <a {...newProps} />;
 };
