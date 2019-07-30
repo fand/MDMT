@@ -9,41 +9,41 @@ const { MDXProvider } = require("@mdx-js/react");
 
 // MDX components
 const components = {
-  code: CodeBlock,
-  img: Img
+    code: CodeBlock,
+    img: Img
 };
 
 export default class MyApp extends App {
-  public static async getInitialProps({
-    Component,
-    ctx
-  }: AppContext): Promise<AppInitialProps> {
-    let pageProps = {};
+    public static async getInitialProps({
+        Component,
+        ctx
+    }: AppContext): Promise<AppInitialProps> {
+        let pageProps = {};
 
-    if (Component.getInitialProps) {
-      pageProps = await Component.getInitialProps(ctx);
+        if (Component.getInitialProps) {
+            pageProps = await Component.getInitialProps(ctx);
+        }
+
+        return { pageProps };
     }
 
-    return { pageProps };
-  }
+    public render(): React.ReactElement {
+        const { Component, pageProps } = this.props;
 
-  public render(): React.ReactElement {
-    const { Component, pageProps } = this.props;
-
-    // Extract frontmatter data embedded by mdx-loader.
-    // eslint-disable-next-line
+        // Extract frontmatter data embedded by mdx-loader.
+        // eslint-disable-next-line
     const frontmatter = (Component as any).frontmatter;
 
-    return (
-      <Container>
-        <MDXProvider components={components}>
-          <Provider frontmatter={frontmatter}>
-            <Layout>
-              <Component {...pageProps} />
-            </Layout>
-          </Provider>
-        </MDXProvider>
-      </Container>
-    );
-  }
+        return (
+            <Container>
+                <MDXProvider components={components}>
+                    <Provider frontmatter={frontmatter}>
+                        <Layout>
+                            <Component {...pageProps} />
+                        </Layout>
+                    </Provider>
+                </MDXProvider>
+            </Container>
+        );
+    }
 }
