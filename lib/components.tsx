@@ -13,11 +13,12 @@ export const CodeBlock = ({
   children,
   className
 }: CodeBlockProps): React.ReactElement => {
-  const language = className ? className.replace(/language-/, "") : "";
+  // eslint-disable-next-line
+  const language = (className ? className.replace(/language-/, "") : "") as any;
   const code = children.trim();
 
   return (
-    <Highlight {...defaultProps} code={code} language={language as any}>
+    <Highlight {...defaultProps} code={code} language={language}>
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <pre className={className} style={{ ...style, padding: "20px" }}>
           {tokens.map((line, i) => (

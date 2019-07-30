@@ -7,7 +7,7 @@
     "build:nojekyll": "touch docs/.nojekyll",
     "build:preload": "node scripts/copy-preload.js",
     "clean": "rm -rf .next docs",
-    "lint": "eslint pages lib components scripts",
+    "lint": "eslint --ext .js,.ts,.tsx pages lib components scripts",
     "test": "NODE_ENV=production babel-node test/index.js"
   },
   "dependencies": {
