@@ -62,6 +62,10 @@ const Main = styled.main`
     width: 100%;
     max-width: 720px;
     margin: 0 auto;
+
+    img {
+        max-width: 100%;
+    }
 `;
 
 const HeaderWrapper = styled.div`
