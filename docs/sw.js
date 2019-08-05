@@ -26,184 +26,184 @@ self.addEventListener('message', (event) => {
  */
 self.__precacheManifest = [
   {
-    "url": "/MDMT/_next/static/8iFGaUIbhlOMzQR7q0cBi/pages/_app.js",
-    "revision": "a9ca847f33ff428832ffb27581a1fd30"
-  },
-  {
-    "url": "/MDMT/_next/static/8iFGaUIbhlOMzQR7q0cBi/pages/_error.js",
-    "revision": "e10db935afcb6a49624d6faf8795f0e7"
-  },
-  {
-    "url": "/MDMT/_next/static/8iFGaUIbhlOMzQR7q0cBi/pages/customize.js",
-    "revision": "ec53066baeefb1bb64656fc0e808126b"
-  },
-  {
-    "url": "/MDMT/_next/static/8iFGaUIbhlOMzQR7q0cBi/pages/customize/config.js",
-    "revision": "eed5c0ba61e38c4800f889c6c942ce5e"
-  },
-  {
-    "url": "/MDMT/_next/static/8iFGaUIbhlOMzQR7q0cBi/pages/customize/theme.js",
-    "revision": "e06f0f700ce18a76efa6e23d514987cb"
-  },
-  {
-    "url": "/MDMT/_next/static/8iFGaUIbhlOMzQR7q0cBi/pages/faq.js",
-    "revision": "37c43880ac068add5d060f747b7ac785"
-  },
-  {
-    "url": "/MDMT/_next/static/8iFGaUIbhlOMzQR7q0cBi/pages/features/i18n.js",
-    "revision": "374db825794dc77c461d33a4a7632c5e"
-  },
-  {
-    "url": "/MDMT/_next/static/8iFGaUIbhlOMzQR7q0cBi/pages/features/mdx.js",
-    "revision": "de631a541df10c0c3f51e7113a04ee08"
-  },
-  {
-    "url": "/MDMT/_next/static/8iFGaUIbhlOMzQR7q0cBi/pages/features/pwa.js",
-    "revision": "b89763ade25f19abc023434fd60872b0"
-  },
-  {
-    "url": "/MDMT/_next/static/8iFGaUIbhlOMzQR7q0cBi/pages/getting-started.js",
-    "revision": "bef56442b73c36cffe39bb31c7280ed0"
-  },
-  {
-    "url": "/MDMT/_next/static/8iFGaUIbhlOMzQR7q0cBi/pages/how-it-works.js",
-    "revision": "ee1777e9486cbb5db68aa7f825f11c9c"
-  },
-  {
-    "url": "/MDMT/_next/static/8iFGaUIbhlOMzQR7q0cBi/pages/index.js",
-    "revision": "1684b9a88bf6675ba2a600b954e6d6bf"
-  },
-  {
-    "url": "/MDMT/_next/static/8iFGaUIbhlOMzQR7q0cBi/pages/ja.js",
-    "revision": "f7cfded9bcd5c90778b41a37e816dccf"
-  },
-  {
-    "url": "/MDMT/_next/static/8iFGaUIbhlOMzQR7q0cBi/pages/ja/customize.js",
-    "revision": "dae15956dab93ab876eca49922cfea7c"
-  },
-  {
-    "url": "/MDMT/_next/static/8iFGaUIbhlOMzQR7q0cBi/pages/ja/customize/config.js",
-    "revision": "40d39d9bc53ba797dc708574708a3a69"
-  },
-  {
-    "url": "/MDMT/_next/static/8iFGaUIbhlOMzQR7q0cBi/pages/ja/customize/theme.js",
-    "revision": "44929335d885fd370fe910f0cf6adc22"
-  },
-  {
-    "url": "/MDMT/_next/static/8iFGaUIbhlOMzQR7q0cBi/pages/ja/faq.js",
-    "revision": "00b98bf4633006fe0628afb1a1b5024e"
-  },
-  {
-    "url": "/MDMT/_next/static/8iFGaUIbhlOMzQR7q0cBi/pages/ja/features/i18n.js",
-    "revision": "2e390fbb5b737603720c72e541690539"
-  },
-  {
-    "url": "/MDMT/_next/static/8iFGaUIbhlOMzQR7q0cBi/pages/ja/features/mdx.js",
-    "revision": "0d7dc4f9a28e9d65b998d84d1732a319"
-  },
-  {
-    "url": "/MDMT/_next/static/8iFGaUIbhlOMzQR7q0cBi/pages/ja/features/pwa.js",
-    "revision": "1336ded9b6edd653fed3a7ff3b9f8139"
-  },
-  {
-    "url": "/MDMT/_next/static/8iFGaUIbhlOMzQR7q0cBi/pages/ja/getting-started.js",
-    "revision": "6d223fa0ea8cbb9ad5d1575f046e160c"
-  },
-  {
-    "url": "/MDMT/_next/static/8iFGaUIbhlOMzQR7q0cBi/pages/ja/how-it-works.js",
-    "revision": "abe4d8d3d9ae850a54d5ef76c212c745"
-  },
-  {
-    "url": "/MDMT/_next/static/8iFGaUIbhlOMzQR7q0cBi/pages/MDMT.js",
-    "revision": "1684b9a88bf6675ba2a600b954e6d6bf"
-  },
-  {
-    "url": "/MDMT/_next/static/8iFGaUIbhlOMzQR7q0cBi/pages/MDMT/_app.js",
-    "revision": "a9ca847f33ff428832ffb27581a1fd30"
-  },
-  {
-    "url": "/MDMT/_next/static/8iFGaUIbhlOMzQR7q0cBi/pages/MDMT/_error.js",
-    "revision": "e10db935afcb6a49624d6faf8795f0e7"
-  },
-  {
-    "url": "/MDMT/_next/static/8iFGaUIbhlOMzQR7q0cBi/pages/MDMT/customize.js",
-    "revision": "ec53066baeefb1bb64656fc0e808126b"
-  },
-  {
-    "url": "/MDMT/_next/static/8iFGaUIbhlOMzQR7q0cBi/pages/MDMT/customize/config.js",
-    "revision": "eed5c0ba61e38c4800f889c6c942ce5e"
-  },
-  {
-    "url": "/MDMT/_next/static/8iFGaUIbhlOMzQR7q0cBi/pages/MDMT/customize/theme.js",
-    "revision": "e06f0f700ce18a76efa6e23d514987cb"
-  },
-  {
-    "url": "/MDMT/_next/static/8iFGaUIbhlOMzQR7q0cBi/pages/MDMT/faq.js",
-    "revision": "37c43880ac068add5d060f747b7ac785"
-  },
-  {
-    "url": "/MDMT/_next/static/8iFGaUIbhlOMzQR7q0cBi/pages/MDMT/features/i18n.js",
-    "revision": "374db825794dc77c461d33a4a7632c5e"
-  },
-  {
-    "url": "/MDMT/_next/static/8iFGaUIbhlOMzQR7q0cBi/pages/MDMT/features/mdx.js",
-    "revision": "de631a541df10c0c3f51e7113a04ee08"
-  },
-  {
-    "url": "/MDMT/_next/static/8iFGaUIbhlOMzQR7q0cBi/pages/MDMT/features/pwa.js",
-    "revision": "b89763ade25f19abc023434fd60872b0"
-  },
-  {
-    "url": "/MDMT/_next/static/8iFGaUIbhlOMzQR7q0cBi/pages/MDMT/getting-started.js",
-    "revision": "bef56442b73c36cffe39bb31c7280ed0"
-  },
-  {
-    "url": "/MDMT/_next/static/8iFGaUIbhlOMzQR7q0cBi/pages/MDMT/how-it-works.js",
-    "revision": "ee1777e9486cbb5db68aa7f825f11c9c"
-  },
-  {
-    "url": "/MDMT/_next/static/8iFGaUIbhlOMzQR7q0cBi/pages/MDMT/ja.js",
-    "revision": "f7cfded9bcd5c90778b41a37e816dccf"
-  },
-  {
-    "url": "/MDMT/_next/static/8iFGaUIbhlOMzQR7q0cBi/pages/MDMT/ja/customize.js",
-    "revision": "dae15956dab93ab876eca49922cfea7c"
-  },
-  {
-    "url": "/MDMT/_next/static/8iFGaUIbhlOMzQR7q0cBi/pages/MDMT/ja/customize/config.js",
-    "revision": "40d39d9bc53ba797dc708574708a3a69"
-  },
-  {
-    "url": "/MDMT/_next/static/8iFGaUIbhlOMzQR7q0cBi/pages/MDMT/ja/customize/theme.js",
-    "revision": "44929335d885fd370fe910f0cf6adc22"
-  },
-  {
-    "url": "/MDMT/_next/static/8iFGaUIbhlOMzQR7q0cBi/pages/MDMT/ja/faq.js",
-    "revision": "00b98bf4633006fe0628afb1a1b5024e"
-  },
-  {
-    "url": "/MDMT/_next/static/8iFGaUIbhlOMzQR7q0cBi/pages/MDMT/ja/features/i18n.js",
-    "revision": "2e390fbb5b737603720c72e541690539"
-  },
-  {
-    "url": "/MDMT/_next/static/8iFGaUIbhlOMzQR7q0cBi/pages/MDMT/ja/features/mdx.js",
-    "revision": "0d7dc4f9a28e9d65b998d84d1732a319"
-  },
-  {
-    "url": "/MDMT/_next/static/8iFGaUIbhlOMzQR7q0cBi/pages/MDMT/ja/features/pwa.js",
-    "revision": "1336ded9b6edd653fed3a7ff3b9f8139"
-  },
-  {
-    "url": "/MDMT/_next/static/8iFGaUIbhlOMzQR7q0cBi/pages/MDMT/ja/getting-started.js",
-    "revision": "6d223fa0ea8cbb9ad5d1575f046e160c"
-  },
-  {
-    "url": "/MDMT/_next/static/8iFGaUIbhlOMzQR7q0cBi/pages/MDMT/ja/how-it-works.js",
-    "revision": "abe4d8d3d9ae850a54d5ef76c212c745"
-  },
-  {
     "url": "/MDMT/_next/static/chunks/commons.5fea9a0ae6a31b9c32e3.js",
     "revision": "e5544108d3f278a1cf3f8706de3456e0"
+  },
+  {
+    "url": "/MDMT/_next/static/kt7vJaTsk5rxJ9lg5ICxZ/pages/_app.js",
+    "revision": "a354ceb2b063971d7e45b84855eb6fcf"
+  },
+  {
+    "url": "/MDMT/_next/static/kt7vJaTsk5rxJ9lg5ICxZ/pages/_error.js",
+    "revision": "e10db935afcb6a49624d6faf8795f0e7"
+  },
+  {
+    "url": "/MDMT/_next/static/kt7vJaTsk5rxJ9lg5ICxZ/pages/customize.js",
+    "revision": "d2a69baf52ee3797483d7594d7b754c7"
+  },
+  {
+    "url": "/MDMT/_next/static/kt7vJaTsk5rxJ9lg5ICxZ/pages/customize/config.js",
+    "revision": "147278baa6f0940647e11073fd78ee74"
+  },
+  {
+    "url": "/MDMT/_next/static/kt7vJaTsk5rxJ9lg5ICxZ/pages/customize/theme.js",
+    "revision": "e06f0f700ce18a76efa6e23d514987cb"
+  },
+  {
+    "url": "/MDMT/_next/static/kt7vJaTsk5rxJ9lg5ICxZ/pages/faq.js",
+    "revision": "37c43880ac068add5d060f747b7ac785"
+  },
+  {
+    "url": "/MDMT/_next/static/kt7vJaTsk5rxJ9lg5ICxZ/pages/features/i18n.js",
+    "revision": "374db825794dc77c461d33a4a7632c5e"
+  },
+  {
+    "url": "/MDMT/_next/static/kt7vJaTsk5rxJ9lg5ICxZ/pages/features/mdx.js",
+    "revision": "de631a541df10c0c3f51e7113a04ee08"
+  },
+  {
+    "url": "/MDMT/_next/static/kt7vJaTsk5rxJ9lg5ICxZ/pages/features/pwa.js",
+    "revision": "b89763ade25f19abc023434fd60872b0"
+  },
+  {
+    "url": "/MDMT/_next/static/kt7vJaTsk5rxJ9lg5ICxZ/pages/getting-started.js",
+    "revision": "bef56442b73c36cffe39bb31c7280ed0"
+  },
+  {
+    "url": "/MDMT/_next/static/kt7vJaTsk5rxJ9lg5ICxZ/pages/how-it-works.js",
+    "revision": "ee1777e9486cbb5db68aa7f825f11c9c"
+  },
+  {
+    "url": "/MDMT/_next/static/kt7vJaTsk5rxJ9lg5ICxZ/pages/index.js",
+    "revision": "1684b9a88bf6675ba2a600b954e6d6bf"
+  },
+  {
+    "url": "/MDMT/_next/static/kt7vJaTsk5rxJ9lg5ICxZ/pages/ja.js",
+    "revision": "f7cfded9bcd5c90778b41a37e816dccf"
+  },
+  {
+    "url": "/MDMT/_next/static/kt7vJaTsk5rxJ9lg5ICxZ/pages/ja/customize.js",
+    "revision": "db57bd346b42babb4b164848d743de5b"
+  },
+  {
+    "url": "/MDMT/_next/static/kt7vJaTsk5rxJ9lg5ICxZ/pages/ja/customize/config.js",
+    "revision": "40d39d9bc53ba797dc708574708a3a69"
+  },
+  {
+    "url": "/MDMT/_next/static/kt7vJaTsk5rxJ9lg5ICxZ/pages/ja/customize/theme.js",
+    "revision": "3620e08633e426f1db373bde5d9c4142"
+  },
+  {
+    "url": "/MDMT/_next/static/kt7vJaTsk5rxJ9lg5ICxZ/pages/ja/faq.js",
+    "revision": "00b98bf4633006fe0628afb1a1b5024e"
+  },
+  {
+    "url": "/MDMT/_next/static/kt7vJaTsk5rxJ9lg5ICxZ/pages/ja/features/i18n.js",
+    "revision": "2e390fbb5b737603720c72e541690539"
+  },
+  {
+    "url": "/MDMT/_next/static/kt7vJaTsk5rxJ9lg5ICxZ/pages/ja/features/mdx.js",
+    "revision": "0d7dc4f9a28e9d65b998d84d1732a319"
+  },
+  {
+    "url": "/MDMT/_next/static/kt7vJaTsk5rxJ9lg5ICxZ/pages/ja/features/pwa.js",
+    "revision": "1336ded9b6edd653fed3a7ff3b9f8139"
+  },
+  {
+    "url": "/MDMT/_next/static/kt7vJaTsk5rxJ9lg5ICxZ/pages/ja/getting-started.js",
+    "revision": "6d223fa0ea8cbb9ad5d1575f046e160c"
+  },
+  {
+    "url": "/MDMT/_next/static/kt7vJaTsk5rxJ9lg5ICxZ/pages/ja/how-it-works.js",
+    "revision": "abe4d8d3d9ae850a54d5ef76c212c745"
+  },
+  {
+    "url": "/MDMT/_next/static/kt7vJaTsk5rxJ9lg5ICxZ/pages/MDMT.js",
+    "revision": "1684b9a88bf6675ba2a600b954e6d6bf"
+  },
+  {
+    "url": "/MDMT/_next/static/kt7vJaTsk5rxJ9lg5ICxZ/pages/MDMT/_app.js",
+    "revision": "a354ceb2b063971d7e45b84855eb6fcf"
+  },
+  {
+    "url": "/MDMT/_next/static/kt7vJaTsk5rxJ9lg5ICxZ/pages/MDMT/_error.js",
+    "revision": "e10db935afcb6a49624d6faf8795f0e7"
+  },
+  {
+    "url": "/MDMT/_next/static/kt7vJaTsk5rxJ9lg5ICxZ/pages/MDMT/customize.js",
+    "revision": "d2a69baf52ee3797483d7594d7b754c7"
+  },
+  {
+    "url": "/MDMT/_next/static/kt7vJaTsk5rxJ9lg5ICxZ/pages/MDMT/customize/config.js",
+    "revision": "147278baa6f0940647e11073fd78ee74"
+  },
+  {
+    "url": "/MDMT/_next/static/kt7vJaTsk5rxJ9lg5ICxZ/pages/MDMT/customize/theme.js",
+    "revision": "e06f0f700ce18a76efa6e23d514987cb"
+  },
+  {
+    "url": "/MDMT/_next/static/kt7vJaTsk5rxJ9lg5ICxZ/pages/MDMT/faq.js",
+    "revision": "37c43880ac068add5d060f747b7ac785"
+  },
+  {
+    "url": "/MDMT/_next/static/kt7vJaTsk5rxJ9lg5ICxZ/pages/MDMT/features/i18n.js",
+    "revision": "374db825794dc77c461d33a4a7632c5e"
+  },
+  {
+    "url": "/MDMT/_next/static/kt7vJaTsk5rxJ9lg5ICxZ/pages/MDMT/features/mdx.js",
+    "revision": "de631a541df10c0c3f51e7113a04ee08"
+  },
+  {
+    "url": "/MDMT/_next/static/kt7vJaTsk5rxJ9lg5ICxZ/pages/MDMT/features/pwa.js",
+    "revision": "b89763ade25f19abc023434fd60872b0"
+  },
+  {
+    "url": "/MDMT/_next/static/kt7vJaTsk5rxJ9lg5ICxZ/pages/MDMT/getting-started.js",
+    "revision": "bef56442b73c36cffe39bb31c7280ed0"
+  },
+  {
+    "url": "/MDMT/_next/static/kt7vJaTsk5rxJ9lg5ICxZ/pages/MDMT/how-it-works.js",
+    "revision": "ee1777e9486cbb5db68aa7f825f11c9c"
+  },
+  {
+    "url": "/MDMT/_next/static/kt7vJaTsk5rxJ9lg5ICxZ/pages/MDMT/ja.js",
+    "revision": "f7cfded9bcd5c90778b41a37e816dccf"
+  },
+  {
+    "url": "/MDMT/_next/static/kt7vJaTsk5rxJ9lg5ICxZ/pages/MDMT/ja/customize.js",
+    "revision": "db57bd346b42babb4b164848d743de5b"
+  },
+  {
+    "url": "/MDMT/_next/static/kt7vJaTsk5rxJ9lg5ICxZ/pages/MDMT/ja/customize/config.js",
+    "revision": "40d39d9bc53ba797dc708574708a3a69"
+  },
+  {
+    "url": "/MDMT/_next/static/kt7vJaTsk5rxJ9lg5ICxZ/pages/MDMT/ja/customize/theme.js",
+    "revision": "3620e08633e426f1db373bde5d9c4142"
+  },
+  {
+    "url": "/MDMT/_next/static/kt7vJaTsk5rxJ9lg5ICxZ/pages/MDMT/ja/faq.js",
+    "revision": "00b98bf4633006fe0628afb1a1b5024e"
+  },
+  {
+    "url": "/MDMT/_next/static/kt7vJaTsk5rxJ9lg5ICxZ/pages/MDMT/ja/features/i18n.js",
+    "revision": "2e390fbb5b737603720c72e541690539"
+  },
+  {
+    "url": "/MDMT/_next/static/kt7vJaTsk5rxJ9lg5ICxZ/pages/MDMT/ja/features/mdx.js",
+    "revision": "0d7dc4f9a28e9d65b998d84d1732a319"
+  },
+  {
+    "url": "/MDMT/_next/static/kt7vJaTsk5rxJ9lg5ICxZ/pages/MDMT/ja/features/pwa.js",
+    "revision": "1336ded9b6edd653fed3a7ff3b9f8139"
+  },
+  {
+    "url": "/MDMT/_next/static/kt7vJaTsk5rxJ9lg5ICxZ/pages/MDMT/ja/getting-started.js",
+    "revision": "6d223fa0ea8cbb9ad5d1575f046e160c"
+  },
+  {
+    "url": "/MDMT/_next/static/kt7vJaTsk5rxJ9lg5ICxZ/pages/MDMT/ja/how-it-works.js",
+    "revision": "abe4d8d3d9ae850a54d5ef76c212c745"
   },
   {
     "url": "/MDMT/_next/static/runtime/main-84dbb8a56cf7d0b55d28.js",
@@ -215,87 +215,87 @@ self.__precacheManifest = [
   },
   {
     "url": "/MDMT/404.html",
-    "revision": "9c5be1fd2030a6af7a20eabd88087d10"
+    "revision": "b3e1b51640d67ec965ade4c5c27f8235"
   },
   {
     "url": "/MDMT/customize.html",
-    "revision": "b173d3bdde73c906155b36e15ea10823"
+    "revision": "3855d2a28f35b70c85c70abc5b4c8ab9"
   },
   {
     "url": "/MDMT/customize/config.html",
-    "revision": "5b9381617faddec03b19977e56062c3a"
+    "revision": "d41ea420cd9251e0bc5f05103a1e69fa"
   },
   {
     "url": "/MDMT/customize/theme.html",
-    "revision": "be23468845a289dd6ff96c471a1ebff0"
+    "revision": "b454b142787a5ec42cf509cce1927a31"
   },
   {
     "url": "/MDMT/faq.html",
-    "revision": "294bdd7daf7de994c5559a4e7f302fe4"
+    "revision": "44f546e920fcc01a5946ebde5bb69daf"
   },
   {
     "url": "/MDMT/features/i18n.html",
-    "revision": "94f59f7b6a47f139168a990b181ef6ce"
+    "revision": "03309e664d5368616ea7091aa5f2f745"
   },
   {
     "url": "/MDMT/features/mdx.html",
-    "revision": "590c1cf9d5d6799fccff6d9d000c7662"
+    "revision": "2f3e4bd84bdabc74e94fabb983de83dd"
   },
   {
     "url": "/MDMT/features/pwa.html",
-    "revision": "507b3165b4460aecd19f3ef286343ac6"
+    "revision": "d29b33b28f91e8090e4546ac4bda8397"
   },
   {
     "url": "/MDMT/getting-started.html",
-    "revision": "febd893ffa4eef62b6406def139adf47"
+    "revision": "1d53e0ea4d2640c6f5f0cac860c20e13"
   },
   {
     "url": "/MDMT/how-it-works.html",
-    "revision": "9c2449c571608d59dee1b377cbd60f09"
+    "revision": "fedffbf454e1500bec7791d8db500dba"
   },
   {
     "url": "/MDMT/index.html",
-    "revision": "8fdf14531105e875491a69ca5d2b4c25"
+    "revision": "0e9969804d94c015ee82eef12b340568"
   },
   {
     "url": "/MDMT/ja.html",
-    "revision": "25c298ecbc8ee4c8af25cc8ffe9de646"
+    "revision": "bca1ea3f15b066fe4d480c37ce0cf52a"
   },
   {
     "url": "/MDMT/ja/customize.html",
-    "revision": "a40d45d759d3f770aa5e4ec089a798b6"
+    "revision": "de245b05782713e2e622b4614bf21923"
   },
   {
     "url": "/MDMT/ja/customize/config.html",
-    "revision": "f7678fb484361eea7b85a3f5405bb4fd"
+    "revision": "56284f3e34c738ce966c5317bab873b9"
   },
   {
     "url": "/MDMT/ja/customize/theme.html",
-    "revision": "64fd52fc598ebfb19914377350ad1290"
+    "revision": "22729b6bd8ba4d49e988a9f447e26669"
   },
   {
     "url": "/MDMT/ja/faq.html",
-    "revision": "d8b003bc62b64643cbc341906ae2283f"
+    "revision": "09d67ac2d4f470d719606dcb33f23f73"
   },
   {
     "url": "/MDMT/ja/features/i18n.html",
-    "revision": "f4ef7fad335b59964ddef69549c5a655"
+    "revision": "769b6fd413f0c1d388e5d14fb3ddf2a9"
   },
   {
     "url": "/MDMT/ja/features/mdx.html",
-    "revision": "2fcc3f874a2ba505937c579f82068d5f"
+    "revision": "ac129d5e25396aa067ac2a0c0cc9bbf9"
   },
   {
     "url": "/MDMT/ja/features/pwa.html",
-    "revision": "21c6a9edc3c0d919381715cee88911f2"
+    "revision": "ceb1da39d1ed6e7b408fec838a8c1023"
   },
   {
     "url": "/MDMT/ja/getting-started.html",
-    "revision": "adbbbcb1346d5531e6e20d0a1b7b3ad1"
+    "revision": "70cfee83ab00e0456f09137710b41563"
   },
   {
     "url": "/MDMT/ja/how-it-works.html",
-    "revision": "038027bf80d69a88121787fcf673bbdc"
+    "revision": "615367018b7cef34c5d3a614fba712fe"
   },
   {
     "url": "/MDMT/static/css/hamburgers.css",

@@ -1,6 +1,6 @@
 ---
 title: 設定のカスタマイズ 💊 MDMT - Markdown Document Template \#MDMTjs
-color: \#FFDD00
+color: \#FFAA00
 ---
 # Configuration
 
