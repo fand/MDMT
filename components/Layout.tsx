@@ -83,11 +83,17 @@ const Layout = (props: LayoutProps): React.ReactElement => {
     const { state, frontmatter, dispatch } = useContext(AppContext);
     const bodyEl = useRef<HTMLDivElement>(null);
 
+    const defer = (callback: () => void): void => {
+        const w = (window as any); // eslint-disable-line
+        w.requestIdleCallback
+            ? w.requestIdleCallback(callback)
+            : setTimeout(callback, 1);
+    };
+
     // Scroll to top on route change
     const router = useRouter();
     useEffect(() => {
-        // eslint-disable-next-line
-        (window as any).requestIdleCallback(() => {
+        defer(() => {
             const body = bodyEl.current;
             if (body) {
                 body.scrollTop = 0;
@@ -108,8 +114,7 @@ const Layout = (props: LayoutProps): React.ReactElement => {
     }, 50);
 
     useEffect(() => {
-        // eslint-disable-next-line
-            (window as any).requestIdleCallback(() => {
+        defer(() => {
             const body = bodyEl.current;
             if (body) {
                 body.addEventListener("scroll", watchScroll);
