@@ -1,5 +1,5 @@
 import React from "react";
-import App, { Container, AppInitialProps, AppContext } from "next/app";
+import App, { AppInitialProps, AppContext } from "next/app";
 import Layout from "../components/Layout";
 import { Img, CodeBlock, Link } from "../lib/components";
 import { Provider } from "../lib/context";
@@ -36,15 +36,13 @@ export default class MyApp extends App {
         const frontmatter = (Component as any).frontmatter || {};
 
         return (
-            <Container>
-                <MDXProvider components={components}>
-                    <Provider frontmatter={frontmatter}>
-                        <Layout>
-                            <Component {...pageProps} />
-                        </Layout>
-                    </Provider>
-                </MDXProvider>
-            </Container>
+            <MDXProvider components={components}>
+                <Provider frontmatter={frontmatter}>
+                    <Layout>
+                        <Component {...pageProps} />
+                    </Layout>
+                </Provider>
+            </MDXProvider>
         );
     }
 }
