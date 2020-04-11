@@ -12,7 +12,7 @@ MDMT is composed of the following files / directories:
 
 - `pages/`: Markdown files corresponding to pages
 - `components/`: React components
-- `static/`: Static files like images
+- `public/`: Static files like images
 - `lib/`: Core application sources
 - `scripts/`: Scripts for build phase
 - `docs/`: Output directory

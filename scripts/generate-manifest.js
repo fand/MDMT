@@ -41,7 +41,7 @@ const manifest = {
 
 try {
     fs.writeFileSync(
-        path.resolve(__dirname, "../static/manifest.json"),
+        path.resolve(__dirname, "../public/static/manifest.json"),
         JSON.stringify(manifest),
         "utf8"
     );
