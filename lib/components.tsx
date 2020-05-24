@@ -11,14 +11,15 @@ interface CodeBlockProps {
 // MDX component for syntax highlighting.
 export const CodeBlock = ({
     children,
-    className
+    className,
 }: CodeBlockProps): React.ReactElement => {
-    // eslint-disable-next-line
-    const language = (className ? className.replace(/language-/, "") : "") as any;
+    const language = (className
+        ? className.replace(/language-/, "")
+        : "") as any; // eslint-disable-line
     const code = children.trim();
 
     const lineStyle = {
-        padding: "0 20px"
+        padding: "0 20px",
     };
 
     return (
@@ -26,15 +27,27 @@ export const CodeBlock = ({
             {({ className, style, tokens, getLineProps, getTokenProps }) => (
                 <div
                     className={className}
-                    style={{ ...style, padding: "20px 0" }}
+                    style={{
+                        ...style,
+                        padding: "20px 0",
+                    }}
                 >
                     {tokens.map((line, i) => (
-                        <div key={i} {...getLineProps({ line, key: i })}>
+                        <div
+                            key={i}
+                            {...getLineProps({
+                                line,
+                                key: i,
+                            })}
+                        >
                             <span style={lineStyle}>
                                 {line.map((token, key) => (
                                     <span
                                         key={key}
-                                        {...getTokenProps({ token, key })}
+                                        {...getTokenProps({
+                                            token,
+                                            key,
+                                        })}
                                     />
                                 ))}
                             </span>
@@ -57,7 +70,7 @@ interface ImgProps {
 export const Img = (props: ImgProps): React.ReactElement => {
     const newProps = {
         ...props,
-        src: prefixUrl(props.src)
+        src: prefixUrl(props.src),
     };
     return <img {...newProps} />;
 };
@@ -87,7 +100,7 @@ export const Link = (props: LinkProps): React.ReactElement => {
     }
 
     const router = useRouter();
-    let newProps = {
+    const newProps = {
         children: props.children,
         href: prefixUrl(props.href),
         onClick: (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -96,7 +109,7 @@ export const Link = (props: LinkProps): React.ReactElement => {
         },
         onMouseOver: () => {
             router.prefetch(prefixUrl(props.href));
-        }
+        },
     };
 
     if (props.prefetch) {

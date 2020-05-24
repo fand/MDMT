@@ -10,10 +10,10 @@ export const sidebar: T.SidebarConfig = config.sidebar as T.SidebarConfig;
 export const header: T.HeaderConfig = config.header as T.HeaderConfig;
 
 // Validate config
-if (!Object.keys(languages).every(l => !!sidebar[l as T.LangCode])) {
+if (!Object.keys(languages).every((l) => !!sidebar[l as T.LangCode])) {
     throw "MDMT: Please add sidebar config for all languages";
 }
-if (!Object.keys(languages).every(l => !!header[l as T.LangCode])) {
+if (!Object.keys(languages).every((l) => !!header[l as T.LangCode])) {
     throw "MDMT: Please add header config for all languages";
 }
 
@@ -23,5 +23,5 @@ export default {
     frontmatter,
     meta,
     sidebar,
-    header
+    header,
 };

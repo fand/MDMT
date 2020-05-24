@@ -21,7 +21,7 @@ module.exports = {
     meta: {
         name: "💊MDMT💊 Markdown Document Template",
         shortName: "MDMT",
-        url: "https://gmork.in/MDMT/",
+        url: "https://amagi.dev/MDMT/",
         image: "/static/images/ogimage.png",
         twitter: "@amagitakayosi",
         themeColor: "#00DDFF",

@@ -11,13 +11,13 @@ const { MDXProvider } = require("@mdx-js/react");
 const components = {
     code: CodeBlock,
     img: Img,
-    a: Link
+    a: Link,
 };
 
 export default class MyApp extends App {
     public static async getInitialProps({
         Component,
-        ctx
+        ctx,
     }: AppContext): Promise<AppInitialProps> {
         let pageProps = {};
 

@@ -5,7 +5,7 @@ import Document, {
     Html,
     Head,
     Main,
-    NextScript
+    NextScript,
 } from "next/document";
 import { ServerStyleSheet } from "styled-components";
 import config from "../lib/config";
@@ -23,7 +23,7 @@ export default class extends Document<DocumentProps> {
         ctx: DocumentContext
     ): Promise<DocumentProps> {
         const pathWithoutPrefix = removePrefixFromPath(ctx.pathname);
-        const language = (Object.keys(config.languages).find(lang =>
+        const language = (Object.keys(config.languages).find((lang) =>
             pathWithoutPrefix.match(new RegExp(`^/${lang}(/.*)?$`))
         ) || config.mainLanguage) as LangId;
 
@@ -33,8 +33,8 @@ export default class extends Document<DocumentProps> {
         try {
             ctx.renderPage = () =>
                 originalRenderPage({
-                    enhanceApp: App => props =>
-                        sheet.collectStyles(<App {...props} />)
+                    enhanceApp: (App) => (props) =>
+                        sheet.collectStyles(<App {...props} />),
                 });
 
             const initialProps = await Document.getInitialProps(ctx);
@@ -46,7 +46,7 @@ export default class extends Document<DocumentProps> {
                         {initialProps.styles}
                         {sheet.getStyleElement()}
                     </>
-                )
+                ),
             };
         } finally {
             sheet.seal();

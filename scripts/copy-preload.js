@@ -15,7 +15,7 @@ if (!nextConfig.assetPrefix) {
 
 // Get build directory path
 const dirs = fs.readdirSync(path.resolve(__dirname, "../docs/_next/static"));
-dirs.forEach(dir => {
+dirs.forEach((dir) => {
     if (dir.match(/chunks|development|runtime|webpack/)) {
         return;
     }
@@ -32,7 +32,7 @@ dirs.forEach(dir => {
 
     // Get files to copy
     const srcs = fs.readdirSync(pagesDir);
-    srcs.forEach(s => {
+    srcs.forEach((s) => {
         const src = path.resolve(pagesDir, s);
         if (s === prefix) {
             return;

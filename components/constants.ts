@@ -5,5 +5,5 @@ export default {
     link: "#88eeff",
     mobile: 767,
     sidebarWidth: 270,
-    headerHeight: 56
+    headerHeight: 56,
 };

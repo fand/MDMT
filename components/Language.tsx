@@ -30,7 +30,7 @@ const Button = styled.button`
 `;
 
 const Dropdown = styled.div<{ open: boolean }>`
-    display: ${p => (p.open ? "block" : "none")};
+    display: ${(p) => (p.open ? "block" : "none")};
     position: absolute;
     top: calc(100% + 8px);
     right: 8px;

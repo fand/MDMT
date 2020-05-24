@@ -14,7 +14,7 @@ export function useLanguage(): LangId {
         const pathWithoutPrefix = removePrefixFromPath(path);
 
         const currentLanguage =
-            Object.keys(config.languages).find(lang =>
+            Object.keys(config.languages).find((lang) =>
                 pathWithoutPrefix.match(new RegExp(`^/${lang}(/.*)?$`))
             ) || config.mainLanguage;
         setLanguage(currentLanguage as LangId);

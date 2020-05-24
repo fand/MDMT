@@ -4,7 +4,7 @@ const { Arrow } = require("react-burgers"); // eslint-disable-line
 
 interface HamburgerProps {
     active: boolean;
-    onClick: Function;
+    onClick: () => void;
 }
 
 // Just a wrapper for react-burgers

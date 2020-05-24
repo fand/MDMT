@@ -5,7 +5,7 @@ export interface AppState {
 
 export const initialState: AppState = {
     isHeaderVisible: false,
-    isMenuVisible: false
+    isMenuVisible: false,
 };
 
 export type Action =
@@ -23,25 +23,25 @@ export function reducer(state: AppState, action: Action): AppState {
         case "showMenu": {
             return {
                 ...state,
-                isMenuVisible: true
+                isMenuVisible: true,
             };
         }
         case "hideMenu": {
             return {
                 ...state,
-                isMenuVisible: false
+                isMenuVisible: false,
             };
         }
         case "showHeader": {
             return {
                 ...state,
-                isHeaderVisible: true
+                isHeaderVisible: true,
             };
         }
         case "hideHeader": {
             return {
                 ...state,
-                isHeaderVisible: false
+                isHeaderVisible: false,
             };
         }
         default: {

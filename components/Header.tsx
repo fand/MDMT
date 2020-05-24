@@ -22,7 +22,7 @@ const Nav = styled.div<{ visible: boolean; color: string }>`
     transition: 0.3s;
     background: transparent;
     @media (max-width: ${constants.mobile}px) {
-        background: ${p => (p.visible ? opacify(1, p.color) : "transparent")};}
+        background: ${(p) => (p.visible ? opacify(1, p.color) : "transparent")};
     }
 `;
 
@@ -50,7 +50,7 @@ const Logo = styled.div<{ visible: boolean }>`
     transition: opacity 0.3s;
     opacity: 0;
     @media (max-width: ${constants.mobile}px) {
-        opacity: ${p => (p.visible ? "1" : "0")};
+        opacity: ${(p) => (p.visible ? "1" : "0")};
     }
 `;
 

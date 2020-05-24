@@ -9,7 +9,7 @@ if (prefix !== "/") {
     console.log("MDMT: Extracted assetPrefix:", prefix);
 }
 
-/* eslint-disable @typescript-eslint/camelcase */
+/* eslint-disable @typescript-eslint/naming-convention */
 const manifest = {
     name: config.meta.name,
     short_name: config.meta.shortName || config.meta.name,
@@ -23,21 +23,21 @@ const manifest = {
         {
             src: `${prefix}/static/images/favicon-192.png`,
             sizes: "192x192",
-            type: "image/png"
+            type: "image/png",
         },
         {
             src: `${prefix}/static/images/favicon-256.png`,
             sizes: "256x256",
-            type: "image/png"
+            type: "image/png",
         },
         {
             src: `${prefix}/static/images/favicon-512.png`,
             sizes: "512x512",
-            type: "image/png"
-        }
-    ]
+            type: "image/png",
+        },
+    ],
 };
-/* eslint-enable @typescript-eslint/camelcase */
+/* eslint-enable @typescript-eslint/naming-convention */
 
 try {
     fs.writeFileSync(

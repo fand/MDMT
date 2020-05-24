@@ -23,7 +23,7 @@ export const Provider = (props: Props): React.ReactElement => {
 
     const frontmatter: Frontmatter = {
         ...config.frontmatter,
-        ...props.frontmatter
+        ...props.frontmatter,
     };
 
     const value = { state, frontmatter, dispatch };

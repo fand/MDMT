@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import nextConfig from "../next.config";
 
-export default () => {
+const ServiceWorker: React.FC = () => {
     // Register ServiceWorker
     useEffect(() => {
         if (process.env.NODE_ENV === "production") {
@@ -11,11 +11,13 @@ export default () => {
             ) {
                 navigator.serviceWorker
                     .register(`${nextConfig.assetPrefix}/sw.js`)
-            .then(console.log) // eslint-disable-line
-            .catch(console.error); // eslint-disable-line
+                    .then(console.log) // eslint-disable-line
+                    .catch(console.error); // eslint-disable-line
             }
         }
     }, []);
 
     return null;
 };
+
+export default ServiceWorker;

@@ -12,6 +12,6 @@ module.exports = {
     globPatterns: ["**/*.{js,html,css,png,ico,webp,gif}"],
     swDest: "docs/sw.js",
     modifyURLPrefix: {
-        "": `${prefix}/`
-    }
+        "": `${prefix}/`,
+    },
 };
