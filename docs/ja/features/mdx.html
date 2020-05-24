@@ -1,632 +1,132 @@
-<!DOCTYPE html><html><head><html lang="en"></html><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta name="Description" content="MDMT is a deadsimple document site generator, powered by Next.js and MDX. You can easily create documents with Markdown."/><title>MDX 💊 MDMT - Markdown Document Template #MDMTjs</title><meta property="og:url" content="https://gmork.in/MDMT//ja/features/mdx"/><meta property="og:type" content="website"/><meta property="og:title" content="MDX 💊 MDMT - Markdown Document Template #MDMTjs"/><meta property="og:image" content="/MDMT/static/images/ogimage.png"/><meta property="og:description" content="MDMT is a deadsimple document site generator, powered by Next.js and MDX. You can easily create documents with Markdown."/><meta property="og:site_name" content="💊MDMT💊 Markdown Document Template"/><meta property="og:locale" content="en_US"/><meta name="twitter:card" content="summary"/><meta name="twitter:site" content="@amagitakayosi"/><meta name="twitter:creator" content="@amagitakayosi"/><meta name="twitter:url" content="https://gmork.in/MDMT//ja/features/mdx"/><meta name="twitter:title" content="MDX 💊 MDMT - Markdown Document Template #MDMTjs"/><meta name="twitter:description" content="MDMT is a deadsimple document site generator, powered by Next.js and MDX. You can easily create documents with Markdown."/><meta name="twitter:image" content="/MDMT/static/images/ogimage.png"/><link rel="icon" type="image/x-icon" sizes="16x16 32x32" href="/MDMT/static/images/favicon.ico"/><link rel="apple-touch-icon" sizes="180x180" href="/MDMT/static/images/favicon-180.png"/><link rel="icon" sizes="192x192" href="/MDMT/static/images/favicon-192.png"/><meta name="theme-color" content="#EE33BB"/><link rel="manifest" href="/MDMT/static/manifest.json"/><style>
-    /* Reset CSS */
-    /* Document
- * ========================================================================== */
-
-/**
- * Add border box sizing in all browsers (opinionated).
- */
-
-*,
-::before,
-::after {
-  box-sizing: border-box;
-}
-
-/**
- * 1. Add text decoration inheritance in all browsers (opinionated).
- * 2. Add vertical alignment inheritance in all browsers (opinionated).
- */
-
-::before,
-::after {
-  text-decoration: inherit; /* 1 */
-  vertical-align: inherit; /* 2 */
-}
-
-/**
- * 1. Use the default cursor in all browsers (opinionated).
- * 2. Change the line height in all browsers (opinionated).
- * 3. Use a 4-space tab width in all browsers (opinionated).
- * 4. Remove the grey highlight on links in iOS (opinionated).
- * 5. Prevent adjustments of font size after orientation changes in
- *    IE on Windows Phone and in iOS.
- * 6. Breaks words to prevent overflow in all browsers (opinionated).
- */
-
-html {
-  cursor: default; /* 1 */
-  line-height: 1.5; /* 2 */
-  -moz-tab-size: 4; /* 3 */
-  tab-size: 4; /* 3 */
-  -webkit-tap-highlight-color: transparent /* 4 */;
-  -ms-text-size-adjust: 100%; /* 5 */
-  -webkit-text-size-adjust: 100%; /* 5 */
-  word-break: break-word; /* 6 */
-}
-
-/* Sections
- * ========================================================================== */
-
-/**
- * Remove the margin in all browsers (opinionated).
- */
-
-body {
-  margin: 0;
-}
-
-/**
- * Correct the font size and margin on `h1` elements within `section` and
- * `article` contexts in Chrome, Edge, Firefox, and Safari.
- */
-
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-}
-
-/* Grouping content
- * ========================================================================== */
-
-/**
- * Remove the margin on nested lists in Chrome, Edge, IE, and Safari.
- */
-
-dl dl,
-dl ol,
-dl ul,
-ol dl,
-ul dl {
-  margin: 0;
-}
-
-/**
- * Remove the margin on nested lists in Edge 18- and IE.
- */
-
-ol ol,
-ol ul,
-ul ol,
-ul ul {
-  margin: 0;
-}
-
-/**
- * 1. Add the correct sizing in Firefox.
- * 2. Show the overflow in Edge 18- and IE.
- */
-
-hr {
-  height: 0; /* 1 */
-  overflow: visible; /* 2 */
-}
-
-/**
- * Add the correct display in IE.
- */
-
-main {
-  display: block;
-}
-
-/**
- * Remove the list style on navigation lists in all browsers (opinionated).
- */
-
-nav ol,
-nav ul {
-  list-style: none;
-  padding: 0;
-}
-
-/**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
- */
-
-pre {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
-}
-
-/* Text-level semantics
- * ========================================================================== */
-
-/**
- * Remove the gray background on active links in IE 10.
- */
-
-a {
-  background-color: transparent;
-}
-
-/**
- * Add the correct text decoration in Edge 18-, IE, and Safari.
- */
-
-abbr[title] {
-  text-decoration: underline;
-  text-decoration: underline dotted;
-}
-
-/**
- * Add the correct font weight in Chrome, Edge, and Safari.
- */
-
-b,
-strong {
-  font-weight: bolder;
-}
-
-/**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
- */
-
-code,
-kbd,
-samp {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
-}
-
-/**
- * Add the correct font size in all browsers.
- */
-
-small {
-  font-size: 80%;
-}
-
-/* Embedded content
- * ========================================================================== */
-
-/*
- * Change the alignment on media elements in all browsers (opinionated).
- */
-
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
-  vertical-align: middle;
-}
-
-/**
- * Add the correct display in IE 9-.
- */
-
-audio,
-video {
-  display: inline-block;
-}
-
-/**
- * Add the correct display in iOS 4-7.
- */
-
-audio:not([controls]) {
-  display: none;
-  height: 0;
-}
-
-/**
- * Remove the border on iframes in all browsers (opinionated).
- */
-
-iframe {
-  border-style: none;
-}
-
-/**
- * Remove the border on images within links in IE 10-.
- */
-
-img {
-  border-style: none;
-}
-
-/**
- * Change the fill color to match the text color in all browsers (opinionated).
- */
-
-svg:not([fill]) {
-  fill: currentColor;
-}
-
-/**
- * Hide the overflow in IE.
- */
-
-svg:not(:root) {
-  overflow: hidden;
-}
-
-/* Tabular data
- * ========================================================================== */
-
-/**
- * Collapse border spacing in all browsers (opinionated).
- */
-
-table {
-  border-collapse: collapse;
-}
-
-/* Forms
- * ========================================================================== */
-
-/**
- * Remove the margin on controls in Safari.
- */
-
-button,
-input,
-select {
-  margin: 0;
-}
-
-/**
- * 1. Show the overflow in IE.
- * 2. Remove the inheritance of text transform in Edge 18-, Firefox, and IE.
- */
-
-button {
-  overflow: visible; /* 1 */
-  text-transform: none; /* 2 */
-}
-
-/**
- * Correct the inability to style buttons in iOS and Safari.
- */
-
-button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
-  -webkit-appearance: button;
-}
-
-/**
- * 1. Change the inconsistent appearance in all browsers (opinionated).
- * 2. Correct the padding in Firefox.
- */
-
-fieldset {
-  border: 1px solid #a0a0a0; /* 1 */
-  padding: 0.35em 0.75em 0.625em; /* 2 */
-}
-
-/**
- * Show the overflow in Edge 18- and IE.
- */
-
-input {
-  overflow: visible;
-}
-
-/**
- * 1. Correct the text wrapping in Edge 18- and IE.
- * 2. Correct the color inheritance from `fieldset` elements in IE.
- */
-
-legend {
-  color: inherit; /* 2 */
-  display: table; /* 1 */
-  max-width: 100%; /* 1 */
-  white-space: normal; /* 1 */
-}
-
-/**
- * 1. Add the correct display in Edge 18- and IE.
- * 2. Add the correct vertical alignment in Chrome, Edge, and Firefox.
- */
-
-progress {
-  display: inline-block; /* 1 */
-  vertical-align: baseline; /* 2 */
-}
-
-/**
- * Remove the inheritance of text transform in Firefox.
- */
-
-select {
-  text-transform: none;
-}
-
-/**
- * 1. Remove the margin in Firefox and Safari.
- * 2. Remove the default vertical scrollbar in IE.
- * 3. Change the resize direction in all browsers (opinionated).
- */
-
-textarea {
-  margin: 0; /* 1 */
-  overflow: auto; /* 2 */
-  resize: vertical; /* 3 */
-}
-
-/**
- * Remove the padding in IE 10-.
- */
-
-[type="checkbox"],
-[type="radio"] {
-  padding: 0;
-}
-
-/**
- * 1. Correct the odd appearance in Chrome, Edge, and Safari.
- * 2. Correct the outline style in Safari.
- */
-
-[type="search"] {
-  -webkit-appearance: textfield; /* 1 */
-  outline-offset: -2px; /* 2 */
-}
-
-/**
- * Correct the cursor style of increment and decrement buttons in Safari.
- */
-
-::-webkit-inner-spin-button,
-::-webkit-outer-spin-button {
-  height: auto;
-}
-
-/**
- * Correct the text style of placeholders in Chrome, Edge, and Safari.
- */
-
-::-webkit-input-placeholder {
-  color: inherit;
-  opacity: 0.54;
-}
-
-/**
- * Remove the inner padding in Chrome, Edge, and Safari on macOS.
- */
-
-::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-/**
- * 1. Correct the inability to style upload buttons in iOS and Safari.
- * 2. Change font properties to `inherit` in Safari.
- */
-
-::-webkit-file-upload-button {
-  -webkit-appearance: button; /* 1 */
-  font: inherit; /* 2 */
-}
-
-/**
- * Remove the inner border and padding of focus outlines in Firefox.
- */
-
-::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
-/**
- * Restore the focus outline styles unset by the previous rule in Firefox.
- */
-
-:-moz-focusring {
-  outline: 1px dotted ButtonText;
-}
-
-/**
- * Remove the additional :invalid styles in Firefox.
- */
-
-:-moz-ui-invalid {
-  box-shadow: none;
-}
-
-/* Interactive
- * ========================================================================== */
-
-/*
- * Add the correct display in Edge 18- and IE.
- */
-
-details {
-  display: block;
-}
-
-/*
- * Add the correct styles in Edge 18-, IE, and Safari.
- */
-
-dialog {
-  background-color: white;
-  border: solid;
-  color: black;
-  display: block;
-  height: -moz-fit-content;
-  height: -webkit-fit-content;
-  height: fit-content;
-  left: 0;
-  margin: auto;
-  padding: 1em;
-  position: absolute;
-  right: 0;
-  width: -moz-fit-content;
-  width: -webkit-fit-content;
-  width: fit-content;
-}
-
-dialog:not([open]) {
-  display: none;
-}
-
-/*
- * Add the correct display in all browsers.
- */
-
-summary {
-  display: list-item;
-}
-
-/* Scripting
- * ========================================================================== */
-
-/**
- * Add the correct display in IE 9-.
- */
-
-canvas {
-  display: inline-block;
-}
-
-/**
- * Add the correct display in IE.
- */
-
-template {
-  display: none;
-}
-
-/* User interaction
- * ========================================================================== */
-
-/*
- * 1. Remove the tapping delay in IE 10.
- * 2. Remove the tapping delay on clickable elements
-      in all browsers (opinionated).
- */
-
-a,
-area,
-button,
-input,
-label,
-select,
-summary,
-textarea,
-[tabindex] {
-  -ms-touch-action: manipulation; /* 1 */
-  touch-action: manipulation; /* 2 */
-}
-
-/**
- * Add the correct display in IE 10-.
- */
-
-[hidden] {
-  display: none;
-}
-
-/* Accessibility
- * ========================================================================== */
-
-/**
- * Change the cursor on busy elements in all browsers (opinionated).
- */
-
-[aria-busy="true"] {
-  cursor: progress;
-}
-
-/*
- * Change the cursor on control elements in all browsers (opinionated).
- */
-
-[aria-controls] {
-  cursor: pointer;
-}
-
-/*
- * Change the cursor on disabled, not-editable, or otherwise
- * inoperable elements in all browsers (opinionated).
- */
-
-[aria-disabled="true"],
-[disabled] {
-  cursor: not-allowed;
-}
-
-/*
- * Change the display on visually hidden accessible elements
- * in all browsers (opinionated).
- */
-
-[aria-hidden="false"][hidden] {
-  display: initial;
-}
-
-[aria-hidden="false"][hidden]:not(:focus) {
-  clip: rect(0, 0, 0, 0);
-  position: absolute;
-}
-
-
-    /* Fix for Prism syntax highlight styles */
-    .prism-code {
-        overflow-x: auto;
-    }
-    code {
-        padding: 3px 8px;
-        background: #282c34;
-        color: #FFFFFF;
-        border-radius: 3px;
-        white-space: nowrap;
-    }
-
-    /* Set global font */
-    * {
-        font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif;
-        line-height: 1.8em;
-    }
-</style><meta name="next-head-count" content="26"/><link rel="preload" href="/MDMT/_next/static/UGNAlAwU2Scho0Qlyj_jS/pages/ja/features/mdx.js" as="script"/><link rel="preload" href="/MDMT/_next/static/UGNAlAwU2Scho0Qlyj_jS/pages/_app.js" as="script"/><link rel="preload" href="/MDMT/_next/static/runtime/webpack-b65cab0b00afd201cbda.js" as="script"/><link rel="preload" href="/MDMT/_next/static/chunks/framework.01fb8c9091ebbaaf6515.js" as="script"/><link rel="preload" href="/MDMT/_next/static/chunks/cb1608f2.037aac15e38c684d5e0f.js" as="script"/><link rel="preload" href="/MDMT/_next/static/chunks/f28ad009f8ab242302ca3cebe8236fe33a8ce40d.5bbdc593d9d01ec616ca.js" as="script"/><link rel="preload" href="/MDMT/_next/static/runtime/main-63277fcfabfc5e39c681.js" as="script"/><style data-styled="cReDOd oTHJO lnIpGY jLfIZU biyqcf ovQPp crghUP lnkubx fYOZrK jBfIKV jsGkWr cEzsNI bRJZmp hfBbCQ idGClP dYGgaP ghRWML esidHk kOyNOl zDwiz iTKQkK" data-styled-version="4.4.1">
-/* sc-component-id: Sidebar__Nav-sc-1tij42x-0 */
-.lnIpGY{width:100%;height:100%;padding:10px 30px 100px;background:rgba(10,10,10,0.6);border-right:1px solid gray;overflow:auto;-webkit-overflow-scrolling:touch;} .lnIpGY *{color:#FFFFFF;text-shadow:0 2px 5px black !important;} .lnIpGY ul{padding-left:0;margin:0;} .lnIpGY li,.lnIpGY li > *{line-height:2.5em;} .lnIpGY li.active,.lnIpGY li > *.active{position:relative;-webkit-text-decoration:none;text-decoration:none;font-weight:bold;font-style:italic;color:white;} .lnIpGY li a{display:block;-webkit-text-decoration:none;text-decoration:none;} .lnIpGY li a:hover{color:#88eeff;-webkit-text-decoration:underline;text-decoration:underline;} .lnIpGY li a:visited{color:#FFFFFF;}
-/* sc-component-id: Sidebar__Header-sc-1tij42x-1 */
-.jLfIZU{margin-bottom:30px;text-align:center;} .jLfIZU .logo{width:100%;padding:20px 0;} .jLfIZU .twitter{display:block;margin:10px auto;} .jLfIZU .twitter img{height:24px;}
-/* sc-component-id: Language__Wrapper-bti4bh-0 */
-.bRJZmp{position:relative;height:100%;width:auto;}
-/* sc-component-id: Language__Button-bti4bh-1 */
-.hfBbCQ{color:#FFFFFF;font-size:32px;line-height:32px;padding:12px 15px;border:none;background:transparent;cursor:pointer;outline:none;} .hfBbCQ:hover{opacity:0.8;}
-/* sc-component-id: Language__Dropdown-bti4bh-2 */
-.idGClP{display:none;position:absolute;top:calc(100% + 8px);right:8px;background:#282c34;} .idGClP .bg{position:fixed;width:100%;height:100%;left:0;top:0;background:rgba(0,0,0,0.3);z-index:2;} .idGClP ul{position:relative;z-index:3;list-style:none;margin:0 8px;padding:10px 20px;line-height:2em;text-align:center;color:#FFFFFF;} .idGClP li{position:relative;white-space:nowrap;} .idGClP li.is-active:before{content:"";border-style:solid;border-width:5px 0 5px 5px;border-color:transparent transparent transparent #FFFFFF;position:absolute;left:-16px;top:10px;} .idGClP a,.idGClP a:visited{color:#FFFFFF;}
-/* sc-component-id: Header__Nav-tc3vqk-0 */
-.crghUP{position:relative;width:100%;height:56px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;-webkit-transition:0.3s;transition:0.3s;background:transparent;} @media (max-width:767px){.crghUP{background:transparent;}}
-/* sc-component-id: Header__PCOnly-tc3vqk-1 */
-.cEzsNI{display:block;} @media (max-width:767px){.cEzsNI{display:none;}}
-/* sc-component-id: Header__MobileOnly-tc3vqk-2 */
-.jBfIKV{display:none;} @media (max-width:767px){.jBfIKV{display:block;}}
-/* sc-component-id: Header__Logo-tc3vqk-3 */
-.lnkubx{height:100%;padding:4px 0;position:absolute;left:51%;-webkit-transform:translateX(-50%);-ms-transform:translateX(-50%);transform:translateX(-50%);-webkit-transition:opacity 0.3s;transition:opacity 0.3s;opacity:0;} @media (max-width:767px){.lnkubx{opacity:1;}}
-/* sc-component-id: Header__Right-tc3vqk-5 */
-.jsGkWr{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;line-height:56px;margin-right:8px;} @media (max-width:767px){.jsGkWr{margin-right:0;}} .jsGkWr .header-link a{line-height:56px;-webkit-text-decoration:none;text-decoration:none;color:#FFFFFF;font-weight:bold;margin:0 8px;}
-/* sc-component-id: Footer__FooterEl-sc-1rmoc1y-0 */
-.esidHk{width:90%;max-width:640px;margin:0 auto;text-align:center;}
-/* sc-component-id: Footer__Hr-sc-1rmoc1y-1 */
-.kOyNOl{margin:60px auto 0;}
-/* sc-component-id: Footer__FooterText-sc-1rmoc1y-2 */
-.zDwiz{margin:30px auto;}
-/* sc-component-id: Background__BG-o0ndp8-0 */
-.iTKQkK{position:fixed;width:100%;height:100%;z-index:-1;left:0;top:0;background:repeating-linear-gradient( 130deg,#eec433,#EE33BB,#ad91f6 );background-size:200% 200%;-webkit-animation:bg 12s ease infinite;animation:bg 12s ease infinite;} @-webkit-keyframes bg{0%{background-position:0 0;}50%{background-position:100% 100%;}100%{background-position:0 0;}} @keyframes bg{0%{background-position:0 0;}50%{background-position:100% 100%;}100%{background-position:0 0;}}
-/* sc-component-id: Layout__Wrapper-moctss-0 */
-.cReDOd{position:fixed;top:0;left:0;height:100%;width:100vw;overflow:visible;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-transition:left 0.3s;transition:left 0.3s;} @media (max-width:767px){.cReDOd{width:auto;left:-75vw;}.cReDOd.menu{left:0;}}
-/* sc-component-id: Layout__SidebarWrapper-moctss-1 */
-.oTHJO{width:270px;-webkit-overflow-scrolling:touch;} @media (max-width:767px){.oTHJO{width:75vw;}}
-/* sc-component-id: Layout__BodyColumn-moctss-2 */
-.biyqcf{-webkit-flex:1;-ms-flex:1;flex:1;position:relative;} @media (max-width:767px){.biyqcf{width:100vw;}}
-/* sc-component-id: Layout__MainWrapper-moctss-3 */
-.dYGgaP{height:100%;width:100%;overflow:auto;-webkit-overflow-scrolling:touch;padding:20px;padding-top:60px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;}
-/* sc-component-id: Layout__Main-moctss-4 */
-.ghRWML{-webkit-flex:1;-ms-flex:1;flex:1;width:100%;max-width:720px;margin:0 auto;} .ghRWML img{max-width:100%;}
-/* sc-component-id: Layout__HeaderWrapper-moctss-5 */
-.ovQPp{position:absolute;top:0;width:100%;z-index:2;}</style></head><body><div id="__next"><div><div class="Layout__Wrapper-moctss-0 cReDOd"><div class="Layout__SidebarWrapper-moctss-1 oTHJO"><nav class="Sidebar__Nav-sc-1tij42x-0 lnIpGY"><div class="Sidebar__Header-sc-1tij42x-1 jLfIZU"><div><a href="/MDMT/"><img class="logo" src="/MDMT/static/images/logo_white.png" alt="MDMT header"/></a></div><div class="twitter"><a href="https://twitter.com/search?f=tweets&amp;q=%23MDMTjs&amp;src=typd" target="_blank" rel="noopener noreferrer"><img alt="hashtag #MDMTjs" src="/MDMT/static/images/hashtag.webp"/></a></div></div><ul style="text-indent:0"><li><a href="/MDMT/">Home</a></li><li><a href="/MDMT/getting-started">Getting Started</a></li><li><span>Features</span><ul style="text-indent:30px"><li><a href="/MDMT/features/mdx">MDX</a></li><li><a href="/MDMT/features/i18n">I18n</a></li><li><a href="/MDMT/features/pwa">PWA</a></li></ul></li><li><a href="/MDMT/customize">Customize</a><ul style="text-indent:30px"><li><a href="/MDMT/customize/config">Config</a></li><li><a href="/MDMT/customize/theme">Theme</a></li></ul></li><li><a href="/MDMT/how-it-works">How It Works</a></li><li><a href="/MDMT/faq">FAQ</a></li></ul></nav></div><div class="Layout__BodyColumn-moctss-2 biyqcf"><div class="Layout__HeaderWrapper-moctss-5 ovQPp"><div color="#EE33BB" class="Header__Nav-tc3vqk-0 crghUP"><div class="Header__Logo-tc3vqk-3 lnkubx"><a href="/MDMT/"><img src="/MDMT/static/images/logo_white.png" alt="MDMT logo" height="48"/></a></div><div class="Header__Left-tc3vqk-4 fYOZrK"><div class="Header__MobileOnly-tc3vqk-2 jBfIKV"><button title="Menu" class="jsx-316289044 BurgerArrow Burger"><div class="jsx-316289044 BurgerBox"><div class="jsx-316289044 BurgerInner"></div></div></button></div></div><div class="Header__Right-tc3vqk-5 jsGkWr"><div class="Header__PCOnly-tc3vqk-1 cEzsNI"><span class="header-link"><a href="https://github.com/fand/mdmt" target="_blank" rel="noopener noreferrer">GitHub</a></span></div><div class="Language__Wrapper-bti4bh-0 bRJZmp"><button type="button" title="Change language" class="Language__Button-bti4bh-1 hfBbCQ"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="globe" class="svg-inline--fa fa-globe fa-w-16 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M336.5 160C322 70.7 287.8 8 248 8s-74 62.7-88.5 152h177zM152 256c0 22.2 1.2 43.5 3.3 64h185.3c2.1-20.5 3.3-41.8 3.3-64s-1.2-43.5-3.3-64H155.3c-2.1 20.5-3.3 41.8-3.3 64zm324.7-96c-28.6-67.9-86.5-120.4-158-141.6 24.4 33.8 41.2 84.7 50 141.6h108zM177.2 18.4C105.8 39.6 47.8 92.1 19.3 160h108c8.7-56.9 25.5-107.8 49.9-141.6zM487.4 192H372.7c2.1 21 3.3 42.5 3.3 64s-1.2 43-3.3 64h114.6c5.5-20.5 8.6-41.8 8.6-64s-3.1-43.5-8.5-64zM120 256c0-21.5 1.2-43 3.3-64H8.6C3.2 212.5 0 233.8 0 256s3.2 43.5 8.6 64h114.6c-2-21-3.2-42.5-3.2-64zm39.5 96c14.5 89.3 48.7 152 88.5 152s74-62.7 88.5-152h-177zm159.3 141.6c71.4-21.2 129.4-73.7 158-141.6h-108c-8.8 56.9-25.6 107.8-50 141.6zM19.3 352c28.6 67.9 86.5 120.4 158 141.6-24.4-33.8-41.2-84.7-50-141.6h-108z"></path></svg></button><div class="Language__Dropdown-bti4bh-2 idGClP"><div class="bg"></div><ul><li class="is-active">English</li><li><a href="/MDMT/ja/ja/features/mdx">日本語</a></li></ul></div></div></div></div></div><div class="Layout__MainWrapper-moctss-3 dYGgaP body"><main class="Layout__Main-moctss-4 ghRWML"><h1 id="mdx">MDX</h1><p>MDMTは、Markdown拡張の一種であるMDXを使っています。<br/>
+<!DOCTYPE html><html lang="ja"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta name="Description" content="MDMT is a deadsimple document site generator, powered by Next.js and MDX. You can easily create documents with Markdown."/><title>MDX 💊 MDMT - Markdown Document Template #MDMTjs</title><meta property="og:url" content="https://gmork.in/MDMT//ja/features/mdx"/><meta property="og:type" content="website"/><meta property="og:title" content="MDX 💊 MDMT - Markdown Document Template #MDMTjs"/><meta property="og:image" content="/MDMT/static/images/ogimage.png"/><meta property="og:description" content="MDMT is a deadsimple document site generator, powered by Next.js and MDX. You can easily create documents with Markdown."/><meta property="og:site_name" content="💊MDMT💊 Markdown Document Template"/><meta property="og:locale" content="en_US"/><meta name="twitter:card" content="summary"/><meta name="twitter:site" content="@amagitakayosi"/><meta name="twitter:creator" content="@amagitakayosi"/><meta name="twitter:url" content="https://gmork.in/MDMT//ja/features/mdx"/><meta name="twitter:title" content="MDX 💊 MDMT - Markdown Document Template #MDMTjs"/><meta name="twitter:description" content="MDMT is a deadsimple document site generator, powered by Next.js and MDX. You can easily create documents with Markdown."/><meta name="twitter:image" content="/MDMT/static/images/ogimage.png"/><link rel="icon" type="image/x-icon" sizes="16x16 32x32" href="/MDMT/static/images/favicon.ico"/><link rel="apple-touch-icon" sizes="180x180" href="/MDMT/static/images/favicon-180.png"/><link rel="icon" sizes="192x192" href="/MDMT/static/images/favicon-192.png"/><meta name="theme-color" content="#EE33BB"/><link rel="manifest" href="/MDMT/static/manifest.json"/><meta name="next-head-count" content="24"/><link rel="preload" href="/MDMT/_next/static/WhWjtYe6JY3QlFgq6VXKY/pages/_app.js" as="script"/><link rel="preload" href="/MDMT/_next/static/WhWjtYe6JY3QlFgq6VXKY/pages/ja/features/mdx.js" as="script"/><link rel="preload" href="/MDMT/_next/static/runtime/webpack-c212667a5f965e81e004.js" as="script"/><link rel="preload" href="/MDMT/_next/static/chunks/framework.ca3e7fa29692f350ed1d.js" as="script"/><link rel="preload" href="/MDMT/_next/static/chunks/cb1608f2.a3c509a6fdf9bc28f462.js" as="script"/><link rel="preload" href="/MDMT/_next/static/chunks/c70476e5a82813d6f197048542921e43a7de64c0.04ad0c4bef9b96aba949.js" as="script"/><link rel="preload" href="/MDMT/_next/static/runtime/main-74e0be04118c43bc8b15.js" as="script"/><style data-styled="" data-styled-version="5.1.0">.cKFBJx{width:100%;height:100%;padding:10px 30px 100px;background:rgba(10,10,10,0.6);border-right:1px solid gray;overflow:auto;-webkit-overflow-scrolling:touch;}/*!sc*/
+.cKFBJx *{color:#FFFFFF;text-shadow:0 2px 5px black !important;}/*!sc*/
+.cKFBJx ul{padding-left:0;margin:0;}/*!sc*/
+.cKFBJx li,.cKFBJx li > *{line-height:2.5em;}/*!sc*/
+.cKFBJx li.active,.cKFBJx li > *.active{position:relative;-webkit-text-decoration:none;text-decoration:none;font-weight:bold;font-style:italic;color:white;}/*!sc*/
+.cKFBJx li a{display:block;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+.cKFBJx li a:hover{color:#88eeff;-webkit-text-decoration:underline;text-decoration:underline;}/*!sc*/
+.cKFBJx li a:visited{color:#FFFFFF;}/*!sc*/
+data-styled.g1[id="Sidebar__Nav-sc-1tij42x-0"]{content:"cKFBJx,"}/*!sc*/
+.dztURi{margin-bottom:30px;text-align:center;}/*!sc*/
+.dztURi .logo{width:100%;padding:20px 0;}/*!sc*/
+.dztURi .twitter{display:block;margin:10px auto;}/*!sc*/
+.dztURi .twitter img{height:24px;}/*!sc*/
+data-styled.g2[id="Sidebar__Header-sc-1tij42x-1"]{content:"dztURi,"}/*!sc*/
+.VzmSf{position:relative;height:100%;width:auto;}/*!sc*/
+data-styled.g3[id="Language__Wrapper-bti4bh-0"]{content:"VzmSf,"}/*!sc*/
+.ePhPJL{color:#FFFFFF;font-size:32px;line-height:32px;padding:12px 15px;border:none;background:transparent;cursor:pointer;outline:none;}/*!sc*/
+.ePhPJL:hover{opacity:0.8;}/*!sc*/
+data-styled.g4[id="Language__Button-bti4bh-1"]{content:"ePhPJL,"}/*!sc*/
+.giTPyu{display:none;position:absolute;top:calc(100% + 8px);right:8px;background:#282c34;}/*!sc*/
+.giTPyu .bg{position:fixed;width:100%;height:100%;left:0;top:0;background:rgba(0,0,0,0.3);z-index:2;}/*!sc*/
+.giTPyu ul{position:relative;z-index:3;list-style:none;margin:0 8px;padding:10px 20px;line-height:2em;text-align:center;color:#FFFFFF;}/*!sc*/
+.giTPyu li{position:relative;white-space:nowrap;}/*!sc*/
+.giTPyu li.is-active:before{content:"";border-style:solid;border-width:5px 0 5px 5px;border-color:transparent transparent transparent #FFFFFF;position:absolute;left:-16px;top:10px;}/*!sc*/
+.giTPyu a,.giTPyu a:visited{color:#FFFFFF;}/*!sc*/
+data-styled.g5[id="Language__Dropdown-bti4bh-2"]{content:"giTPyu,"}/*!sc*/
+.kVEogq{position:relative;width:100%;height:56px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;-webkit-transition:0.3s;transition:0.3s;background:transparent;}/*!sc*/
+@media (max-width:767px){.kVEogq{background:transparent;}}/*!sc*/
+data-styled.g6[id="Header__Nav-tc3vqk-0"]{content:"kVEogq,"}/*!sc*/
+.cHraie{display:block;}/*!sc*/
+@media (max-width:767px){.cHraie{display:none;}}/*!sc*/
+data-styled.g7[id="Header__PCOnly-tc3vqk-1"]{content:"cHraie,"}/*!sc*/
+.eycTZO{display:none;}/*!sc*/
+@media (max-width:767px){.eycTZO{display:block;}}/*!sc*/
+data-styled.g8[id="Header__MobileOnly-tc3vqk-2"]{content:"eycTZO,"}/*!sc*/
+.cPEJWy{height:100%;padding:4px 0;position:absolute;left:51%;-webkit-transform:translateX(-50%);-ms-transform:translateX(-50%);transform:translateX(-50%);-webkit-transition:opacity 0.3s;transition:opacity 0.3s;opacity:0;}/*!sc*/
+@media (max-width:767px){.cPEJWy{opacity:1;}}/*!sc*/
+data-styled.g9[id="Header__Logo-tc3vqk-3"]{content:"cPEJWy,"}/*!sc*/
+.hEWeFB{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;line-height:56px;margin-right:8px;}/*!sc*/
+@media (max-width:767px){.hEWeFB{margin-right:0;}}/*!sc*/
+.hEWeFB .header-link a{line-height:56px;-webkit-text-decoration:none;text-decoration:none;color:#FFFFFF;font-weight:bold;margin:0 8px;}/*!sc*/
+data-styled.g11[id="Header__Right-tc3vqk-5"]{content:"hEWeFB,"}/*!sc*/
+.iOZVQZ{width:90%;max-width:640px;margin:0 auto;text-align:center;}/*!sc*/
+data-styled.g12[id="Footer__FooterEl-sc-1rmoc1y-0"]{content:"iOZVQZ,"}/*!sc*/
+.byUCUK{margin:60px auto 0;}/*!sc*/
+data-styled.g13[id="Footer__Hr-sc-1rmoc1y-1"]{content:"byUCUK,"}/*!sc*/
+.lclYMf{margin:30px auto;}/*!sc*/
+data-styled.g14[id="Footer__FooterText-sc-1rmoc1y-2"]{content:"lclYMf,"}/*!sc*/
+.cQBYNr{position:fixed;width:100%;height:100%;z-index:-1;left:0;top:0;background:repeating-linear-gradient( 130deg,#eec433,#EE33BB,#ad91f6 );background-size:200% 200%;-webkit-animation:bg 12s ease infinite;animation:bg 12s ease infinite;}/*!sc*/
+@-webkit-keyframes bg{0%{background-position:0 0;}50%{background-position:100% 100%;}100%{background-position:0 0;}}/*!sc*/
+@keyframes bg{0%{background-position:0 0;}50%{background-position:100% 100%;}100%{background-position:0 0;}}/*!sc*/
+data-styled.g15[id="Background__BG-o0ndp8-0"]{content:"cQBYNr,"}/*!sc*/
+.dYMMsH{position:fixed;top:0;left:0;height:100%;width:100vw;overflow:visible;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-transition:left 0.3s;transition:left 0.3s;}/*!sc*/
+@media (max-width:767px){.dYMMsH{width:auto;left:-75vw;}.dYMMsH.menu{left:0;}}/*!sc*/
+data-styled.g16[id="Layout__Wrapper-moctss-0"]{content:"dYMMsH,"}/*!sc*/
+.klPzsQ{width:270px;-webkit-overflow-scrolling:touch;}/*!sc*/
+@media (max-width:767px){.klPzsQ{width:75vw;}}/*!sc*/
+data-styled.g17[id="Layout__SidebarWrapper-moctss-1"]{content:"klPzsQ,"}/*!sc*/
+.fLbEIw{-webkit-flex:1;-ms-flex:1;flex:1;position:relative;}/*!sc*/
+@media (max-width:767px){.fLbEIw{width:100vw;}}/*!sc*/
+data-styled.g18[id="Layout__BodyColumn-moctss-2"]{content:"fLbEIw,"}/*!sc*/
+.fzthLn{height:100%;width:100%;overflow:auto;-webkit-overflow-scrolling:touch;padding:20px;padding-top:60px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;}/*!sc*/
+data-styled.g19[id="Layout__MainWrapper-moctss-3"]{content:"fzthLn,"}/*!sc*/
+.bQOKvr{-webkit-flex:1;-ms-flex:1;flex:1;width:100%;max-width:720px;margin:0 auto;}/*!sc*/
+.bQOKvr img{max-width:100%;}/*!sc*/
+data-styled.g20[id="Layout__Main-moctss-4"]{content:"bQOKvr,"}/*!sc*/
+.hnkqKd{position:absolute;top:0;width:100%;z-index:2;}/*!sc*/
+data-styled.g21[id="Layout__HeaderWrapper-moctss-5"]{content:"hnkqKd,"}/*!sc*/
+*,::before,::after{box-sizing:border-box;}/*!sc*/
+::before,::after{-webkit-text-decoration:inherit;text-decoration:inherit;vertical-align:inherit;}/*!sc*/
+html{cursor:default;line-height:1.5;-moz-tab-size:4;tab-size:4;-webkit-tap-highlight-color:transparent;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;word-break:break-word;}/*!sc*/
+body{margin:0;}/*!sc*/
+h1{font-size:2em;margin:0.67em 0;}/*!sc*/
+dl dl,dl ol,dl ul,ol dl,ul dl{margin:0;}/*!sc*/
+ol ol,ol ul,ul ol,ul ul{margin:0;}/*!sc*/
+hr{height:0;overflow:visible;}/*!sc*/
+main{display:block;}/*!sc*/
+nav ol,nav ul{list-style:none;padding:0;}/*!sc*/
+pre{font-family:monospace,monospace;font-size:1em;}/*!sc*/
+a{background-color:transparent;}/*!sc*/
+abbr[title]{-webkit-text-decoration:underline;text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted;}/*!sc*/
+b,strong{font-weight:bolder;}/*!sc*/
+code,kbd,samp{font-family:monospace,monospace;font-size:1em;}/*!sc*/
+small{font-size:80%;}/*!sc*/
+audio,canvas,iframe,img,svg,video{vertical-align:middle;}/*!sc*/
+audio,video{display:inline-block;}/*!sc*/
+audio:not([controls]){display:none;height:0;}/*!sc*/
+iframe{border-style:none;}/*!sc*/
+img{border-style:none;}/*!sc*/
+svg:not([fill]){fill:currentColor;}/*!sc*/
+svg:not(:root){overflow:hidden;}/*!sc*/
+table{border-collapse:collapse;}/*!sc*/
+button,input,select{margin:0;}/*!sc*/
+button{overflow:visible;text-transform:none;}/*!sc*/
+button,[type="button"],[type="reset"],[type="submit"]{-webkit-appearance:button;}/*!sc*/
+fieldset{border:1px solid #a0a0a0;padding:0.35em 0.75em 0.625em;}/*!sc*/
+input{overflow:visible;}/*!sc*/
+legend{color:inherit;display:table;max-width:100%;white-space:normal;}/*!sc*/
+progress{display:inline-block;vertical-align:baseline;}/*!sc*/
+select{text-transform:none;}/*!sc*/
+textarea{margin:0;overflow:auto;resize:vertical;}/*!sc*/
+[type="checkbox"],[type="radio"]{padding:0;}/*!sc*/
+[type="search"]{-webkit-appearance:textfield;outline-offset:-2px;}/*!sc*/
+::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto;}/*!sc*/
+::-webkit-input-placeholder{color:inherit;opacity:0.54;}/*!sc*/
+::-webkit-search-decoration{-webkit-appearance:none;}/*!sc*/
+::-webkit-file-upload-button{-webkit-appearance:button;font:inherit;}/*!sc*/
+::-moz-focus-inner{border-style:none;padding:0;}/*!sc*/
+:-moz-focusring{outline:1px dotted ButtonText;}/*!sc*/
+:-moz-ui-invalid{box-shadow:none;}/*!sc*/
+details{display:block;}/*!sc*/
+dialog{background-color:white;border:solid;color:black;display:block;height:-moz-fit-content;height:-webkit-fit-content;height:-webkit-fit-content;height:-moz-fit-content;height:fit-content;left:0;margin:auto;padding:1em;position:absolute;right:0;width:-moz-fit-content;width:-webkit-fit-content;width:-webkit-fit-content;width:-moz-fit-content;width:fit-content;}/*!sc*/
+dialog:not([open]){display:none;}/*!sc*/
+summary{display:list-item;}/*!sc*/
+canvas{display:inline-block;}/*!sc*/
+template{display:none;}/*!sc*/
+a,area,button,input,label,select,summary,textarea,[tabindex]{-ms-touch-action:manipulation;touch-action:manipulation;}/*!sc*/
+[hidden]{display:none;}/*!sc*/
+[aria-busy="true"]{cursor:progress;}/*!sc*/
+[aria-controls]{cursor:pointer;}/*!sc*/
+[aria-disabled="true"],[disabled]{cursor:not-allowed;}/*!sc*/
+[aria-hidden="false"][hidden]{display:initial;}/*!sc*/
+[aria-hidden="false"][hidden]:not(:focus){-webkit-clip:rect(0,0,0,0);clip:rect(0,0,0,0);position:absolute;}/*!sc*/
+.prism-code{overflow-x:auto;}/*!sc*/
+code{padding:3px 8px;background:#282c34;color:#FFFFFF;border-radius:3px;white-space:nowrap;}/*!sc*/
+*{font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",YuGothic,"ヒラギノ角ゴ ProN W3",Hiragino Kaku Gothic ProN,Arial,"メイリオ",Meiryo,sans-serif;line-height:1.8em;}/*!sc*/
+data-styled.g22[id="sc-global-drYPEA1"]{content:"sc-global-drYPEA1,"}/*!sc*/
+</style></head><body><div id="__next"><div><div class="Layout__Wrapper-moctss-0 dYMMsH"><div class="Layout__SidebarWrapper-moctss-1 klPzsQ"><nav class="Sidebar__Nav-sc-1tij42x-0 cKFBJx"><div class="Sidebar__Header-sc-1tij42x-1 dztURi"><div><a href="/MDMT/"><img class="logo" src="/MDMT/static/images/logo_white.png" alt="MDMT header"/></a></div><div class="twitter"><a href="https://twitter.com/search?f=tweets&amp;q=%23MDMTjs&amp;src=typd" target="_blank" rel="noopener noreferrer"><img alt="hashtag #MDMTjs" src="/MDMT/static/images/hashtag.webp"/></a></div></div><ul style="text-indent:0"><li><a href="/MDMT/">Home</a></li><li><a href="/MDMT/getting-started">Getting Started</a></li><li><span>Features</span><ul style="text-indent:30px"><li><a href="/MDMT/features/mdx">MDX</a></li><li><a href="/MDMT/features/i18n">I18n</a></li><li><a href="/MDMT/features/pwa">PWA</a></li></ul></li><li><a href="/MDMT/customize">Customize</a><ul style="text-indent:30px"><li><a href="/MDMT/customize/config">Config</a></li><li><a href="/MDMT/customize/theme">Theme</a></li></ul></li><li><a href="/MDMT/how-it-works">How It Works</a></li><li><a href="/MDMT/faq">FAQ</a></li></ul></nav></div><div class="Layout__BodyColumn-moctss-2 fLbEIw"><div class="Layout__HeaderWrapper-moctss-5 hnkqKd"><div color="#EE33BB" class="Header__Nav-tc3vqk-0 kVEogq"><div class="Header__Logo-tc3vqk-3 cPEJWy"><a href="/MDMT/"><img src="/MDMT/static/images/logo_white.png" alt="MDMT logo" height="48"/></a></div><div class="Header__Left-tc3vqk-4 ghaHRr"><div class="Header__MobileOnly-tc3vqk-2 eycTZO"><button title="Menu" class="jsx-316289044 BurgerArrow Burger"><div class="jsx-316289044 BurgerBox"><div class="jsx-316289044 BurgerInner"></div></div></button></div></div><div class="Header__Right-tc3vqk-5 hEWeFB"><div class="Header__PCOnly-tc3vqk-1 cHraie"><span class="header-link"><a href="https://github.com/fand/mdmt" target="_blank" rel="noopener noreferrer">GitHub</a></span></div><div class="Language__Wrapper-bti4bh-0 VzmSf"><button type="button" title="Change language" class="Language__Button-bti4bh-1 ePhPJL"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="globe" class="svg-inline--fa fa-globe fa-w-16 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M336.5 160C322 70.7 287.8 8 248 8s-74 62.7-88.5 152h177zM152 256c0 22.2 1.2 43.5 3.3 64h185.3c2.1-20.5 3.3-41.8 3.3-64s-1.2-43.5-3.3-64H155.3c-2.1 20.5-3.3 41.8-3.3 64zm324.7-96c-28.6-67.9-86.5-120.4-158-141.6 24.4 33.8 41.2 84.7 50 141.6h108zM177.2 18.4C105.8 39.6 47.8 92.1 19.3 160h108c8.7-56.9 25.5-107.8 49.9-141.6zM487.4 192H372.7c2.1 21 3.3 42.5 3.3 64s-1.2 43-3.3 64h114.6c5.5-20.5 8.6-41.8 8.6-64s-3.1-43.5-8.5-64zM120 256c0-21.5 1.2-43 3.3-64H8.6C3.2 212.5 0 233.8 0 256s3.2 43.5 8.6 64h114.6c-2-21-3.2-42.5-3.2-64zm39.5 96c14.5 89.3 48.7 152 88.5 152s74-62.7 88.5-152h-177zm159.3 141.6c71.4-21.2 129.4-73.7 158-141.6h-108c-8.8 56.9-25.6 107.8-50 141.6zM19.3 352c28.6 67.9 86.5 120.4 158 141.6-24.4-33.8-41.2-84.7-50-141.6h-108z"></path></svg></button><div class="Language__Dropdown-bti4bh-2 giTPyu"><div class="bg"></div><ul><li class="is-active">English</li><li><a href="/MDMT/ja/ja/features/mdx">日本語</a></li></ul></div></div></div></div></div><div class="Layout__MainWrapper-moctss-3 fzthLn body"><main class="Layout__Main-moctss-4 bQOKvr"><h1 id="mdx">MDX</h1><p>MDMTは、Markdown拡張の一種であるMDXを使っています。<br/>
 <!-- -->MDXでは文中にReactコンポーネントを埋め込むことができます。</p><p>詳しくはMDXのドキュメントをご覧ください。<br/>
 <a href="https://mdxjs.com/" target="_blank" rel="noopener noreferrer">https://mdxjs.com/</a></p><p>MDXのパースには<a href="https://github.com/remarkjs/remark" target="_blank" rel="noopener noreferrer">remark</a>を使用しています。<br/>
 <!-- -->Markdownの書き心地をGitHubに近づけるため、remarkのプラグインを使用しています。<br/>
-<!-- -->remarkプラグインを変更したい場合は <code>lib/mdx-loader.js</code> を編集してください。</p></main><footer class="Footer__FooterEl-sc-1rmoc1y-0 esidHk"><hr class="Footer__Hr-sc-1rmoc1y-1 kOyNOl"/><div class="Footer__FooterText-sc-1rmoc1y-2 zDwiz">MDMT by <a href="https://twitter.com/amagitakayosi" target="_blank" rel="noopener noreferrer">@amagitakayosi</a></div></footer></div></div></div><div color="#EE33BB" class="Background__BG-o0ndp8-0 iTKQkK"></div></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{}},"page":"/ja/features/mdx","query":{},"buildId":"UGNAlAwU2Scho0Qlyj_jS","assetPrefix":"/MDMT","nextExport":true,"isFallback":false}</script><script nomodule="" src="/MDMT/_next/static/runtime/polyfills-e8a67dd7d670b2147438.js"></script><script async="" data-next-page="/ja/features/mdx" src="/MDMT/_next/static/UGNAlAwU2Scho0Qlyj_jS/pages/ja/features/mdx.js"></script><script async="" data-next-page="/_app" src="/MDMT/_next/static/UGNAlAwU2Scho0Qlyj_jS/pages/_app.js"></script><script src="/MDMT/_next/static/runtime/webpack-b65cab0b00afd201cbda.js" async=""></script><script src="/MDMT/_next/static/chunks/framework.01fb8c9091ebbaaf6515.js" async=""></script><script src="/MDMT/_next/static/chunks/cb1608f2.037aac15e38c684d5e0f.js" async=""></script><script src="/MDMT/_next/static/chunks/f28ad009f8ab242302ca3cebe8236fe33a8ce40d.5bbdc593d9d01ec616ca.js" async=""></script><script src="/MDMT/_next/static/runtime/main-63277fcfabfc5e39c681.js" async=""></script><script src="/MDMT/_next/static/UGNAlAwU2Scho0Qlyj_jS/_buildManifest.js" async=""></script><script src="/MDMT/_next/static/UGNAlAwU2Scho0Qlyj_jS/_ssgManifest.js" async=""></script></body></html>
+<!-- -->remarkプラグインを変更したい場合は <code>lib/mdx-loader.js</code> を編集してください。</p></main><footer class="Footer__FooterEl-sc-1rmoc1y-0 iOZVQZ"><hr class="Footer__Hr-sc-1rmoc1y-1 byUCUK"/><div class="Footer__FooterText-sc-1rmoc1y-2 lclYMf">MDMT by <a href="https://twitter.com/amagitakayosi" target="_blank" rel="noopener noreferrer">@amagitakayosi</a></div></footer></div></div></div><div color="#EE33BB" class="Background__BG-o0ndp8-0 cQBYNr"></div></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{}},"page":"/ja/features/mdx","query":{},"buildId":"WhWjtYe6JY3QlFgq6VXKY","assetPrefix":"/MDMT","nextExport":true,"isFallback":false,"appGip":true}</script><script nomodule="" src="/MDMT/_next/static/runtime/polyfills-0f75c8ede6fe59f93383.js"></script><script async="" data-next-page="/_app" src="/MDMT/_next/static/WhWjtYe6JY3QlFgq6VXKY/pages/_app.js"></script><script async="" data-next-page="/ja/features/mdx" src="/MDMT/_next/static/WhWjtYe6JY3QlFgq6VXKY/pages/ja/features/mdx.js"></script><script src="/MDMT/_next/static/runtime/webpack-c212667a5f965e81e004.js" async=""></script><script src="/MDMT/_next/static/chunks/framework.ca3e7fa29692f350ed1d.js" async=""></script><script src="/MDMT/_next/static/chunks/cb1608f2.a3c509a6fdf9bc28f462.js" async=""></script><script src="/MDMT/_next/static/chunks/c70476e5a82813d6f197048542921e43a7de64c0.04ad0c4bef9b96aba949.js" async=""></script><script src="/MDMT/_next/static/runtime/main-74e0be04118c43bc8b15.js" async=""></script><script src="/MDMT/_next/static/WhWjtYe6JY3QlFgq6VXKY/_buildManifest.js" async=""></script><script src="/MDMT/_next/static/WhWjtYe6JY3QlFgq6VXKY/_ssgManifest.js" async=""></script></body></html>

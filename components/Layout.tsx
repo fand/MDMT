@@ -10,6 +10,7 @@ import Sidebar from "./Sidebar";
 import Header from "./Header";
 import Footer from "./Footer";
 import Background from "./Background";
+import GlobalStyle from "./GlobalStyle";
 
 const Wrapper = styled.div`
     position: fixed;
@@ -84,7 +85,7 @@ const Layout = (props: LayoutProps): React.ReactElement => {
     const bodyEl = useRef<HTMLDivElement>(null);
 
     const defer = (callback: () => void): void => {
-        const w = (window as any); // eslint-disable-line
+        const w = window as any; // eslint-disable-line
         w.requestIdleCallback
             ? w.requestIdleCallback(callback)
             : setTimeout(callback, 1);
@@ -133,6 +134,7 @@ const Layout = (props: LayoutProps): React.ReactElement => {
     return (
         <div>
             <Meta />
+            <GlobalStyle />
             <ServiceWorker />
             <Wrapper className={sc}>
                 <SidebarWrapper className={sc}>

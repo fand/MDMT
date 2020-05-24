@@ -1,8 +1,8 @@
-import React from "react";
 import sanitize from "../lib/sanitize";
 import constants from "./constants";
+import { createGlobalStyle } from "styled-components";
 
-const css = `
+const GlobalStyle = createGlobalStyle`
     /* Reset CSS */
     ${sanitize}
 
@@ -24,9 +24,5 @@ const css = `
         line-height: 1.8em;
     }
 `;
-
-const GlobalStyle = (): React.ReactElement => (
-    <style dangerouslySetInnerHTML={{ __html: css }} />
-);
 
 export default GlobalStyle;

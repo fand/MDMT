@@ -2,14 +2,11 @@ import React, { useContext } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { prefixUrl, removePrefixFromPath } from "../lib/utils";
-import { useLanguage } from "../lib/hooks";
 import { AppContext } from "../lib/context";
 import config from "../lib/config";
-import GlobalStyle from "./GlobalStyle";
 
 const Meta = (): React.ReactElement => {
     const { url, image, name, twitter } = config.meta;
-    const lang = useLanguage();
 
     // Get page data
     const { frontmatter } = useContext(AppContext);
@@ -28,7 +25,6 @@ const Meta = (): React.ReactElement => {
 
     return (
         <Head>
-            <html lang={lang} />
             <meta charSet="utf-8" />
             <meta httpEquiv="x-ua-compatible" content="ie=edge" />
             <meta
@@ -82,7 +78,6 @@ const Meta = (): React.ReactElement => {
             {/* PWA */}
             <meta name="theme-color" content={opaqueColor} />
             <link rel="manifest" href={prefixUrl("/static/manifest.json")} />
-            <GlobalStyle />
         </Head>
     );
 };
