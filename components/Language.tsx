@@ -27,6 +27,16 @@ const Button = styled.button`
     &:hover {
         opacity: 0.8;
     }
+
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+        width: 28px;
+        height: 28px;
+    }
 `;
 
 const Dropdown = styled.div<{ open: boolean }>`
